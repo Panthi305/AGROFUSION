@@ -1,0 +1,131 @@
+.bio-quality {
+  padding: 110px 20px;
+  background: #ffffff;
+}
+
+.bio-quality-container {
+  max-width: 1300px;
+  margin: auto;
+}
+
+.bio-quality h2 {
+  text-align: center;
+  font-size: 38px;
+  font-weight: 700;
+  color: #0b3d2e;
+  margin-bottom: 14px;
+}
+
+.bio-quality-subtitle {
+  text-align: center;
+  max-width: 850px;
+  margin: 0 auto 70px;
+  font-size: 17px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* =========================
+   QUALITY GRID
+========================= */
+.quality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-bottom: 90px;
+}
+
+.quality-block {
+  background: #f5fbf8;
+  padding: 36px 32px;
+  border-radius: 18px;
+  border-left: 6px solid #0b3d2e;
+}
+
+.quality-block h3 {
+  font-size: 22px;
+  color: #0b3d2e;
+  margin-bottom: 20px;
+}
+
+.quality-block ul {
+  padding-left: 18px;
+}
+
+.quality-block li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+.certifications {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.certifications h3 {
+  font-size: 28px;
+  color: #0b3d2e;
+  margin-bottom: 36px;
+}
+
+.certification-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.certification-list span {
+  background: #0b3d2e;
+  color: #ffffff;
+  padding: 14px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   LAB SECTION
+========================= */
+.quality-lab {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, #0b3d2e, #1f6f54);
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.quality-lab h4 {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.quality-lab p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .bio-quality h2 {
+    font-size: 30px;
+  }
+
+  .certifications h3 {
+    font-size: 22px;
+  }
+
+  .quality-lab h4 {
+    font-size: 20px;
+  }
+}

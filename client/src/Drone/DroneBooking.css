@@ -1,0 +1,159 @@
+/* --- Section Container --- */
+.drone-booking {
+  padding: 80px 5%;
+  font-family: 'Inter', sans-serif;
+}
+
+.drone-booking__container {
+  max-width: 900px; /* Slimmer container */
+  margin: 0 auto;
+}
+
+/* --- Tightened Title --- */
+.drone-booking__title {
+  text-align: center;
+  color: #0b3d2e;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+}
+
+/* --- The Compact Form Card --- */
+.drone-booking__form {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  /* Clean, thin shadow for a modern look */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns to save vertical space */
+  gap: 15px;
+}
+
+/* --- Input Groups --- */
+.drone-booking__group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Row Management for Compactness */
+.drone-booking__group:nth-child(n+7) {
+  grid-column: span 3; /* Checkboxes and notes take full width */
+}
+
+.drone-booking__group label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+}
+
+.drone-booking__group input, 
+.drone-booking__group textarea {
+  padding: 10px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #fff;
+  transition: border-color 0.2s;
+}
+
+.drone-booking__group input:focus {
+  outline: none;
+  border-color: #2ca01c;
+  background: #fdfdfd;
+}
+
+/* --- Compact Checkboxes --- */
+.drone-booking__checkboxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+}
+
+.drone-booking__checkboxes label {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  text-transform: none;
+  transition: all 0.2s;
+}
+
+.drone-booking__checkboxes label:has(input:checked) {
+  border-color: #2ca01c;
+  background: #f0fdf4;
+  color: #166534;
+}
+
+/* --- Minimal Quote & Submit --- */
+.drone-booking__quote {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0b3d2e;
+}
+
+.drone-booking__quote strong {
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-right: 10px;
+}
+
+.drone-booking__submit {
+  grid-column: span 1;
+  background: #2ca01c;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.drone-booking__submit:hover {
+  background: #0b3d2e;
+}
+
+/* --- Responsive Layout --- */
+
+@media (max-width: 900px) {
+  .drone-booking__form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .drone-booking__group:nth-child(n+7),
+  .drone-booking__quote,
+  .drone-booking__submit {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .drone-booking__form {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+  .drone-booking__group,
+  .drone-booking__group:nth-child(n+7),
+  .drone-booking__quote,
+  .drone-booking__submit {
+    grid-column: span 1;
+  }
+}

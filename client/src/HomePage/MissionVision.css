@@ -1,0 +1,434 @@
+/* =====================================
+   AGROFUSION MISSION & VISION SECTION
+   Modern Split Design with Background Images
+===================================== */
+
+.af-mv {
+  position: relative;
+  overflow: hidden;
+}
+
+.af-mv__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 800px;
+}
+
+/* Mission Block with Background */
+.af-mv__block {
+  position: relative;
+  padding: 5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.af-mv__block:nth-child(1) {
+  background: linear-gradient(rgba(11, 61, 46, 0.388), rgba(11, 61, 46, 0.402)),
+              url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+}
+
+/* Vision Block with Background */
+.af-mv__block--vision {
+  background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98)),
+              url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #0b3d2e;
+}
+
+/* Content Wrapper */
+.af-mv__content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Title with Icon */
+.af-mv__title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+}
+
+.af-mv__block:nth-child(1) .af-mv__title {
+  color: #ffffff;
+}
+
+.af-mv__block--vision .af-mv__title {
+  color: #0b3d2e;
+}
+
+.af-mv__title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: #2ecc71;
+  border-radius: 2px;
+}
+
+.af-mv__block--vision .af-mv__title::before {
+  background: #0b3d2e;
+}
+
+.af-mv__title span {
+  color: #2ecc71;
+  display: block;
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+  position: relative;
+  padding-left: 50px;
+}
+
+.af-mv__title span::before {
+  content: '🌱';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
+
+/* Text with Decorative Border */
+.af-mv__text {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 2rem;
+  border-left: 3px solid rgba(46, 204, 113, 0.3);
+}
+
+.af-mv__block--vision .af-mv__text {
+  border-left-color: rgba(11, 61, 46, 0.3);
+}
+
+.af-mv__text strong {
+  color: #2ecc71;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  background: rgba(46, 204, 113, 0.1);
+  border-radius: 4px;
+}
+
+.af-mv__block--vision .af-mv__text strong {
+  color: #0b3d2e;
+  background: rgba(11, 61, 46, 0.1);
+}
+
+/* Stats Highlight */
+.af-mv__stats {
+  display: flex;
+  gap: 3rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 2px dashed rgba(255, 255, 255, 0.2);
+}
+
+.af-mv__block--vision .af-mv__stats {
+  border-top-color: rgba(11, 61, 46, 0.2);
+}
+
+.af-mv__stat {
+  text-align: center;
+}
+
+.af-mv__stat-number {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #2ecc71;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.af-mv__block--vision .af-mv__stat-number {
+  color: #0b3d2e;
+}
+
+.af-mv__stat-label {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+/* Decorative Elements */
+.af-mv__block::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(135deg, rgba(46, 204, 113, 0.1) 0%, transparent 50%);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+.af-mv__block--vision::after {
+  background: linear-gradient(135deg, rgba(11, 61, 46, 0.1) 0%, transparent 50%);
+  top: auto;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(100% 100%, 0 100%, 100% 0);
+}
+
+/* Vision Icon */
+.af-mv__vision-icon {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+  width: 100px;
+  height: 100px;
+  opacity: 0.1;
+}
+
+.af-mv__vision-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: #0b3d2e;
+}
+
+/* =====================================
+   LAPTOP & DESKTOP (1025px - 1440px)
+===================================== */
+@media (max-width: 1440px) {
+  .af-mv__container {
+    min-height: 700px;
+  }
+  
+  .af-mv__title {
+    font-size: 2.5rem;
+  }
+  
+  .af-mv__title span {
+    font-size: 2rem;
+  }
+  
+  .af-mv__text {
+    font-size: 1.125rem;
+  }
+}
+
+/* =====================================
+   TABLET & SMALL DESKTOP (768px - 1024px)
+===================================== */
+@media (max-width: 1024px) {
+  .af-mv__container {
+    min-height: 600px;
+  }
+  
+  .af-mv__block {
+    padding: 4rem 2rem;
+  }
+  
+  .af-mv__title {
+    font-size: 2.25rem;
+  }
+  
+  .af-mv__title span {
+    font-size: 1.75rem;
+  }
+  
+  .af-mv__text {
+    font-size: 1.0625rem;
+    padding-left: 1.5rem;
+  }
+  
+  .af-mv__stats {
+    gap: 2rem;
+  }
+  
+  .af-mv__stat-number {
+    font-size: 2.5rem;
+  }
+}
+
+/* =====================================
+   TABLET (481px - 767px)
+===================================== */
+@media (max-width: 768px) {
+  .af-mv__container {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  
+  .af-mv__block {
+    padding: 3rem 1.5rem;
+  }
+  
+  .af-mv__title {
+    font-size: 2rem;
+  }
+  
+  .af-mv__title span {
+    font-size: 1.5rem;
+    padding-left: 40px;
+  }
+  
+  .af-mv__title span::before {
+    font-size: 1.5rem;
+  }
+  
+  .af-mv__text {
+    font-size: 1rem;
+    padding-left: 1.25rem;
+  }
+  
+  .af-mv__stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .af-mv__stat-number {
+    font-size: 2rem;
+  }
+  
+  /* Disable parallax on mobile */
+  .af-mv__block:nth-child(1),
+  .af-mv__block--vision {
+    background-attachment: scroll;
+  }
+}
+
+/* =====================================
+   MOBILE DEVICES (up to 480px)
+===================================== */
+@media (max-width: 480px) {
+  .af-mv__block {
+    padding: 2.5rem 1rem;
+  }
+  
+  .af-mv__title {
+    font-size: 1.75rem;
+  }
+  
+  .af-mv__title span {
+    font-size: 1.25rem;
+    padding-left: 35px;
+    margin-top: 0.25rem;
+  }
+  
+  .af-mv__title span::before {
+    font-size: 1.25rem;
+  }
+  
+  .af-mv__title::before {
+    width: 60px;
+    height: 3px;
+    bottom: -8px;
+  }
+  
+  .af-mv__text {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    padding-left: 1rem;
+    border-left-width: 2px;
+  }
+  
+  .af-mv__stats {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+  }
+  
+  .af-mv__stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .af-mv__vision-icon {
+    width: 60px;
+    height: 60px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
+
+/* =====================================
+   VERY SMALL MOBILE DEVICES (up to 360px)
+===================================== */
+@media (max-width: 360px) {
+  .af-mv__title {
+    font-size: 1.5rem;
+  }
+  
+  .af-mv__title span {
+    font-size: 1.125rem;
+    padding-left: 30px;
+  }
+  
+  .af-mv__title span::before {
+    font-size: 1rem;
+  }
+  
+  .af-mv__text {
+    font-size: 0.875rem;
+  }
+  
+  .af-mv__stat-number {
+    font-size: 1.5rem;
+  }
+}
+
+/* =====================================
+   LARGE DESKTOPS (1200px+)
+===================================== */
+@media (min-width: 1200px) {
+  .af-mv__container {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .af-mv__block {
+    padding: 6rem 3rem;
+  }
+  
+  .af-mv__block:nth-child(1) {
+    background-position: right center;
+  }
+  
+  .af-mv__block--vision {
+    background-position: left center;
+  }
+}
+
+/* =====================================
+   REDUCED MOTION SUPPORT
+===================================== */
+@media (prefers-reduced-motion: reduce) {
+  .af-mv__block:nth-child(1),
+  .af-mv__block--vision {
+    background-attachment: scroll;
+  }
+}
+
+/* =====================================
+   HIGH CONTRAST MODE
+===================================== */
+@media (prefers-contrast: high) {
+  .af-mv__block:nth-child(1) {
+    background: #0b3d2e;
+  }
+  
+  .af-mv__block--vision {
+    background: #ffffff;
+  }
+  
+  .af-mv__title::before,
+  .af-mv__block--vision .af-mv__title::before {
+    height: 4px;
+  }
+  
+  .af-mv__text {
+    border-left-width: 4px;
+  }
+}

@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.fertilizer-section {
+  padding: 100px 1.5rem;
+  background: #fbfdfc;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.fertilizer-container { 
+  max-width: 1200px;
+  margin: auto;
+}
+
+.fertilizer-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+}
+
+.section-badge {
+  display: inline-block;
+  color: #2f8f5b;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.fertilizer-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 700;
+  color: #1a2f23;
+  margin-bottom: 1.5rem;
+}
+
+.fertilizer-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+/* --- The Grid --- */
+.fertilizer-grid {
+  display: grid;
+  /* Laptop: Exactly 4 per row */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.fertilizer-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem 1.5rem;
+  border: 1px solid #f1f5f9;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+.fertilizer-card:hover {
+  transform: translateY(-10px);
+  border-color: #2f8f5b;
+  box-shadow: 0 20px 40px rgba(47, 143, 91, 0.08);
+}
+
+/* --- Circular Image Design --- */
+.circle-frame {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  transition: 0.4s;
+}
+
+.fertilizer-card:hover .circle-frame {
+  border-color: #2f8f5b;
+}
+
+.circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.fertilizer-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a2f23;
+  margin-bottom: 1.2rem;
+}
+
+.fertilizer-card ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.fertilizer-card li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-bottom: 0.8rem;
+}
+
+.fertilizer-card svg {
+  color: #2f8f5b;
+  flex-shrink: 0;
+}
+
+/* --- Advisory Section --- */
+.fertilizer-planning {
+  margin-top: 6rem;
+  padding: 4rem;
+  background: #246741b4;
+  border-radius: 32px;
+  color: white;
+  text-align: center;
+}
+
+.fertilizer-planning h3 {
+  font-size: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 3rem;
+}
+
+.planning-grid div {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  border-radius: 16px;
+  font-size: 0.9rem;
+}
+
+.fertilizer-contact-btn {
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  border: none;
+  font-weight: 700;
+  background: #3fbf7f;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.fertilizer-contact-btn:hover {
+  background: white;
+  color: #1a2f23;
+  transform: scale(1.05);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet: 2 per row */
+@media (max-width: 1024px) {
+  .fertilizer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 640px) {
+  .fertilizer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .fertilizer-planning {
+    padding: 2.5rem 1.5rem;
+  }
+  
+  .fertilizer-header h2 {
+    font-size: 1.8rem;
+  }
+}

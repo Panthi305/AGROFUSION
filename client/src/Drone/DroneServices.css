@@ -1,0 +1,247 @@
+/* ==========================================
+   DRONE SERVICES - MAIN SECTION
+   ========================================== */
+.drone-services {
+  padding: 80px 5%;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+}
+
+.drone-services__container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Heading Styling --- */
+.drone-services__title {
+  text-align: center;
+  color: #0b3d2e;
+  font-size: 2.4rem;
+  font-weight: 800;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.title-accent {
+  width: 50px;
+  height: 4px;
+  background: #2ca01c;
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.drone-services__intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 60px;
+  font-size: 1rem;
+}
+
+/* --- Wrapper & Hub Logic --- */
+.drone-services__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.center-hub {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: #2ca01c;
+  border: 8px solid #f4f9f6;
+  border-radius: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 25px rgba(44, 160, 28, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hub-content {
+  color: white;
+  font-weight: 900;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* --- Grid System --- */
+.drone-services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+/* --- Base Card Styling --- */
+.drone-service-item {
+  background: white;
+  padding: 35px 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgb(146, 144, 144);
+  overflow: hidden;
+}
+.drone-service-item::after {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border: 1px solid rgb(146, 144, 144);
+  border-radius: 50%;
+  pointer-events: none;
+}
+/* TOP LEFT */
+.item-tl::after {
+  bottom: -70px;
+  right: -70px;
+}
+
+/* TOP RIGHT */
+.item-tr::after {
+  bottom: -70px;
+  left: -70px;
+}
+
+/* BOTTOM LEFT */
+.item-bl::after {
+  top: -70px;
+  right: -70px;
+}
+
+/* BOTTOM RIGHT */
+.item-br::after {
+  top: -70px;
+  left: -70px;
+}
+
+.service-icon {
+  background: rgba(44, 160, 28, 0.1);
+  color: #2ca01c;
+  padding: 12px;
+  border-radius: 12px;
+  transition: all 0.3s ease; 
+  flex-shrink: 0;
+}
+
+.drone-service-item h3 { 
+  color: #0b3d2e; 
+  font-size: 1.2rem; 
+  margin-bottom: 10px; 
+}
+
+.drone-service-item li { 
+  font-size: 0.85rem; 
+  color: #666; 
+  margin-bottom: 6px; 
+  list-style: none;
+}
+
+/* --- Desktop Specifics (Alignment & Masks) --- */
+@media (min-width: 1025px) {
+  .side-left { text-align: left; border: 1px solid rgb(146, 144, 144);}
+  .side-right { text-align: right; flex-direction: row;border: 1px solid rgb(146, 144, 144); }
+  .side-right ul { padding: 0; list-style: none; }
+  
+  /* Mask Cuts for Diamond Layout */
+  .item-tl { border-radius: 20px 20px 0 20px; -webkit-mask-image: radial-gradient(circle at bottom right, transparent 70px, black 71px); }
+  .item-tr { border-radius: 20px 20px 20px 0; -webkit-mask-image: radial-gradient(circle at bottom left, transparent 70px, black 71px); }
+  .item-bl { border-radius: 20px 0 20px 20px; -webkit-mask-image: radial-gradient(circle at top right, transparent 70px, black 71px); }
+  .item-br { border-radius: 0 20px 20px 20px; -webkit-mask-image: radial-gradient(circle at top left, transparent 70px, black 71px); }
+
+  .drone-service-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(11, 61, 46, 0.1);
+    z-index: 15;
+  }
+}
+
+/* --- Interaction Effects --- */
+.drone-service-item:hover .service-icon {
+  background: #2ca01c;
+  color: white;
+}
+
+/* ==========================================
+   TABLET & MOBILE (1024px and Below)
+   FORCE 2 CARDS PER ROW
+   ========================================== */
+@media (max-width: 1024px) {
+  .drone-services {
+    padding: 60px 15px;
+  }
+
+  /* Hide the center hub to make space for 2-column grid */
+  .center-hub {
+    display: none;
+  }
+
+  .drone-services__grid {
+    grid-template-columns: 1fr 1fr; /* Keep 2 cards in one row */
+    gap: 15px;
+  }
+
+  .drone-service-item {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    border-radius: 15px !important;
+    flex-direction: column !important; /* Stack icon on top of text */
+    align-items: center !important;
+    text-align: center !important;
+    padding: 25px 15px;
+  }
+
+  /* Re-order icons for cards where they were placed second in JSX */
+  .side-right {
+    flex-direction: column !important;
+  }
+  
+  .side-right .service-icon {
+    order: -1; 
+  }
+
+  .service-icon {
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+
+  .drone-service-item h3 {
+    font-size: 1rem;
+  }
+
+  .drone-service-item li {
+    font-size: 0.75rem;
+    line-height: 1.3;
+  }
+
+  .drone-service-item ul {
+    padding: 0;
+  }
+}
+
+/* --- Mobile Small Optimizations --- */
+@media (max-width: 480px) {
+  .drone-services__title {
+    font-size: 1.5rem;
+  }
+  
+  .drone-services__grid {
+    gap: 10px;
+  }
+  
+  .drone-service-item {
+    padding: 20px 10px;
+  }
+  
+  .drone-service-item h3 {
+    font-size: 0.9rem;
+  }
+}

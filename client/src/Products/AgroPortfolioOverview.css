@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.apo-agro-fusion-portfolio {
+  --agro-green: #1a4d2e;
+  /* Deep Professional Green */
+  --accent-lime: #4caf50;
+  --text-main: #1e293b;
+  --text-light: #64748b;
+  --border-soft: #e2e8f0;
+  --bg-subtle: #f8fafc;
+
+  padding: 100px 24px;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+}
+
+.apo-portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+.apo-portfolio-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+  border-bottom: 2px solid #f1f5f9;
+  padding-bottom: 32px;
+}
+
+.apo-subtitle-tag {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.apo-main-heading {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin: 0;
+  color: var(--agro-green);
+}
+
+.apo-main-heading span {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.apo-description-group p {
+  max-width: 440px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* List Matrix Styling */
+.apo-portfolio-list-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.apo-list-header-labels {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr 60px;
+  padding: 0 24px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #cbd5e1;
+}
+
+.apo-portfolio-list-item {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr 60px;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid var(--border-soft);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.apo-portfolio-list-item:hover {
+  background-color: var(--bg-subtle);
+  transform: translateX(8px);
+  border-bottom-color: var(--accent-lime);
+}
+
+/* Column Content */
+.apo-col-category {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.apo-icon-badge {
+  width: 48px;
+  height: 48px;
+  background: #f0f9f1;
+  color: var(--agro-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.apo-portfolio-list-item:hover .apo-icon-badge {
+  background: rgb(125, 161, 133);
+  color: white;
+}
+
+.apo-col-category h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 4px;
+}
+
+.apo-count-pill {
+  font-size: 11px;
+  font-weight: 600;
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.apo-col-segments p {
+  font-size: 14px;
+  color: var(--text-light);
+  margin: 0;
+  padding-right: 20px;
+}
+
+.apo-col-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.apo-benefit-status {
+  font-size: 10px;
+  font-weight: 800;
+  color: var(--accent-lime);
+  text-transform: uppercase;
+}
+
+.apo-col-benefits p {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+  margin: 0;
+}
+
+.apo-explore-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border-soft);
+  background: white;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apo-portfolio-list-item:hover .apo-explore-btn {
+  background: var(--accent-lime);
+  color: white;
+  border-color: var(--accent-lime);
+}
+
+/* Footer Trust Bar */
+.apo-portfolio-trust-bar {
+  margin-top: 48px;
+  background: var(--agro-green);
+  border-radius: 16px;
+  padding: 24px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  color: white;
+}
+
+.apo-trust-unit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.apo-trust-icon {
+  color: var(--accent-lime);
+}
+
+.apo-vertical-sep {
+  width: 1px;
+  height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .apo-portfolio-header-flex {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .apo-list-header-labels {
+    display: none;
+  }
+
+  .apo-portfolio-list-item {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 32px 16px;
+  }
+
+  .apo-portfolio-trust-bar {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .apo-vertical-sep {
+    display: none;
+  }
+}

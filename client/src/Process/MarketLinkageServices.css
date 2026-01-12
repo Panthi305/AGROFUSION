@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+/* --- Global Section Reset --- */
+.market-linkage-section {
+  padding: clamp(60px, 10vw, 100px) 20px; /* Fluid padding */
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden; /* Prevents unwanted horizontal scroll */
+}
+
+.market-linkage-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* --- Responsive Header --- */
+.market-linkage-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 8vw, 70px);
+}
+
+.market-linkage-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 5vw, 2.8rem); /* Fluid font size */
+  color: #0f172a;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.market-linkage-header p {
+  color: #64748b;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- Card Flexbox Logic --- */
+.market-linkage-card {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: #f8fafc;
+  border-radius: 30px;
+  padding: clamp(25px, 5vw, 45px); /* Responsive inner spacing */
+  margin-bottom: clamp(25px, 5vw, 40px);
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Alternating panels for Desktop */
+.market-linkage-card:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* Content wrapper to control text width */
+.market-linkage-content {
+  flex: 1;
+}
+
+.market-linkage-card img {
+  width: 45%;
+  height: clamp(200px, 30vw, 350px); /* Fluid height */
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.market-linkage-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+/* List Item Styling */
+.market-linkage-card li {
+  color: #475569;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  padding-left: 25px;
+  position: relative;
+}
+
+.market-linkage-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+}
+
+/* --- CTA Button Responsiveness --- */
+.market-linkage-cta {
+  text-align: center;
+  margin-top: clamp(40px, 8vw, 60px);
+}
+
+.market-linkage-contact-btn {
+  background: #0f172a;
+  color: #ffffff;
+  padding: clamp(14px, 3vw, 18px) clamp(25px, 5vw, 45px);
+  border-radius: 50px;
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablet (Medium Screens) */
+@media (max-width: 992px) {
+  .market-linkage-card, 
+  .market-linkage-card:nth-child(even) {
+    flex-direction: column; /* Stack vertically */
+    gap: 30px;
+    text-align: left;
+  }
+
+  .market-linkage-card img {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+/* Mobile (Small Screens) */
+@media (max-width: 576px) {
+  .market-linkage-section {
+    padding: 50px 15px;
+  }
+
+  .market-linkage-card {
+    border-radius: 20px;
+    padding: 20px;
+  }
+
+  .market-linkage-card img {
+    height: 200px;
+    border-radius: 15px;
+  }
+
+  .market-linkage-card h3::after {
+    left: 0;
+    margin-left: 0;
+  }
+  
+  .market-linkage-contact-btn {
+    width: 100%; /* Full width button on mobile for better thumb reach */
+  }
+}

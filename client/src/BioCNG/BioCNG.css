@@ -1,0 +1,30 @@
+/* BioCNG.css - Fixed Background */
+
+.bio-bg {
+  background: #f7f4ee; /* Fallback color */
+  background-image: url("https://images.unsplash.com/photo-1592982535283-d2c04d3f4f3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Parallax effect - remove if it causes issues on mobile */
+  
+  /* Optional: Add subtle overlay for better text readability in child sections */
+  position: relative;
+}
+
+.bio-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(247, 244, 238, 0.85); /* Slight tint to blend with #f7f4ee */
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Ensure child content appears above overlay */
+.bio-bg > * {
+  position: relative;
+  z-index: 2;
+}

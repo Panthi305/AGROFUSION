@@ -1,0 +1,128 @@
+/* ============================================================
+   SECTION CONTAINER
+   ============================================================ */
+.final-cta {
+  position: relative;
+  width: 100%;
+  padding: 160px 20px;
+  color: #ffffff;
+  overflow: hidden;
+  
+  /* PARALLAX CORE */
+  background-image: url('../assets/your-image.jpg'); /* MAKE SURE THIS PATH IS CORRECT */
+  background-attachment: fixed; /* The magic for parallax */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Fallback color if image fails to load */
+  background-color: #0b3d2e; 
+}
+
+/* ============================================================
+   OVERLAY (The Tint)
+   ============================================================ */
+.final-cta-overlay {
+  position: absolute;
+  inset: 0;
+  /* We use RGBA to allow the image to show through the green tint */
+  
+  z-index: 1;
+}
+
+/* Optional technical glow at the corner */
+.final-cta::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(
+    circle at top right,
+    rgba(44, 160, 28, 0.2),
+    transparent 70%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ============================================================
+   CONTENT BOX
+   ============================================================ */
+.final-cta-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  z-index: 10; /* Ensures text is always on top of overlays */
+}
+
+.final-cta h2 {
+  font-size: clamp(32px, 5vw, 52px); /* Responsive font size */
+  font-weight: 800;
+  margin-bottom: 25px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.final-cta p {
+  font-size: clamp(16px, 2vw, 20px);
+  max-width: 800px;
+  margin: 0 auto 50px;
+  line-height: 1.8;
+  color: #e8f5ef;
+  font-weight: 400;
+}
+
+/* ============================================================
+   BUTTON STYLES
+   ============================================================ */
+.final-cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.cta-primary-b {
+  background: #ffffff;
+  color: #0b3d2e;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 60px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.cta-primary-b:hover {
+  background: #2ca01c;
+  color: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(44, 160, 28, 0.3);
+}
+
+/* ============================================================
+   RESPONSIVE (The "Safe" Mode)
+   ============================================================ */
+@media (max-width: 1024px) {
+  /* Parallax is often disabled on mobile browsers due to "jittery" scrolling */
+  .final-cta {
+    background-attachment: scroll; 
+    padding: 100px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .final-cta h2 {
+    font-size: 28px;
+  }
+  .cta-primary-b {
+    width: 100%; /* Full width button on small mobile */
+    padding: 15px 20px;
+  }
+}

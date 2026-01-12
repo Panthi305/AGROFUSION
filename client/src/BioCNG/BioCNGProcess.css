@@ -1,0 +1,140 @@
+/* --- Section Core --- */
+.bio-process {
+  padding: 100px 5%;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+}
+
+.bio-process-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr; /* Sticky sidebar ratio */
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Sticky Left Column --- */
+.bio-process-header {
+  position: sticky;
+  top: 150px; /* Adjust based on your header/nav height */
+  padding-right: 20px;
+}
+
+.bio-process-header h2 {
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #0b3d2e;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.process-count-indicator {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #2ca01c;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+/* --- Scrolling Right Column --- */
+.process-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.process-card {
+  padding: 60px 0;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  gap: 40px;
+}
+
+.process-card:first-child {
+  padding-top: 0;
+}
+
+.process-card:last-child {
+  border-bottom: none;
+}
+
+/* Technical Step Numbers */
+.step-number {
+  font-family: 'Space Mono', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #2ca01c;
+  padding-top: 6px;
+  min-width: 30px;
+}
+
+.process-content {
+  flex: 1;
+}
+
+.process-content h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b3d2e;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+/* Compact Micro-Grid for Points */
+.process-content ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Substantial 2-column layout */
+  gap: 16px 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.process-content li {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 18px; /* Space for the dot */
+}
+
+/* --- The Dot Replacement --- */
+.process-content li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px; /* Aligns with the first line of text */
+  width: 5px;
+  height: 5px;
+  background-color: #2ca01c;
+  border-radius: 50%; /* Pure circular dot */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1100px) {
+  .bio-process-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bio-process-header {
+    position: relative;
+    top: 0;
+    padding-right: 0;
+  }
+  .bio-process-header h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .process-card {
+    flex-direction: column;
+    gap: 10px;
+    padding: 40px 0;
+  }
+  .process-content ul {
+    grid-template-columns: 1fr; /* Stacked points for mobile */
+    gap: 12px;
+  }
+}

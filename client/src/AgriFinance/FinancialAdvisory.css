@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;800&family=JetBrains+Mono:wght@400;700&display=swap');
+
+/* --- THE CANVAS --- */
+.finadv-section {
+  padding: clamp(60px, 10vw, 120px) 5%;
+  background-color: #ffffff;
+  background-image: 
+    radial-gradient(at 0% 0%, hsla(161, 84%, 94%, 0.4) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(161, 84%, 97%, 0.4) 0px, transparent 50%);
+  color: #111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.finadv-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- THE HEADER --- */
+.finadv-header {
+  margin-bottom: clamp(60px, 8vw, 100px);
+  max-width: 850px;
+}
+
+.finadv-header h2 {
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: #064e3b;
+  margin-bottom: 25px;
+}
+
+.finadv-header p {
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
+  color: #555;
+  line-height: 1.6;
+}
+
+/* --- THE CARDS GRID --- */
+.finadv-content {
+  display: grid;
+  /* Auto-fit handles the number of columns based on available space */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
+  gap: clamp(20px, 4vw, 40px);
+}
+
+.finadv-block {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: clamp(25px, 5vw, 60px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 4px;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- SIMPLE HOVER --- */
+.finadv-block:hover {
+  background: #ffffff;
+  transform: translateY(-8px);
+  border-color: #10b981;
+  box-shadow: 0 30px 60px -15px rgba(6, 78, 59, 0.08);
+}
+
+/* --- HEADING JUST BESIDE ICON --- */
+.finadv-block h3 {
+  font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+  font-weight: 800;
+  color: #064e3b;
+  margin-bottom: clamp(25px, 4vw, 40px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+}
+
+.finadv-block h3 svg {
+  width: clamp(24px, 3vw, 32px);
+  height: clamp(24px, 3vw, 32px);
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* --- DATA LIST --- */
+.finadv-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 30px);
+}
+
+.finadv-list p {
+  margin: 0;
+  display: grid;
+  /* Split layout for desktop */
+  grid-template-columns: 140px 1fr;
+  align-items: start;
+  gap: 15px;
+}
+
+.finadv-list strong {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #999;
+  padding-top: 4px;
+}
+
+.finadv-list span {
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  line-height: 1.5;
+  color: #444;
+  font-weight: 500;
+}
+
+/* --- DELIVERY CHANNELS --- */
+.finadv-channels {
+  margin-top: clamp(60px, 10vw, 130px);
+  padding-top: 40px;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.finadv-channels h3 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: #888;
+  margin: 0;
+}
+
+.finadv-channel-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(15px, 3vw, 40px);
+}
+
+.finadv-channel-list div {
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: #064e3b;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablets and Medium Screens */
+@media (max-width: 1024px) {
+  .finadv-content {
+    grid-template-columns: 1fr; /* Stack to single column for better readability */
+  }
+}
+
+/* Small Tablets and Large Mobiles */
+@media (max-width: 768px) {
+  .finadv-list p {
+    grid-template-columns: 120px 1fr; /* Tighten the label column */
+    gap: 10px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 580px) {
+  .finadv-list p {
+    grid-template-columns: 1fr; /* Stack label on top of description */
+    gap: 4px;
+  }
+  
+  .finadv-list strong {
+    padding-top: 0;
+  }
+
+  .finadv-channels {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .finadv-channel-list {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* 4K and Ultra-wide screens */
+@media (min-width: 2000px) {
+  .finadv-container {
+    max-width: 1800px;
+  }
+  .finadv-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

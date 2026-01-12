@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,600&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+.fcm-collab-models-section {
+  padding: 100px 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  min-height: 90vh;
+  /* background: #fff; */
+}
+
+.fcm-collab-models-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* HEADER */
+.fcm-collab-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.fcm-transformed-heading {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 6vw, 80px);
+  letter-spacing: -2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.fcm-line-solid {
+  color: #1a1a1a;
+}
+
+.fcm-line-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px #2d5a43;
+}
+
+/* TABS */
+.fcm-collab-tabs-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+  position: sticky;
+  top: 80px;
+  background: #fff;
+  z-index: 100;
+  padding: 10px 0;
+}
+
+.fcm-tab-btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 12px 24px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #64748b;
+  white-space: nowrap;
+}
+
+.fcm-tab-btn.fcm-active {
+  background: #0a2e1a;
+  color: #ffffff;
+  border-color: #0a2e1a;
+  box-shadow: 0 10px 20px rgba(10, 46, 26, 0.15);
+}
+
+/* CONTENT BLOCK */
+.fcm-collab-block {
+  background: #ffffff;
+  padding: 50px 40px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+}
+
+.fcm-collab-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 48px);
+  color: #0a2e1a;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+}
+
+.fcm-collab-target {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #c5a059;
+  display: block;
+  margin-bottom: 40px;
+}
+
+.fcm-collab-block p,
+.fcm-collab-block li {
+  color: #334155;
+  line-height: 1.8;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Grids & Columns */
+.fcm-collab-grid,
+.fcm-collab-columns {
+  display: grid;
+  gap: 40px;
+  margin: 40px 0;
+}
+
+.fcm-collab-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.fcm-collab-columns {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.fcm-collab-block h4 {
+  font-size: 14px;
+  color: #0a2e1a;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 800;
+}
+
+.fcm-collab-grid ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.fcm-collab-grid li {
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.fcm-collab-grid li::before {
+  content: "•";
+  color: #c5a059;
+  font-weight: bold;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Flow Bar */
+.fcm-collab-flow {
+  margin-top: 50px;
+  background: #f8fafc;
+  border-left: 4px solid #0a2e1a;
+  padding: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* List Tags (Coop) */
+.fcm-collab-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.fcm-collab-list span {
+  background: #0a2e1a;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+}
+
+/* Description paragraphs with class for spacing */
+.fcm-coop-desc,
+.fcm-contract-desc,
+.fcm-international-desc {
+  margin: 30px 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .fcm-transformed-heading {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .fcm-collab-tabs-nav {
+    top: 70px;
+  }
+
+  .fcm-collab-block {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .fcm-collab-models-section {
+    padding: 80px 0;
+  }
+
+  .fcm-collab-models-container {
+    padding: 0 16px;
+  }
+
+  .fcm-collab-header {
+    margin-bottom: 30px;
+  }
+
+  .fcm-collab-tabs-nav {
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .fcm-tab-btn {
+    padding: 10px 18px;
+    font-size: 10px;
+  }
+
+  .fcm-collab-block {
+    padding: 30px 20px;
+  }
+
+  .fcm-collab-flow {
+    font-size: 13px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fcm-transformed-heading {
+    font-size: 42px;
+  }
+
+  .fcm-collab-block h3 {
+    font-size: 36px;
+  }
+
+  .fcm-collab-grid li,
+  .fcm-collab-block p {
+    font-size: 15px;
+  }
+}

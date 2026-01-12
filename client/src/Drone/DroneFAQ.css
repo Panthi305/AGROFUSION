@@ -1,0 +1,78 @@
+.drone-faq {
+  padding: 80px 20px;
+}
+
+.drone-faq__container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.drone-faq__title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #0b3d2e;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.drone-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.drone-faq__item {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.drone-faq__item.open {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.drone-faq__question {
+  padding: 18px 20px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #0b3d2e;
+}
+
+.drone-faq__icon {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #2ca01c;
+}
+
+.drone-faq__answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.drone-faq__item.open .drone-faq__answer {
+  max-height: 500px;
+  padding: 15px 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .drone-faq__title {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 480px) {
+  .drone-faq__title {
+    font-size: 1.5rem;
+  }
+}

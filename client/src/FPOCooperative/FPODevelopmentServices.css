@@ -1,0 +1,132 @@
+/* =====================================
+   FPO DEVELOPMENT SERVICES
+===================================== */
+
+.fpo-dev-section {
+  padding: 100px 24px;
+  background: #ffffff;
+}
+
+.fpo-dev-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.fpo-dev-header {
+  max-width: 780px;
+  margin-bottom: 70px;
+}
+
+.fpo-dev-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #07241b;
+  margin-bottom: 18px;
+}
+
+.fpo-dev-subtitle {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #516d64;
+}
+
+/* Blocks */
+.fpo-dev-block {
+  margin-bottom: 80px;
+}
+
+.fpo-dev-block-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0b3f2f;
+  margin-bottom: 36px;
+}
+
+/* Columns */
+.fpo-dev-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.fpo-dev-columns h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f5132;
+  margin-bottom: 16px;
+}
+
+.fpo-dev-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.fpo-dev-columns li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 14px;
+  font-size: 15px;
+  color: #2f4f44;
+}
+
+.fpo-dev-columns li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #3bb78f;
+  font-weight: 700;
+}
+
+/* Scale */
+.fpo-dev-scale {
+  margin-top: 60px;
+}
+
+.fpo-dev-scale-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.fpo-dev-scale-list span {
+  padding: 14px 22px;
+  border-radius: 26px;
+  background: #f1fbf7;
+  border: 1px solid #cceee2;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0b3f2f;
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media (max-width: 1024px) {
+  .fpo-dev-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fpo-dev-title {
+    font-size: 34px;
+  }
+}
+
+@media (max-width: 640px) {
+  .fpo-dev-section {
+    padding: 70px 18px;
+  }
+
+  .fpo-dev-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .fpo-dev-title {
+    font-size: 28px;
+  }
+
+  .fpo-dev-subtitle {
+    font-size: 15px;
+  }
+}

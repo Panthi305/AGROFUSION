@@ -1,0 +1,157 @@
+.riskmgmt-section {
+  width: 100%;
+  padding: 5.5rem 1.5rem;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  color: #0f172a;
+}
+
+.riskmgmt-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER */
+.riskmgmt-header {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 4.5rem;
+}
+
+.riskmgmt-header h2 {
+  font-size: 2.6rem;
+  color: #1e3a8a;
+  margin-bottom: 0.8rem;
+}
+
+.riskmgmt-header p {
+  font-size: 1.15rem;
+  color: #475569;
+}
+
+/* BLOCKS */
+.riskmgmt-block {
+  margin-bottom: 4.5rem;
+}
+
+.riskmgmt-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.7rem;
+  color: #0f172a;
+  margin-bottom: 1.8rem;
+}
+
+.riskmgmt-block svg {
+  color: #dc2626;
+}
+
+/* COLUMNS */
+.riskmgmt-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.riskmgmt-columns h4 {
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  color: #1e293b;
+}
+
+.riskmgmt-columns ul {
+  list-style: none;
+  padding: 0;
+}
+
+.riskmgmt-columns li {
+  padding-left: 1.2rem;
+  position: relative;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.riskmgmt-columns li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* INTEGRATED */
+.riskmgmt-integrated h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 2rem;
+}
+
+.riskmgmt-framework {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.riskmgmt-framework div {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.riskmgmt-framework svg {
+  color: #16a34a;
+}
+
+/* SUPPORT */
+.riskmgmt-support {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+}
+
+.riskmgmt-support h4 {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1.15rem;
+  color: #0f172a;
+  margin-bottom: 0.4rem;
+}
+
+.riskmgmt-support p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .riskmgmt-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .riskmgmt-header h2 {
+    font-size: 2.1rem;
+  }
+
+  .riskmgmt-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .riskmgmt-support {
+    grid-template-columns: 1fr;
+  }
+
+  .riskmgmt-framework {
+    justify-content: center;
+  }
+}

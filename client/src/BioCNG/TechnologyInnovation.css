@@ -1,0 +1,149 @@
+/* --- Section Core --- */
+.bio-tech {
+  padding: 100px 5%;
+  background: transparent;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  background-image: radial-gradient(rgba(11, 61, 46, 0.05) 1px, transparent 1px);
+  background-size: 30px 30px;
+  overflow: hidden;
+  counter-reset: tech-id;
+}
+
+.bio-tech-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header Adjustments */
+.bio-tech h2 {
+  font-size: 0.75rem;
+  font-family: monospace;
+  color: #2ca01c;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.bio-tech-subtitle {
+  font-size: clamp(1.5rem, 4vw, 2.8rem); /* Fluid size */
+  font-weight: 200;
+  color: #0b3d2e;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  max-width: 750px;
+}
+
+/* --- The Schematic Layout --- */
+.bio-tech-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 100px; /* Balanced gaps */
+  margin-top: 40px;
+}
+
+.bio-tech-card {
+  position: relative;
+  padding-top: 30px;
+}
+
+/* Horizontal "Leader Line" */
+.bio-tech-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, #2ca01c, transparent);
+}
+
+/* Technical ID Label */
+.bio-tech-card::after {
+  counter-increment: tech-id;
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-family: monospace;
+  font-size: 0.65rem;
+  color: #999;
+}
+
+.bio-tech-card h3 {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 800;
+  color: #0b3d2e;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.bio-tech-card h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #2ca01c;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bio-tech-card ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* High density columns */
+  gap: 15px 30px;
+}
+
+.bio-tech-card li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  border-left: 1px solid #ddd;
+  padding-left: 12px;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet & Smaller Laptops */
+@media (max-width: 1100px) {
+  .bio-tech-grid {
+    gap: 60px 50px;
+  }
+  .bio-tech-card ul {
+    grid-template-columns: 1fr; /* Switch to single column for readability */
+    gap: 10px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .bio-tech {
+    padding: 60px 20px;
+  }
+  .bio-tech-grid {
+    grid-template-columns: 1fr; /* Stack cards vertically */
+    gap: 50px;
+    margin-top: 50px;
+  }
+  .bio-tech-subtitle {
+    font-weight: 300; /* Slightly thicker for mobile legibility */
+  }
+  .bio-tech-card {
+    padding-top: 25px;
+  }
+  .bio-tech-card h3 {
+    margin-bottom: 15px;
+  }
+}
+
+/* Small Screens */
+@media (max-width: 480px) {
+  .bio-tech h2 {
+    letter-spacing: 2px;
+  }
+  .bio-tech-card::after {
+    font-size: 0.55rem;
+  }
+}

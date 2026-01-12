@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300;1,600&family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap');
+
+.ffch-cinema-hero-root {
+  position: relative;
+  height: calc(100vh - 60px);
+  min-height: 600px;
+  /* Prevents too-short hero on small screens */
+  margin-top: 60px;
+  background-color: #f9f7f2;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* 1. THE VIDEO: FULL SCREEN DEPTH */
+.ffch-cinema-video-bg {
+  position: absolute;
+  top: -90px;
+  right: 0;
+  width: 70%;
+  height: 125%;
+  z-index: 1;
+}
+
+.ffch-cinema-video-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(20%) brightness(0.9);
+}
+
+/* 2. THE SILK OVERLAY */
+.ffch-cinema-video-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #f9f7f2 0%, rgba(249, 247, 242, 0.6) 20%, transparent 100%);
+  z-index: 2;
+}
+
+.ffch-cinema-container {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 100px;
+  z-index: 10;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+/* 3. TYPOGRAPHY: THE ELITE LOOK */
+.ffch-cinema-tag {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: #c5a059;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.ffch-cinema-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(60px, 9vw, 140px);
+  color: #0f1a14;
+  line-height: 0.85;
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+.ffch-cinema-title i {
+  font-weight: 600;
+  display: block;
+  letter-spacing: -2px;
+}
+
+.ffch-cinema-para {
+  max-width: 440px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #4a504d;
+  margin-bottom: 50px;
+  padding-left: 30px;
+  border-left: 1px solid #c5a059;
+}
+
+/* 4. BUTTONS: MINIMALIST PRECISION */
+.ffch-cinema-btn-group {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.ffch-btn-cinema-main {
+  background: #0f1a14;
+  color: white;
+  padding: 24px 50px;
+  border: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.ffch-btn-cinema-main:hover {
+  background: #c5a059;
+  padding-right: 70px;
+}
+
+/* 5. FLOATING HUD STATS */
+.ffch-cinema-stats {
+  position: absolute;
+  bottom: 60px;
+  left: 100px;
+  display: flex;
+  gap: 80px;
+}
+
+.ffch-stat-item b {
+  display: block;
+  font-size: 38px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #0f1a14;
+}
+
+.ffch-stat-item span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #c5a059;
+  font-weight: 700;
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+@media (max-width: 1200px) {
+  .ffch-cinema-container {
+    padding: 0 60px;
+  }
+
+  .ffch-cinema-stats {
+    gap: 50px;
+    left: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ffch-cinema-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 50px;
+  }
+
+  .ffch-cinema-video-bg {
+    width: 65%;
+  }
+
+  .ffch-cinema-para {
+    font-size: 16px;
+    max-width: 400px;
+  }
+
+  .ffch-cinema-stats {
+    gap: 40px;
+    bottom: 50px;
+  }
+
+  .ffch-stat-item b {
+    font-size: 32px;
+  }
+}
+
+/* ==================== PRO RESPONSIVE FIX ==================== */
+/* ==================== PRO RESPONSIVE FIX (CLEAN CROP) ==================== */
+
+@media (max-width: 768px) {
+  .ffch-cinema-hero-root {
+    height: 100vh;
+    min-height: 600px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    /* Darker base so transitions feel smoother */
+  }
+
+  /* 1. THE CROP FIX: Scaling to hide black bars */
+  .ffch-cinema-video-bg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* We make it taller than the screen to hide the bars at top/bottom */
+    height: 115%;
+    top: 45%;
+    transform: translateY(-50%);
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .ffch-cinema-video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Forces the video to fill the 115% container */
+    object-position: center;
+    filter: grayscale(10%) brightness(0.7);
+    /* Slightly darker for better text contrast */
+  }
+
+  /* 2. OVERLAY ADJUSTMENT */
+  .ffch-cinema-video-bg::after {
+    background: linear-gradient(to bottom,
+        rgba(15, 26, 20, 0.4) 0%,
+        transparent 50%,
+        rgba(15, 26, 20, 0.6) 100%);
+  }
+
+  /* 3. CONTENT LAYOUT */
+  .ffch-cinema-container {
+    grid-template-columns: 1fr;
+    padding: 0 25px;
+    text-align: center;
+    z-index: 10;
+  }
+
+  .ffch-cinema-title {
+    font-size: 52px;
+    margin-bottom: 20px;
+    color: #f9f7f2;
+    /* Light text for better visibility on video */
+  }
+
+  .ffch-cinema-para {
+    max-width: 100%;
+    padding-left: 0;
+    border-left: none;
+    margin: 0 auto 35px auto;
+    font-size: 16px;
+    color: #f9f7f2;
+    /* Improved Glassmorphism for mobile readability */
+    background: rgba(15, 26, 20, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 20px;
+    border-radius: 4px;
+  }
+
+  /* 4. BUTTONS */
+  .ffch-cinema-btn-group {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .ffch-btn-cinema-main {
+    width: 100%;
+    max-width: 280px;
+    padding: 20px 0;
+    background: #c5a059;
+    /* Gold stands out better on mobile video */
+    color: #0f1a14;
+  }
+
+  .ffch-cinema-btn-group a {
+    color: #f9f7f2 !important;
+    border-bottom: 1px solid #f9f7f2 !important;
+  }
+
+  /* Hide vertical signature */
+  div[style*="writingMode: 'vertical-rl'"] {
+    display: none !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ffch-cinema-title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ffch-cinema-title {
+    font-size: 42px;
+  }
+
+  .ffch-cinema-container {
+    padding: 0 20px;
+  }
+}

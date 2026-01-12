@@ -1,0 +1,106 @@
+.afq-section {
+  padding: 110px 20px;
+  background: transparent; /* Changed to blend with your background images */
+}
+
+.afq-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.afq-title {
+  text-align: center;
+  font-size: clamp(28px, 4vw, 36px);
+  font-weight: 700;
+  color: #0b3d2e;
+  margin-bottom: 60px;
+}
+
+/* =========================
+   FAQ LIST WRAPPER
+========================= */
+.afq-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.afq-item {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  border: 1px solid #e1ece7;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.afq-item-active {
+  border-color: #0b3d2e;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+}
+
+.afq-trigger {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 22px 26px;
+  text-align: left;
+  font-size: 17px;
+  font-weight: 600;
+  color: #0b3d2e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.afq-trigger:hover {
+  background: rgba(11, 61, 46, 0.03);
+}
+
+.afq-icon {
+  font-size: 26px;
+  font-weight: 500;
+  color: #0b3d2e;
+  margin-left: 15px;
+}
+
+/* =========================
+   ACCORDION CONTENT
+========================= */
+.afq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.afq-item-active .afq-content {
+  max-height: 400px; /* Increased to ensure text doesn't cut off */
+}
+
+.afq-text {
+  padding: 0 26px 24px;
+  font-size: 15.5px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .afq-section {
+    padding: 60px 20px;
+  }
+
+  .afq-trigger {
+    font-size: 16px;
+    padding: 20px;
+  }
+
+  .afq-text {
+    font-size: 15px;
+    padding: 0 20px 20px;
+  }
+}

@@ -1,0 +1,91 @@
+/* =====================================
+   ABOUT PAGE: OUR PARTNERS & ALLIANCES
+===================================== */
+.af-partners {
+  padding: 80px 8%;
+  background: #f9fffeeb;
+  text-align: center;
+}
+
+.af-partners__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.af-partners__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0b3d2e;
+  margin-bottom: 50px;
+}
+
+/* Group */
+.af-partners__group {
+  margin-bottom: 50px;
+}
+
+.af-partners__category {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2ecc71;
+  margin-bottom: 20px;
+}
+
+/* Logos Grid */
+.af-partners__logos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.af-partners__logo {
+  max-width: 150px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.af-partners__logo:hover {
+  transform: scale(1.1);
+}
+
+/* =====================================
+   TABLET
+===================================== */
+@media (max-width: 992px) {
+  .af-partners__logos {
+    gap: 25px;
+  }
+
+  .af-partners__title {
+    font-size: 2.2rem;
+  }
+
+  .af-partners__category {
+    font-size: 1.3rem;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+@media (max-width: 576px) {
+  .af-partners__logos {
+    gap: 15px;
+  }
+
+  .af-partners__title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .af-partners__category {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  .af-partners__logo {
+    max-width: 120px;
+  }
+}

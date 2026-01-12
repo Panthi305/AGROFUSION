@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+/* --- MAIN CONTAINER --- */
+.processing-hero-section {
+  position: relative;
+  height: 110vh;
+  min-height: 650px;
+  width: 100%;
+  overflow: hidden; /* Vital: Keeps the moving background contained */
+  display: flex;
+  align-items: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #0f172a; /* Fallback color */
+  margin-top: 20px;
+}
+
+/* --- THE PARALLAX BACKGROUND LAYER --- */
+.processing-hero-bg {
+  position: absolute;
+  /* top -20% and height 140% gives room for the image to move down 
+     as you scroll without hitting the edge of the container */
+  top: -20%; 
+  left: 0;
+  width: 100%;
+  height: 140%; 
+  background-image: url('https://images.unsplash.com/photo-1590682680695-43b964a3ae17?auto=format&fit=crop&w=1920&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 1;
+  /* Crucial for performance: prevents "jittery" movement */
+  will-change: transform; 
+  pointer-events: none;
+}
+
+/* --- DARK OVERLAY --- */
+.processing-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right, 
+    rgba(15, 23, 42, 0.95) 0%, 
+    rgba(15, 23, 42, 0.7) 50%, 
+    rgba(15, 23, 42, 0.3) 100%
+  );
+  z-index: 2;
+}
+
+/* --- CONTENT WRAPPER --- */
+.processing-hero-content {
+  max-width: 1200px;
+  margin-top: 20px;
+  margin: 0 auto;
+  padding: 0 40px;
+  color: #ffffff;
+  position: relative;
+  z-index: 3;
+}
+
+/* --- TYPOGRAPHY --- */
+.processing-hero-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  line-height: 1.1;
+  max-width: 850px;
+  margin-bottom: 24px;
+  margin-top: 120px;
+}
+
+.processing-hero-title span {
+  color: #10b981; /* Emerald Green */
+}
+
+.processing-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 650px;
+  color: #cbd5e1;
+  margin-bottom: 40px;
+}
+
+/* --- STATS GRID --- */
+.processing-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+  margin-bottom: 50px;
+  max-width: 1000px;
+}
+
+.processing-stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 18px 22px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 500;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.3s ease;
+}
+
+.processing-stat-card span {
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* --- BUTTONS --- */
+.processing-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.processing-primary-btn {
+  background: #10b981;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.processing-primary-btn:hover {
+  background: #ffffff;
+  color: #064e3b;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.2);
+}
+
+.processing-secondary-btn {
+  background: transparent;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.processing-secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  transform: translateY(-3px);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .processing-hero-section {
+    height: auto;
+    padding: 100px 0;
+  }
+
+  .processing-hero-content {
+    padding: 0 24px;
+    text-align: center;
+  }
+
+  .processing-hero-buttons {
+    justify-content: center;
+  }
+
+  .processing-primary-btn, 
+  .processing-secondary-btn {
+    width: 100%;
+  }
+}

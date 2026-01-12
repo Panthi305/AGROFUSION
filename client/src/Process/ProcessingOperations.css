@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.processing-ops-section {
+  padding: 80px 20px;
+  background-color: #ffffff; /* Clean white background */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.processing-ops-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Section Header --- */
+.processing-ops-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.processing-ops-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.processing-ops-header p {
+  color: #64748b;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- The Grid --- */
+.processing-ops-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+/* --- Card Styling --- */
+.processing-ops-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Diagonal Image Clip Design */
+.processing-ops-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+  transition: transform 0.5s ease;
+}
+
+.processing-ops-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  color: #0f172a;
+  padding: 20px 20px 10px;
+}
+
+/* List with Emerald Dots */
+.processing-ops-card ul {
+  list-style: none;
+  padding: 0 20px 25px;
+  margin: 0;
+}
+
+.processing-ops-card li {
+  font-size: 0.88rem;
+  color: #475569;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+}
+
+.processing-ops-card li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  background-color: #10b981; /* Emerald Dot */
+  border-radius: 50%;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+/* --- Hover State --- */
+.processing-ops-card:hover {
+  transform: translateY(-8px);
+  background: #ffffff;
+  border-color: #10b981;
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.08);
+}
+
+.processing-ops-card:hover img {
+  transform: scale(1.1);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%); /* Straightens on hover */
+}
+
+/* --- Technology Highlights Banner --- */
+.processing-ops-tech {
+  background: #1b4d33;
+  border-radius: 20px;
+  padding: 40px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.processing-ops-tech h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: #10b981;
+}
+
+.processing-ops-tech ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.processing-ops-tech li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.processing-ops-tech li:hover {
+  background: #10b981;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .processing-ops-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .processing-ops-tech ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .processing-ops-tech li {
+    width: 100%;
+  }
+}

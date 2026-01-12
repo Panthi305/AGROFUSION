@@ -1,0 +1,123 @@
+/* --- SECTION BASE --- */
+.af-swiss-section {
+  padding: 140px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* --- THE BACKGROUND LAYER --- */
+.af-swiss-bg-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.af-outline-text {
+  font-size: 22vw;
+  font-weight: 900;
+  line-height: 0.75;
+  color: transparent;
+  -webkit-text-stroke: 1px #6ac1f033; 
+  text-transform: uppercase;
+  letter-spacing: -8px;
+  white-space: nowrap;
+}
+
+/* --- THE CONTENT LAYER --- */
+.af-swiss-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.af-swiss-intro {
+  margin-bottom: 80px;
+  max-width: 700px;
+}
+
+.af-pre-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #4baf47;
+  letter-spacing: 4px;
+}
+
+.af-main-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: #1a1a1a;
+  line-height: 1.1;
+  margin-top: 15px;
+}
+
+/* --- THE UNIFORM ONE-ROW GRID --- */
+.af-swiss-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  align-items: start; /* All items start at the same top level */
+}
+
+.af-swiss-col {
+  padding: 20px 0;
+  transition: transform 0.4s ease;
+}
+
+.af-val-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  border-bottom: 2px solid #eec044; /* Yellow Accent */
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.af-swiss-col h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+}
+
+.af-swiss-col p {
+  font-size: 1.05rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+/* --- INTERACTION --- */
+.af-swiss-col:hover {
+  transform: translateY(-10px);
+}
+
+.af-swiss-col:hover .af-val-label {
+  border-bottom-color: #4baf47; /* Yellow turns Green on hover */
+  color: #4baf47;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+  .af-swiss-row {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .af-main-title {
+    font-size: 2.2rem;
+  }
+  .af-outline-text {
+    font-size: 30vw;
+  }
+}

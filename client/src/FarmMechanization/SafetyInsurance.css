@@ -1,0 +1,286 @@
+/* --- Global Reset & Professional Refinements --- */
+.safety-section {
+  padding: 100px 0;
+  background-color: #ffffff;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #000000;
+  line-height: 1.5;
+  overflow-x: hidden; /* Prevent horizontal scroll on animations */
+}
+
+.safety-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%; /* Percentage padding for better fluid response */
+}
+
+/* --- Entrance Animations --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* --- Executive Header --- */
+.safety-exec-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 100px;
+}
+
+.header-left { 
+  flex: 1;
+  animation-delay: 0.1s; 
+}
+.header-right { 
+  flex: 1.2;
+  animation-delay: 0.3s;
+}
+
+.eyebrow {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: #2ca01c;
+  margin-bottom: 15px;
+}
+
+.safety-title {
+  font-size: clamp(2.5rem, 5vw, 4rem); /* Fluid typography */
+  font-weight: 800;
+  letter-spacing: -2px;
+  line-height: 1.1;
+  margin-bottom: 25px;
+}
+
+.safety-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: #555;
+  max-width: 480px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  filter: saturate(0.8);
+  transition: transform 0.6s ease;
+}
+
+.image-container:hover img {
+  transform: scale(1.03); /* Subtle zoom on hover */
+}
+
+.experience-tag {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #000000;
+  color: #ffffff;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+/* --- Standards Grid --- */
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: #e0e0e0; 
+  border: 1px solid #e0e0e0;
+  margin-bottom: 100px;
+}
+
+.standard-card {
+  background: #fff;
+  padding: 50px 40px;
+  transition: background 0.3s ease;
+}
+
+.standard-card:hover {
+  background: #fcfdfc; /* Extremely subtle shift */
+}
+
+.card-category {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #999;
+}
+
+.standard-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 15px 0;
+}
+
+.card-divider {
+  width: 30px;
+  height: 2px;
+  background: #2ca01c;
+  margin-bottom: 30px;
+  transition: width 0.4s ease;
+}
+
+.standard-card:hover .card-divider {
+  width: 60px;
+}
+
+.standard-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.standard-card li {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.standard-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 1px;
+  background: #2ca01c;
+}
+
+/* --- Claims Process Bar --- */
+.process-box {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 60px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.process-pipeline {
+  display: flex;
+  gap: clamp(15px, 3vw, 40px);
+  flex-wrap: wrap;
+}
+
+.pipeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pipeline-step:hover {
+  transform: translateY(-5px);
+}
+
+.step-circle {
+  width: 35px;
+  height: 35px;
+  border: 1px solid #000;
+  border-radius: 50%; /* Modernized to circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.pipeline-step:hover .step-circle {
+  background: #000;
+  color: #fff;
+}
+
+.step-label { 
+  font-size: 0.7rem; 
+  font-weight: 700; 
+  text-transform: uppercase; 
+  letter-spacing: 1px; 
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* Tablets & Small Laptops */
+@media (max-width: 1024px) {
+  .safety-exec-header {
+    flex-direction: column;
+    text-align: left;
+    gap: 40px;
+  }
+  .header-right, .header-left {
+    width: 100%;
+  }
+  .standards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .safety-section { padding: 60px 0; }
+  
+  .standards-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-box {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 0;
+  }
+  
+  .process-pipeline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    gap: 20px;
+  }
+
+  .experience-tag {
+    position: relative;
+    width: 100%;
+    padding: 25px;
+  }
+  
+  .tag-number { font-size: 2.2rem; }
+
+  .cert-logos {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+}
+
+/* Tiny Mobile */
+@media (max-width: 480px) {
+  .process-pipeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

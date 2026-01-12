@@ -1,0 +1,247 @@
+/* =====================================
+   AGROFUSION GLOBAL STYLES
+   Premium • Scientific • Enterprise-Grade
+===================================== */
+
+/* CSS RESET & BASE */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================================
+   DESIGN TOKENS - COLOR SYSTEM
+===================================== */
+:root {
+  /* Primary Brand Colors - Earth & Scientific */
+  --color-primary-dark: #0b3d2e;
+  --color-primary: #145c43;
+  --color-primary-light: #1e7a5a;
+  
+  /* Accent Colors - Growth & Trust */
+  --color-accent: #2ecc71;
+  --color-accent-dark: #27ae60;
+  --color-accent-light: #52d98b;
+  --color-accent-subtle: #8fe1b6;
+  
+  /* Neutral Palette - Clean & Professional */
+  --color-neutral-50: #f9fbf9;
+  --color-neutral-100: #f7faf8;
+  --color-neutral-200: #f3f8f5;
+  --color-neutral-300: #eef3ef;
+  --color-neutral-400: #e6efe9;
+  --color-neutral-500: #d8e5dc;
+  
+  /* Text Colors - Readable Hierarchy */
+  --color-text-primary: #0b3d2e;
+  --color-text-secondary: #2d5f4f;
+  --color-text-body: #555555;
+  --color-text-light: #666666;
+  --color-text-subtle: #888888;
+  --color-text-white: #ffffff;
+  --color-text-white-soft: #f0f0f0;
+  
+  /* Background Colors */
+  --color-bg-white: #ffffff;
+  --color-bg-subtle: #f9fbf9;
+  --color-bg-light: #f7faf8;
+  --color-bg-soft: #f3f8f5;
+  --color-bg-accent: linear-gradient(135deg, #2ecc71, #27ae60);
+  
+  /* Border Colors */
+  --color-border-light: #eef3ef;
+  --color-border-medium: #e6efe9;
+  --color-border-accent: #2ecc71;
+  
+  /* Shadow System - Soft & Natural */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 28px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 18px 40px rgba(0, 0, 0, 0.10);
+  --shadow-2xl: 0 24px 60px rgba(0, 0, 0, 0.12);
+  
+  /* Interactive Shadows */
+  --shadow-hover: 0 16px 36px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 8px 20px rgba(46, 204, 113, 0.25);
+  
+  /* Typography System */
+  --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --font-family-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', monospace;
+  
+  /* Font Weights - Clear Hierarchy */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  
+  /* Font Sizes - Fluid & Responsive */
+  --font-size-xs: 0.8125rem;    /* 13px */
+  --font-size-sm: 0.875rem;     /* 14px */
+  --font-size-base: 0.9375rem;  /* 15px */
+  --font-size-md: 1rem;         /* 16px */
+  --font-size-lg: 1.0625rem;    /* 17px */
+  --font-size-xl: 1.125rem;     /* 18px */
+  --font-size-2xl: 1.25rem;     /* 20px */
+  --font-size-3xl: 1.5rem;      /* 24px */
+  --font-size-4xl: 1.875rem;    /* 30px */
+  --font-size-5xl: 2.25rem;     /* 36px */
+  --font-size-6xl: 3rem;        /* 48px */
+  
+  /* Line Heights */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.65;
+  --line-height-loose: 1.8;
+  
+  /* Spacing Scale - Consistent Rhythm */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  
+  /* Border Radius - Modern & Soft */
+  --radius-sm: 0.5rem;      /* 8px */
+  --radius-md: 0.75rem;     /* 12px */
+  --radius-lg: 1rem;        /* 16px */
+  --radius-xl: 1.25rem;     /* 20px */
+  --radius-2xl: 1.5rem;     /* 24px */
+  --radius-full: 9999px;
+  
+  /* Transitions - Smooth & Professional */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  
+  /* Z-Index System */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-overlay: 800;
+  --z-modal: 900;
+  --z-tooltip: 1000;
+}
+
+/* =====================================
+   BASE HTML & BODY
+===================================== */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-body);
+  background-color: var(--color-bg-white);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* =====================================
+   SELECTION STYLES
+===================================== */
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
+::-moz-selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-text-primary);
+}
+
+/* =====================================
+   FOCUS STYLES - ACCESSIBILITY
+===================================== */
+:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* =====================================
+   UTILITY CLASSES - TYPOGRAPHY
+===================================== */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* =====================================
+   SCROLLBAR STYLING
+===================================== */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-neutral-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* =====================================
+   REDUCED MOTION PREFERENCES
+===================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* =====================================
+   PRINT STYLES
+===================================== */
+@media print {
+  body {
+    background: white;
+  }
+  
+  * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

@@ -1,0 +1,114 @@
+/* =====================================
+   AGROFUSION CTA - PARALLAX & GEOMETRIC
+===================================== */
+
+.af-cta {
+  padding: 100px 20px;
+  /* Parallax Background Implementation */
+  background-image: linear-gradient(
+      rgba(27, 67, 50, 0.85), 
+      rgba(27, 67, 50, 0.85)
+    ),
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80'); /* Professional farm image */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Semicircle Top-Left */
+.af-cta::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  background: rgba(46, 204, 113, 0.2);
+  border-radius: 0 0 200px 200px; /* Semicircle shape */
+  transform: rotate(-45deg) translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* Semicircle Bottom-Right */
+.af-cta::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 200px 200px 0 0; /* Semicircle shape */
+  transform: rotate(-45deg) translate(50%, 50%);
+  z-index: 1;
+}
+
+.af-cta__container {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2; /* Sits above circles and parallax */
+}
+
+.af-cta__title {
+  font-size: 2.2rem;
+  color: #ffffff;
+  font-weight: 700;
+  margin-bottom: 30px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.af-cta__buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.af-btn {
+  padding: 14px 40px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px 2px 8px 2px; /* Professional leaf shape */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: capitalize;
+}
+
+.af-btn--primary {
+  background-color: #2ecc71;
+  color: #ffffff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.af-btn--primary:hover {
+  background-color: #ffffff;
+  color: #1b4332;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* =====================================
+   RESPONSIVE QUERIES
+===================================== */
+
+@media (max-width: 768px) {
+  .af-cta {
+    padding: 80px 20px;
+    background-attachment: scroll; /* Parallax often disabled on mobile for performance */
+  }
+
+  .af-cta__title {
+    font-size: 1.7rem;
+  }
+
+  .af-cta::before, .af-cta::after {
+    width: 120px;
+    height: 60px;
+  }
+}

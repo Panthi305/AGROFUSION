@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+.bgrp-agro-luxury-root {
+  --primary-green: #1a4d2e;
+  --text-main: #0f172a;
+  --text-soft: #64748b;
+  --accent-green: #16a34a;
+
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-main);
+  padding: 80px 0;
+  width: 100%;
+  overflow-x: clip;
+  /* Modern alternative to hidden that doesn't break sticky */
+}
+
+/* --- HEADER SECTION --- */
+.bgrp-luxury-header {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.bgrp-kicker {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--accent-green);
+  margin-bottom: 16px;
+  display: block;
+}
+
+.bgrp-luxury-header h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  margin: 0;
+}
+
+.bgrp-luxury-header h1 span {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #94a3b8;
+}
+
+/* --- ALTERNATING STACK --- */
+.bgrp-luxury-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  /* Large editorial spacing */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bgrp-luxury-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  width: 100%;
+}
+
+/* Logic for Alternating Rows */
+.bgrp-luxury-row.bgrp-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Visual Side */
+.bgrp-luxury-visual {
+  flex: 1;
+  width: 100%;
+}
+
+.bgrp-img-reveal-container {
+  will-change: clip-path;
+  aspect-ratio: 4 / 5;
+  /* Consistent editorial aspect ratio */
+  max-height: 650px;
+  border-radius: 12px;
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.15);
+  position: relative;
+  overflow: hidden;
+  /* Local overflow for the image only */
+}
+
+.bgrp-img-reveal-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content Side */
+.bgrp-luxury-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.bgrp-title-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.bgrp-icon-wrap {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0fdf4;
+  border-radius: 50%;
+}
+
+.bgrp-title-row h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.bgrp-specs-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.bgrp-spec-group label {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-green);
+  display: block;
+  margin-bottom: 12px;
+}
+
+.bgrp-spec-group p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #475569;
+  font-weight: 500;
+}
+
+/* --- FOOTER --- */
+.bgrp-luxury-footer {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  padding: 60px 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.bgrp-f-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 1px;
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+@media (max-width: 992px) {
+
+  .bgrp-luxury-row,
+  .bgrp-luxury-row.bgrp-reverse {
+    flex-direction: column;
+    /* Stack on mobile/tablet */
+    gap: 40px;
+  }
+
+  .bgrp-luxury-stack {
+    gap: 80px;
+  }
+
+  .bgrp-img-reveal-container {
+    aspect-ratio: 16 / 9;
+    /* Wider images for mobile stacking */
+    max-height: 400px;
+  }
+
+  .bgrp-luxury-content {
+    text-align: left;
+  }
+}
+
+@media (max-width: 600px) {
+  .bgrp-agro-luxury-root {
+    padding: 60px 0;
+  }
+
+  .bgrp-luxury-header h1 {
+    line-height: 1.2;
+  }
+
+  .bgrp-title-row {
+    margin-bottom: 30px;
+  }
+
+  .bgrp-luxury-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    padding-top: 40px;
+  }
+}

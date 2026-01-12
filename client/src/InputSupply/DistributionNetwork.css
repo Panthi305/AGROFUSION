@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+.distribution-section {
+  padding: clamp(60px, 10vw, 100px) 0;
+  background-color: #f4f7fa; /* Light steel background */
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1e293b;
+}
+
+.distribution-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.distribution-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.distribution-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.6rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 15px;
+}
+
+.distribution-header p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* 4-Column Grid for Laptops */
+.distribution-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Card Styling */
+.distribution-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.distribution-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(15, 23, 42, 0.08);
+  border-color: #3b82f6; /* Highlight blue on hover */
+}
+
+/* Dashboard-style Image */
+.distribution-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  filter: saturate(0.8);
+  transition: 0.3s;
+}
+
+.distribution-card:hover img {
+  filter: saturate(1.2);
+}
+
+/* Title & Icon Styling */
+.distribution-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.distribution-card h3 svg {
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+/* Delivery List */
+.distribution-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.distribution-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.distribution-card li svg {
+  color: #10b981; /* Green checkmark for "Done/Delivered" feel */
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* CTA Section */
+.distribution-cta {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.distribution-contact-btn {
+  background: #0f172a;
+  color: #fff;
+  padding: 16px 40px;
+  border-radius: 12px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: 0.3s;
+}
+
+.distribution-contact-btn:hover {
+  background: #3b82f6;
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablets (iPad/Portrait): 2 per row */
+@media (max-width: 1024px) {
+  .distribution-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Large Mobile: Still 2 per row but smaller text */
+@media (max-width: 768px) {
+  .distribution-header {
+    margin-bottom: 40px;
+  }
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 550px) {
+  .distribution-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .distribution-card {
+    padding: 25px;
+  }
+
+  .distribution-contact-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

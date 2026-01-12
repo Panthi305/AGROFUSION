@@ -1,0 +1,357 @@
+.af-eco-section {
+  padding: 80px 0;
+  background-color: #fdfdfd;
+}
+
+.af-eco-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.af-eco-badge {
+  color: #4baf47;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.af-eco-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+/* THE GRID */
+.af-eco-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: white;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.04);
+  border: 1px solid #eee;
+  min-height: 600px;
+}
+
+/* NAV TABS (Left) */
+.af-eco-nav {
+  background: #f8f9f8;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+}
+
+.af-eco-tab {
+  padding: 22px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0,0,0,0.03);
+  position: relative;
+}
+
+.af-eco-tab.active {
+  background: white;
+}
+
+.af-eco-tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 4px;
+  background: #4baf47;
+}
+
+.af-tab-num {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #bbb;
+}
+
+.af-eco-tab.active .af-tab-num { color: #4baf47; }
+
+.af-tab-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #666;
+  line-height: 1.3;
+}
+
+.af-eco-tab.active .af-tab-title { color: #111; }
+
+/* DISPLAY CARD (Right) */
+.af-eco-display {
+  padding: 50px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.af-display-card {
+  animation: afFadeSlide 0.4s ease-out forwards;
+}
+
+@keyframes afFadeSlide {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.af-display-icon {
+  width: 48px;
+  height: 48px;
+  background: #f0f7f0;
+  color: #4baf47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.af-display-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.af-display-desc {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  max-width: 600px;
+}
+
+.af-display-points {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.af-display-points li {
+  font-size: 0.85rem;
+  color: #666;
+  padding-left: 20px;
+  position: relative;
+}
+
+.af-display-points li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #4baf47;
+  font-weight: bold;
+}
+
+/* THE UNIQUE BENEFIT BOX */
+.af-display-benefit {
+  background: #111;
+  color: white;
+  padding: 20px 25px;
+  border-radius: 16px;
+  display: inline-block;
+}
+
+.af-display-benefit span {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.af-display-benefit p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #4baf47;
+  margin: 0;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet & Smaller Laptops (1024px and down) */
+@media (max-width: 1024px) {
+  .af-eco-grid {
+    grid-template-columns: 280px 1fr;
+  }
+  .af-eco-display {
+    padding: 35px;
+  }
+}
+
+/* Mobile & Tablet Portrait (900px and down) */
+@media (max-width: 900px) {
+  .af-eco-grid {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  /* Transform Sidebar into Horizontal Scroll */
+  .af-eco-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+    /* Hide scrollbar */
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+  }
+  
+  .af-eco-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .af-eco-tab {
+    flex: 0 0 auto;
+    padding: 15px 20px;
+    border-bottom: none;
+  }
+
+  .af-eco-tab.active::after {
+    height: 3px;
+    width: 100%;
+    top: auto;
+    bottom: 0;
+  }
+
+  .af-tab-num { display: none; } /* Simplify for mobile row */
+
+  .af-eco-display {
+    padding: 30px 20px;
+  }
+  
+  .af-display-points {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Small Mobile (480px and down) */
+@media (max-width: 480px) {
+  .af-eco-section {
+    padding: 60px 0;
+  }
+  .af-display-title {
+    font-size: 1.4rem;
+  }
+  .af-display-benefit {
+    display: block; /* Stretch benefit to full width */
+  }
+}
+
+/* --- UPDATED DISPLAY LAYOUT --- */
+.af-eco-display {
+  padding: 40px; /* Restore padding to the main container */
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.af-display-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  animation: afFadeSlide 0.5s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+}
+
+/* NEW: Inset Image Styling */
+.af-display-image {
+  width: 100%;
+  height: 160px; /* Reduced height significantly */
+  overflow: hidden;
+  border-radius: 16px; /* Rounded corners for a modern feel */
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.af-display-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+/* Removed extra padding wrapper since display has padding now */
+.af-display-content-wrap {
+  padding: 0; 
+}
+
+/* ICON BOX ADJUSTMENT */
+.af-display-icon {
+  width: 42px;
+  height: 42px;
+  background: #f0f7f0;
+  color: #4baf47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.af-display-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.af-display-desc {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 25px;
+  max-width: 550px;
+}
+
+/* LIST POINTS */
+.af-display-points {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.af-display-points li {
+  font-size: 0.85rem;
+  color: #666;
+  padding-left: 20px;
+  position: relative;
+}
+
+/* BENEFIT BOX - More compact */
+.af-display-benefit {
+  background: #111;
+  color: white;
+  padding: 18px 22px;
+  border-radius: 12px;
+  display: inline-block;
+  min-width: 250px;
+}
+
+/* MOBILE REFINEMENT */
+@media (max-width: 900px) {
+  .af-eco-display {
+    padding: 25px;
+  }
+  .af-display-image {
+    height: 140px;
+  }
+  .af-display-points {
+    grid-template-columns: 1fr;
+  }
+}

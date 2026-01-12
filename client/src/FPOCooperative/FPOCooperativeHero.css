@@ -1,0 +1,154 @@
+/* =========================================
+   FPO & COOPERATIVE HERO SECTION
+========================================= */
+
+.fpo-hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 720px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Background Video */
+.fpo-hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* Dark Overlay */
+.fpo-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 32, 24, 0.88),
+    rgba(6, 32, 24, 0.55)
+  );
+  z-index: 2;
+}
+
+/* Content Wrapper */
+.fpo-hero-content-wrapper {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  padding: 0 24px;
+}
+
+.fpo-hero-content {
+  max-width: 850px;
+}
+
+/* Heading */
+.fpo-hero-heading {
+  font-size: 52px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 22px;
+}
+
+/* Subheading */
+.fpo-hero-subheading {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #e3f4ed;
+  margin-bottom: 36px;
+  max-width: 760px;
+}
+
+/* CTA Buttons */
+.fpo-hero-cta-group {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 42px;
+}
+
+.fpo-hero-primary-btn {
+  padding: 16px 34px;
+  background: #6be0b3;
+  color: #052016;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fpo-hero-primary-btn:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+}
+
+.fpo-hero-secondary-btn {
+  padding: 16px 34px;
+  border: 1.5px solid #6be0b3;
+  color: #6be0b3;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fpo-hero-secondary-btn:hover {
+  background: #6be0b3;
+  color: #052016;
+}
+
+/* Stats */
+.fpo-hero-stats {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  gap: 12px 40px;
+}
+
+.fpo-hero-stats li {
+  font-size: 15px;
+  color: #d6f2e7;
+  white-space: nowrap;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+  .fpo-hero-heading {
+    font-size: 42px;
+  }
+
+  .fpo-hero-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .fpo-hero-section {
+    min-height: 640px;
+  }
+
+  .fpo-hero-heading {
+    font-size: 30px;
+  }
+
+  .fpo-hero-subheading {
+    font-size: 16px;
+  }
+
+  .fpo-hero-primary-btn,
+  .fpo-hero-secondary-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

@@ -1,0 +1,213 @@
+/* --- Root Section --- */
+.maas-section {
+  padding: 100px 5%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.maas-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.maas-title {
+  font-size: clamp(22px, 3vw, 32px);
+  color: #0b3d2e;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+/* --- Keyframes for Animations --- */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes lineFlow {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes nodePulse {
+  0% { box-shadow: 0 0 0 0 rgba(44, 160, 28, 0.4); }
+  70% { box-shadow: 0 0 0 10px rgba(44, 160, 28, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(44, 160, 28, 0); }
+}
+
+/* --- The Flow Layout --- */
+.maas-steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  padding-top: 40px;
+}
+
+/* The Connecting Graphic Line with Flow Animation */
+.maas-steps::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg, #e2e8f0, #2ca01c, #e2e8f0);
+  background-size: 200% 100%;
+  animation: lineFlow 4s linear infinite;
+  z-index: 1;
+}
+
+/* --- The Step Node --- */
+.maas-step {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  opacity: 0;
+  animation: slideInUp 0.6s ease forwards;
+}
+
+/* Sequential Staggered Entry */
+.maas-step:nth-child(1) { animation-delay: 0.1s; }
+.maas-step:nth-child(2) { animation-delay: 0.3s; }
+.maas-step:nth-child(3) { animation-delay: 0.5s; }
+.maas-step:nth-child(4) { animation-delay: 0.7s; }
+
+/* The Circular Node on the line */
+.maas-step::after {
+  content: "";
+  position: absolute;
+  top: -48px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border: 3px solid #2ca01c;
+  border-radius: 50%;
+  animation: nodePulse 2s infinite;
+}
+
+.maas-step-number {
+  font-family: monospace;
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(44, 160, 28, 0.1); /* Ghost number */
+  line-height: 1;
+  margin-bottom: 10px;
+  transition: all 0.3s ease;
+}
+
+.maas-step h3 {
+  font-size: 1.25rem;
+  color: #0b3d2e;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Minimalist List */
+.maas-step ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.maas-step li {
+  font-size: 0.9rem;
+  color: #4a5568;
+  margin-bottom: 15px;
+  line-height: 1.5;
+  padding-left: 15px;
+  border-left: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.maas-time {
+  font-size: 0.75rem;
+  font-weight: 900;
+  color: #2ca01c;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: #f0fff4;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+/* --- Hover States --- */
+.maas-step:hover {
+  transform: translateY(-10px);
+}
+
+.maas-step:hover .maas-step-number {
+  color: rgba(44, 160, 28, 0.25);
+  transform: scale(1.1);
+}
+
+.maas-step:hover li {
+  border-left-color: #2ca01c;
+  color: #1a1a1a;
+}
+
+/* --- Timeline "Progress" Bar Footer --- */
+.maas-timeline {
+  margin-top: 80px;
+  padding: 20px;
+  background: #0b3d2e;
+  color: #7cffc4;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: slideInUp 0.8s ease forwards;
+  animation-delay: 1s;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 1024px) {
+  .maas-steps {
+    flex-direction: column;
+    gap: 60px;
+    padding-top: 0;
+    padding-left: 30px;
+  }
+
+  .maas-steps::before {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 2px;
+    height: auto;
+    background: linear-gradient(180deg, #e2e8f0, #2ca01c, #e2e8f0);
+    background-size: 100% 200%;
+  }
+
+  .maas-step::after {
+    top: 10px;
+    left: -37px;
+  }
+  
+  .maas-step-number {
+    font-size: 2.5rem;
+  }
+
+  .maas-timeline {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}

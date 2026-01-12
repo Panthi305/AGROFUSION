@@ -1,0 +1,152 @@
+/* =====================================
+    WIDE & COMPACT JOIN MISSION
+===================================== */
+.af-join-mission {
+  padding: 60px 0;
+  background-color: #fcfdfd;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.af-join-mission__inner {
+  width: 95%;
+  /* Uses proper width */
+  max-width: 1400px;
+  background: #0b3d2e;
+  /* Brand Dark Green */
+  border-radius: 32px;
+  padding: 20px 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(11, 61, 46, 0.2);
+  display: flex;
+  justify-content: center;
+}
+
+.af-join-mission__container {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  /* Centered for balance */
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.af-join-tag {
+  color: #2ecc71;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 800;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.af-join-mission__title {
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  color: #ffffff;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.af-join-mission__title span {
+  color: #2ecc71;
+}
+
+.af-join-mission__text {
+  font-size: clamp(1rem, 2vw, 1rem);
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0 auto;
+}
+
+/* Premium Wide Button */
+.af-btn-premium {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #2ecc71;
+  color: #0b3d2e;
+  padding: 12px 12px 12px 35px;
+  /* Asymmetric padding for the icon circle */
+  border-radius: 100px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  border: 2px solid transparent;
+}
+
+.af-btn-icon {
+  background: #0b3d2e;
+  color: #2ecc71;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+}
+
+.af-btn-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.af-btn-premium:hover {
+  background: #ffffff;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.af-btn-premium:hover .af-btn-icon {
+  transform: rotate(-45deg);
+  background: #2ecc71;
+  color: #0b3d2e;
+}
+
+/* Decorative Circles to fill width */
+.af-bg-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, transparent 70%);
+  z-index: 1;
+}
+
+.circle-1 {
+  width: 400px;
+  height: 400px;
+  top: -200px;
+  left: -100px;
+}
+
+.circle-2 {
+  width: 300px;
+  height: 300px;
+  bottom: -150px;
+  right: -50px;
+}
+
+/* =====================================
+    MOBILE RESPONSIVE
+===================================== */
+@media (max-width: 768px) {
+  .af-join-mission__inner {
+    width: 92%;
+    padding: 50px 20px;
+    border-radius: 24px;
+  }
+
+  .af-btn-premium {
+    padding: 10px 10px 10px 25px;
+    font-size: 1rem;
+  }
+}

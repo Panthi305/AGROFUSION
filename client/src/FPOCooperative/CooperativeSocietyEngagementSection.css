@@ -1,0 +1,98 @@
+.coop-engagement-section {
+  padding: 90px 20px;
+  background-color: #f9fafb;
+}
+
+.coop-engagement-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.coop-engagement-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.coop-engagement-header h2 {
+  font-size: 38px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 14px;
+}
+
+.coop-engagement-header p {
+  font-size: 18px;
+  color: #475569;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.coop-engagement-block {
+  margin-bottom: 70px;
+}
+
+.coop-engagement-block h3 {
+  font-size: 28px;
+  color: #166534;
+  margin-bottom: 32px;
+}
+
+.coop-engagement-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+}
+
+.coop-engagement-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.coop-engagement-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 45px rgba(0, 0, 0, 0.15);
+}
+
+.coop-engagement-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #14532d;
+  margin-bottom: 18px;
+}
+
+.coop-engagement-card ul {
+  padding-left: 18px;
+}
+
+.coop-engagement-card li {
+  font-size: 15px;
+  color: #334155;
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+
+.coop-engagement-target {
+  background: linear-gradient(135deg, #14532d, #166534);
+  color: #ffffff;
+  padding: 45px;
+  border-radius: 22px;
+}
+
+.coop-engagement-target h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.coop-engagement-target ul {
+  list-style: none;
+  padding: 0;
+}
+
+.coop-engagement-target li {
+  font-size: 16px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}

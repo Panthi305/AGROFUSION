@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.si-cta-section {
+  position: relative;
+  width: 100%;
+  /* Using min-height with vh to ensure good coverage on large screens */
+  min-height: 450px;
+  height: auto;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=2000');
+  
+  /* Desktop Parallax Effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(60px, 10vh, 100px) 5%;
+  box-sizing: border-box;
+}
+
+.si-cta-container {
+  max-width: 750px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  padding: clamp(35px, 6vw, 55px) clamp(20px, 4vw, 40px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Header - Responsive Scaling */
+.si-cta-header h2 {
+  font-family: 'Outfit', sans-serif;
+  /* Fluid font sizing using clamp */
+  font-size: clamp(1.6rem, 4vw, 2.2rem); 
+  line-height: 1.25;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.si-cta-header p em {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  color: #e2e8f0;
+  line-height: 1.6;
+  font-weight: 400;
+  display: block;
+  margin-bottom: clamp(25px, 5vh, 40px);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button - Adaptive Width */
+.si-cta-action {
+  display: flex;
+  justify-content: center;
+}
+
+.si-cta-btn {
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 16px 40px;
+  font-size: 1rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: auto;
+  min-width: 200px;
+}
+
+.si-cta-btn:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Responsive Breakpoints --- */
+
+/* For Tablets (Small Laptops to Large Tablets) */
+@media (max-width: 1024px) {
+  .si-cta-section {
+    background-attachment: scroll; /* Smooth scrolling for tablets */
+  }
+}
+
+/* For Mobile Devices */
+@media (max-width: 768px) {
+  .si-cta-section {
+    padding: 60px 4%;
+    min-height: 400px;
+  }
+  
+  .si-cta-container {
+    padding: 40px 20px;
+    border-radius: 12px; /* Slightly smaller radius for mobile screens */
+  }
+  
+  .si-cta-btn {
+    width: 100%; /* Full width button for easier thumb-tapping */
+    max-width: 320px;
+  }
+}
+
+/* For Small Phones */
+@media (max-width: 480px) {
+  .si-cta-header h2 {
+    font-size: 1.5rem; /* Ensure title doesn't break into too many lines */
+  }
+
+  .si-cta-section {
+    min-height: 350px;
+  }
+}

@@ -1,0 +1,205 @@
+/* --- Main Section Wrapper --- */
+.af-tech-services {
+  padding: 120px 0;
+  background-color: #f8faf8;
+  position: relative;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+/* 1. BOTTOM/CENTER BACKGROUND: Fluid vascular paths */
+.af-tech-services::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1000 1000' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M-100,500 C150,300 350,700 500,500 C650,300 850,700 1100,500' stroke='%234baf47' stroke-width='0.5' fill='none' stroke-opacity='0.15'/%3E%3Cpath d='M-100,600 C200,800 400,400 600,600 C800,800 1000,500 1200,700' stroke='%234baf47' stroke-width='0.3' fill='none' stroke-opacity='0.1'/%3E%3Ccircle cx='500' cy='500' r='300' fill='none' stroke='%234baf47' stroke-width='0.2' stroke-opacity='0.1'/%3E%3C/svg%3E");
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 2. TOP RIGHT BACKGROUND: Organic Canopy */
+.af-tech-services::after {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 500px;
+  height: 500px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M100,0 Q80,20 60,0 M100,20 Q70,40 50,10 M80,50 Q50,60 30,30' stroke='%234baf47' stroke-width='0.2' fill='none' stroke-opacity='0.12'/%3E%3C/svg%3E");
+  background-repeat: no-no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 3. TOP LEFT BACKGROUND: Mirrored Canopy */
+.af-tech-services__bg-top-left {
+  position: absolute;
+  top: -60px;
+  left: -60px;
+  width: 500px;
+  height: 500px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0 Q20,20 40,0 M0,20 Q30,40 50,10 M20,50 Q50,60 70,30' stroke='%234baf47' stroke-width='0.2' fill='none' stroke-opacity='0.12'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 4. LEFT CENTER BACKGROUND: Root System */
+.af-tech-services__bg-left {
+  position: absolute;
+  bottom: 15%;
+  left: -50px;
+  width: 400px;
+  height: 500px;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 150' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,150 Q20,100 0,50 M0,120 Q40,80 10,20 M0,90 Q30,50 5,0' stroke='%234baf47' stroke-width='0.15' fill='none' stroke-opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.af-tech-services__container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 25px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --- Header --- */
+.af-tech-services__header {
+  margin-bottom: 80px;
+  text-align: center;
+}
+
+.af-tech-services__title {
+  font-size: clamp(2.2rem, 5vw, 3.2rem);
+  font-weight: 900;
+  color: #0d1a0d;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+
+.af-tech-services__intro {
+  color: #4baf47;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* --- The Grid --- */
+.af-tech-services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+/* --- The Card: Hex-Organic Shape --- */
+.af-tech-services__card {
+  background: #ffffff;
+  padding: 65px 45px;
+  clip-path: polygon(10% 0%, 90% 0%, 100% 15%, 100% 85%, 90% 100%, 10% 100%, 0% 85%, 0% 15%);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+/* Organic Border Pulse Overlay */
+.af-tech-services__card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  box-shadow: inset 0 0 0 2px #4baf47;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+}
+
+.af-tech-services__card-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(75, 175, 71, 0.1) 0%, transparent 75%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+/* --- Card Hover State --- */
+.af-tech-services__card:hover {
+  transform: translateY(-15px);
+  /* Morphs to a softer rectangular shape */
+  clip-path: polygon(4% 0%, 96% 0%, 100% 8%, 100% 92%, 96% 100%, 4% 100%, 0% 92%, 0% 8%);
+  box-shadow: 0 40px 70px rgba(75, 175, 71, 0.15);
+}
+
+.af-tech-services__card:hover::before,
+.af-tech-services__card:hover .af-tech-services__card-glow {
+  opacity: 1;
+}
+
+/* Card Content Styling */
+.af-tech-services__card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.af-tech-services__card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+.af-tech-services__card:hover .af-tech-services__card-title {
+  color: #4baf47;
+}
+
+.af-tech-services__card-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Decorative Card Tag */
+.af-tech-services__card-tag {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: #4baf47;
+  opacity: 0.25;
+  letter-spacing: 2px;
+  transition: opacity 0.3s ease;
+}
+
+.af-tech-services__card:hover .af-tech-services__card-tag {
+  opacity: 0.8;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1100px) {
+  .af-tech-services__grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+}
+
+/* Keeps 2 cards per row down to 540px */
+@media (max-width: 768px) {
+  .af-tech-services { padding: 80px 0; }
+  .af-tech-services__grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .af-tech-services__card { padding: 50px 30px; }
+  /* Tone down background svgs for small screens */
+  .af-tech-services__bg-left, .af-tech-services__bg-top-left { opacity: 0.5; transform: scale(0.8); }
+}
+
+/* Switch to single column below 540px */
+@media (max-width: 540px) {
+  .af-tech-services__grid { grid-template-columns: 1fr; }
+  .af-tech-services__title { font-size: 2rem; }
+  .af-tech-services__bg-left, .af-tech-services__bg-top-left { display: none; }
+}

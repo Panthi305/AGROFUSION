@@ -1,0 +1,98 @@
+.cse-section {
+  padding: 80px 20px;
+  background: #f8fafc;
+}
+
+.cse-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cse-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.cse-header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.cse-header p {
+  font-size: 18px;
+  color: #475569;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cse-block {
+  margin-bottom: 60px;
+}
+
+.cse-block h3 {
+  font-size: 28px;
+  color: #166534;
+  margin-bottom: 30px;
+}
+
+.cse-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.cse-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cse-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.cse-card h4 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #14532d;
+  margin-bottom: 16px;
+}
+
+.cse-card ul {
+  padding-left: 18px;
+}
+
+.cse-card li {
+  font-size: 15px;
+  color: #334155;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.cse-target {
+  background: linear-gradient(135deg, #14532d, #166534);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+}
+
+.cse-target h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.cse-target ul {
+  list-style: none;
+  padding: 0;
+}
+
+.cse-target li {
+  font-size: 16px;
+  margin-bottom: 12px;
+  line-height: 1.6;
+}

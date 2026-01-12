@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+.sustain-stage-section {
+  padding: 100px 0;
+  background: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stage-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.stage-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2.5rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.stage-indicators {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  width: 30px;
+  border-radius: 10px;
+  background: #10b981;
+}
+
+/* --- The Stage Logic --- */
+.stage-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.stage-card {
+  position: absolute;
+  width: 400px;
+  height: 100%;
+  left: 50%;
+  margin-left: -200px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Position States */
+.stage-card.left {
+  transform: translateX(-100%) scale(0.8) rotateY(25deg);
+  opacity: 0.4;
+  filter: grayscale(1) blur(2px);
+  z-index: 0;
+}
+
+.stage-card.right {
+  transform: translateX(100%) scale(0.8) rotateY(-25deg);
+  opacity: 0.4;
+  filter: grayscale(1) blur(2px);
+  z-index: 0;
+}
+
+.stage-card.center {
+  transform: translateX(0) scale(1.1) rotateY(0);
+  opacity: 1;
+  filter: grayscale(0) blur(0);
+  z-index: 10;
+}
+
+/* Card Visuals */
+.card-glass {
+  background: #ffffff;
+  height: 100%;
+  padding: 40px;
+  border-radius: 30px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stage-card.center .card-glass {
+  border-color: #10b981;
+  box-shadow: 0 30px 60px rgba(16, 185, 129, 0.15);
+}
+
+.card-tag {
+  background: #f0fdf4;
+  color: #10b981;
+  padding: 5px 15px;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.stage-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.stage-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.stage-card li {
+  margin-bottom: 15px;
+  color: #64748b;
+  position: relative;
+  padding-left: 20px;
+  line-height: 1.4;
+}
+
+.stage-card li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #10b981;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .stage-card { width: 300px; margin-left: -150px; }
+  .stage-card.left { transform: translateX(-60%) scale(0.7); }
+  .stage-card.right { transform: translateX(60%) scale(0.7); }
+}

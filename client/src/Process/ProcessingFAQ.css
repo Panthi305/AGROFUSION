@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.proc-faq-section {
+  padding: clamp(40px, 8vw, 80px) 20px;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.proc-faq-container {
+  max-width: 1100px; /* Wider container for side-by-side columns */
+  margin: 0 auto;
+}
+
+.proc-faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.proc-faq-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  color: #0f172a;
+}
+
+/* --- TWO COLUMN GRID DESIGN --- */
+.proc-faq-list {
+  display: grid;
+  /* Creates two columns on desktop */
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 40px; /* 0 vertical gap, 40px horizontal gap between columns */
+  border-top: 1px solid #e2e8f0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e2e8f0;
+  cursor: pointer;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  /* Prevents items from stretching awkwardly */
+  height: fit-content;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+
+.faq-question h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.faq-icon {
+  font-size: 1.2rem;
+  color: #10b981;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* --- Animated Answer Opening --- */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer p {
+  padding: 0 0 20px 0;
+  margin: 0;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --- Active State --- */
+.faq-item.active .faq-question h3 {
+  color: #10b981;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; 
+}
+
+/* --- CTA --- */
+.proc-faq-cta {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.proc-faq-contact-btn {
+  background: #0f172a;
+  color: white;
+  padding: 14px 40px;
+  border-radius: 8px;
+  border: none;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.proc-faq-contact-btn:hover {
+  background: #10b981;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet: Stack to 1 column */
+@media (max-width: 992px) {
+  .proc-faq-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  
+  .proc-faq-container {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 600px) {
+  .proc-faq-section {
+    padding: 40px 15px;
+  }
+  .proc-faq-contact-btn {
+    width: 100%;
+  }
+}

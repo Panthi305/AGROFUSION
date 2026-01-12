@@ -1,0 +1,144 @@
+/* --- SECTION BASE --- */
+.af-leadership {
+    padding: 100px 0;
+    background-color: #f9fffeeb;
+}
+
+.af-leadership__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER --- */
+.af-leadership__header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.af-leadership__title {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #24231d;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.af-title-line {
+    width: 60px;
+    height: 4px;
+    background: #eec044;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* --- FLEX GRID --- */
+.af-leadership__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* Centering the 4th and 5th items */
+    gap: 40px;
+}
+
+/* --- CARD STYLING --- */
+.af-leadership__card {
+    flex: 0 1 calc(33.333% - 40px);
+    min-width: 280px;
+    max-width: 350px;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 20px;
+    background: transparent;
+    transition: all 0.4s ease;
+    /* Smooth hover transition */
+}
+
+/* Box Shadow on Hover */
+.af-leadership__card:hover {
+    background: #ffffff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    transform: translateY(-5px);
+}
+
+/* --- Optimized Image Wrapper --- */
+.af-leadership__img-wrapper {
+    width: 180px;
+    /* Slightly larger for better presence */
+    height: 180px;
+    margin: 0 auto 25px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    /* White border for 'pop' */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow even when not hovered */
+    background-color: #f0f0f0;
+    /* Placeholder color */
+    transition: all 0.4s ease;
+}
+
+.af-leadership__card:hover .af-leadership__img-wrapper {
+    border-color: #4baf47;
+    transform: scale(1.05);
+    /* Slight zoom effect on hover */
+}
+
+.af-leadership__img {
+    width: 100%;
+    height: 100%;
+    /* This is the magic line: it fills the circle without stretching */
+    object-fit: cover;
+    /* Centers the focus; use 'top' if heads are getting cut off */
+    object-position: center top;
+    display: block;
+}
+
+/* Improve Bio Text readability */
+.af-leadership__bio {
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding: 0 10px;
+}
+
+/* Text Content */
+.af-leadership__name {
+    font-size: 1.4rem;
+    color: #24231d;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.af-leadership__title-card {
+    color: #4baf47;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.af-leadership__bio {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .af-leadership__card {
+        flex: 0 1 calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .af-leadership {
+        padding: 60px 0;
+    }
+
+    .af-leadership__card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,197 @@
+/* --- SECTION BASE --- */
+.agro-minimal {
+  padding: 100px 0;
+  background-color: #f9fffeeb;
+  color: #24231d;
+}
+
+.agro-minimal__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  gap: 60px; /* Reduced gap for better fit on medium screens */
+  align-items: flex-start; 
+}
+
+/* --- LEFT SIDE: STICKY TITLE --- */
+.agro-minimal__left {
+  flex: 0 0 320px; /* Slightly narrower fixed width */
+  position: sticky;
+  top: 100px;
+  height: auto;
+}
+
+.agro-minimal__tag {
+  color: #4baf47;
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 0.75rem;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.agro-minimal__main-title {
+  font-size: clamp(2.5rem, 4vw, 3.5rem); /* Fluid typography */
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.agro-minimal__main-title span {
+  color: #4baf47;
+}
+
+.agro-minimal__line {
+  width: 60px;
+  height: 5px;
+  background: #eec044;
+  margin-top: 25px;
+}
+
+/* --- RIGHT SIDE: ROWS --- */
+.agro-minimal__right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.agro-minimal__row {
+  position: relative;
+  padding: 50px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.agro-minimal__row:first-child {
+  border-top: 1px solid #eee;
+}
+
+.agro-minimal__row-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px; /* Reduced gap for tablet */
+  position: relative;
+  z-index: 2;
+}
+
+.agro-minimal__number {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #4baf47;
+  padding-top: 6px;
+}
+
+.agro-minimal__text-wrap {
+  flex: 1;
+}
+
+.agro-minimal__row-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  transition: transform 0.4s ease;
+}
+
+.agro-minimal__row-desc {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 550px;
+  opacity: 0.8;
+  transition: all 0.4s ease;
+}
+
+/* --- HOVER EFFECTS --- */
+.agro-minimal__hover-bg {
+  position: absolute;
+  top: 0;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: 0;
+  background-color: #f4faf4;
+  z-index: 1;
+  transition: height 0.3s ease;
+}
+
+.agro-minimal__row:hover .agro-minimal__hover-bg {
+  height: 100%;
+}
+
+.agro-minimal__row:hover .agro-minimal__row-title {
+  transform: translateX(10px);
+  color: #4baf47;
+}
+
+.agro-minimal__row:hover .agro-minimal__row-desc {
+  color: #24231d;
+  opacity: 1;
+}
+
+/* --- RESPONSIVE FIXES --- */
+
+/* TABLET BREAKPOINT: Switch to stack earlier to avoid squashing */
+@media (max-width: 1100px) {
+  .agro-minimal {
+    padding: 80px 0;
+  }
+
+  .agro-minimal__container {
+    flex-direction: column;
+    gap: 50px;
+    align-items: center; /* Center the header */
+  }
+
+  .agro-minimal__left {
+    position: relative; /* Sticky is disabled on tablet/mobile */
+    top: 0;
+    flex: 0 0 auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .agro-minimal__line {
+    margin: 20px auto 0;
+  }
+
+  .agro-minimal__main-title {
+    font-size: 3rem;
+  }
+
+  .agro-minimal__right {
+    width: 100%;
+  }
+
+  .agro-minimal__row-desc {
+    max-width: 100%; /* Allow text to fill width */
+  }
+}
+
+/* MOBILE BREAKPOINT */
+@media (max-width: 600px) {
+  .agro-minimal {
+    padding: 60px 0;
+  }
+
+  .agro-minimal__container {
+    padding: 0 20px;
+  }
+
+  .agro-minimal__main-title {
+    font-size: 2.2rem;
+  }
+
+  .agro-minimal__row-content {
+    gap: 15px;
+  }
+
+  .agro-minimal__row-title {
+    font-size: 1.3rem;
+  }
+
+  .agro-minimal__row-desc {
+    font-size: 0.95rem;
+  }
+}

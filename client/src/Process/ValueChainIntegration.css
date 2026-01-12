@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.value-chain-section {
+  padding: 60px 20px;
+  background-color: #f8fafc;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.value-chain-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Compact Header --- */
+.value-chain-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.value-chain-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.value-chain-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Compact Grid Layout --- */
+.value-chain-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.value-chain-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.value-chain-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  border-color: #10b981;
+}
+
+.value-chain-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.value-chain-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  color: #10b981;
+  margin-bottom: 12px;
+}
+
+.value-chain-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.value-chain-card li {
+  font-size: 0.85rem;
+  color: #475569;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  padding-left: 20px; /* Increased slightly for the dot */
+  position: relative;
+}
+
+/* REPLACED ARROW WITH DOT */
+.value-chain-card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px; /* Adjusts vertical position to center with text */
+  width: 6px;
+  height: 6px;
+  background-color: #10b981;
+  border-radius: 50%; /* Makes it a perfect circle */
+}
+
+/* --- Compact CTA --- */
+.value-chain-cta {
+  text-align: center;
+}
+
+.value-chain-contact-btn {
+  background: #0f172a;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.value-chain-contact-btn:hover {
+  background: #10b981;
+}
+
+@media (max-width: 600px) {
+  .value-chain-grid {
+    grid-template-columns: 1fr;
+  }
+}

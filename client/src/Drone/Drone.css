@@ -1,0 +1,11 @@
+/* Shared background for all sections except the hero */
+.drone-bg {
+  background: #f7f4ee;
+  background-image: url("https://images.squarespace-cdn.com/content/v1/6447eeb38baf0c31deed937f/77323125-ad94-45d4-ba47-dadeb4f56398/nyc+day+spa%2C+day+spa+in+nyc%2C+spa+day+nyc%2C+nyc+spa+day%2C+nyc+spa+days%2C+spa+day+in+nyc%2C+day+spa+new+york+city%2C+day+spa+nyc%2C+day+spas+in+nyc%2C+day+spas+nyc+best.jpg?format=750w");
+
+  background-size: cover;
+  background-position: center;
+  background-color: #f7f4ee;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

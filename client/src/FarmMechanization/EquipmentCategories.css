@@ -1,0 +1,148 @@
+/* --- Root Section --- */
+.equip-section {
+  padding: 120px 0;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  counter-reset: section-counter;
+}
+
+.equip-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.equip-title {
+  font-size: clamp(24px, 4vw, 38px);
+  color: #0b3d2e;
+  font-weight: 900;
+  margin-bottom: 100px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* --- Category Layout (The Row System) --- */
+.equip-category {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 50px;
+  padding: 60px 0;
+  border-top: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.equip-category:last-of-type {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Section Numbering (Automatic) */
+.equip-category h3 {
+  font-size: 1.5rem;
+  color: #0b3d2e;
+  font-weight: 700;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.equip-category h3::before {
+  counter-increment: section-counter;
+  content: "0" counter(section-counter) ". ";
+  font-family: monospace;
+  color: #2ca01c;
+  font-size: 1rem;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* --- The Specification Grid --- */
+.equip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 60px 40px;
+}
+
+.equip-card {
+  /* This is no longer a 'card', just a content block */
+  display: flex;
+  flex-direction: column;
+}
+
+.equip-card h4 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  color: #1a1a1a;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #2ca01c;
+  width: fit-content;
+}
+
+/* Specification List Styling */
+.equip-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.equip-card li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+}
+
+.equip-card li strong {
+  font-weight: 600;
+  color: #0b3d2e;
+  margin-right: 8px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  color: #718096; /* Muted label color */
+}
+
+/* --- Special Link Styling --- */
+.highlight-card {
+  background-color: #f0fff4; /* Extremely light green tint */
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.equip-link {
+  color: #2ca01c;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-top: 10px;
+  display: inline-block;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.equip-link:hover {
+  border-bottom: 1px solid #2ca01c;
+}
+
+/* --- Responsive Layout --- */
+@media (max-width: 900px) {
+  .equip-category {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 40px 0;
+  }
+
+  .equip-category h3 {
+    position: static;
+  }
+}
+
+@media (max-width: 600px) {
+  .equip-grid {
+    grid-template-columns: 1fr;
+  }
+}

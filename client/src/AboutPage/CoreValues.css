@@ -1,0 +1,154 @@
+/* --- SECTION BASE --- */
+.af-core-values {
+    padding: 80px 0;
+    background-color: #f9fffeeb;
+    position: relative;
+    overflow: hidden;
+}
+
+.af-core-values__container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+/* --- HEADER --- */
+.af-core-values__header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.af-subtitle {
+    color: #4baf47;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    display: block;
+    text-transform: uppercase;
+}
+
+.af-core-values__title {
+    font-size: clamp(1.8rem, 4vw, 2.3rem);
+    color: #24231d;
+    margin: 8px 0;
+    font-weight: 800;
+}
+
+.af-title-line {
+    width: 50px;
+    height: 3px;
+    background: #eec044;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+/* --- GRID --- */
+.af-core-values__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.af-core-values__card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px 25px;
+    transition: all 0.4s ease;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+    border: 1.2px solid rgba(0, 0, 0, 0.089);
+
+    flex: 0 1 calc(30% - 20px);
+    min-width: 280px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+}
+
+.af-core-values__card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(75, 175, 71, 0.1);
+}
+
+.af-icon-wrapper {
+    width: 55px;
+    height: 55px;
+    background: #fff;
+    color: var(--brand-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.af-core-values__card h3 {
+    font-size: 1.2rem;
+    color: #24231d;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.af-core-values__card p {
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* --- THE NUMBER ANIMATION --- */
+.af-card-number {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.068);
+    /* Slightly visible base */
+    transition: color 0.4s ease, transform 0.4s ease;
+    /* Smooth transition */
+    user-select: none;
+}
+
+/* On hover, make the number darker and slightly larger */
+.af-core-values__card:hover .af-card-number {
+    color: rgba(0, 0, 0, 0.363);
+    /* Darkened on hover */
+    transform: scale(1.1);
+}
+
+/* --- DECORATIVE --- */
+.af-shape-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: url("https://etorisoft.com/wp/farmus/wp-content/uploads/2024/01/img-shap-right.png") no-repeat;
+    background-size: contain;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 992px) {
+    .af-core-values__card {
+        flex: 0 1 calc(45% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .af-core-values {
+        padding: 50px 0;
+    }
+
+    .af-core-values__card {
+        flex: 1 1 100%;
+        max-width: 100%;
+        min-width: 100%;
+    }
+}

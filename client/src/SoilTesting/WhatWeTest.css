@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.test-section {
+  padding: 60px 0; /* Reduced from 100px for better mobile flow */
+  background-color: #fcfdfd;
+  font-family: 'Inter', sans-serif;
+  color: #2d3436;
+}
+
+.test-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --- Responsive Header --- */
+.test-header {
+  text-align: center;
+  margin-bottom: 40px; /* Reduced for mobile */
+}
+
+.test-header h2 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: -0.04em;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.test-header p {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #636e72;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* --- The Modern Grid --- */
+.test-grid {
+  display: grid;
+  /* Use 1fr for mobile, and minmax for larger screens */
+  grid-template-columns: 1fr; 
+  gap: 20px;
+}
+
+.test-category-box {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 16px; /* Slightly smaller radius for mobile */
+  padding: 24px; /* More compact for mobile */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+}
+
+.test-category-box h3 {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #2ca01c;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.test-category-box h3::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #edf2f7;
+}
+
+/* --- Test Items --- */
+.test-entry {
+  margin-bottom: 20px;
+}
+
+.test-entry h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.test-entry p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #636e72;
+  margin-bottom: 10px;
+}
+
+.test-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #4a4a4a;
+  background: #f1f3f5;
+  padding: 4px 10px;
+  border-radius: 100px;
+}
+
+/* --- Footer & Button --- */
+.test-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.test-btn {
+  display: inline-block;
+  width: 100%; /* Full width on mobile */
+  max-width: 300px;
+  padding: 16px 30px;
+  background: #1a1a1a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+/* --- Media Queries --- */
+
+/* Tablets and Desktops */
+@media (min-width: 768px) {
+  .test-section {
+    padding: 100px 0;
+  }
+
+  .test-grid {
+    /* Prevents boxes from getting too narrow but allows 2 or 3 columns */
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+    gap: 30px;
+  }
+
+  .test-category-box {
+    padding: 35px;
+    border-radius: 20px;
+  }
+
+  .test-category-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(44, 160, 28, 0.08);
+    border-color: #2ca01c;
+  }
+
+  .test-category-box:hover .test-tag {
+    background: #2ca01c;
+    color: #ffffff;
+  }
+
+  .test-btn {
+    width: auto;
+  }
+
+  .test-btn:hover {
+    background: #2ca01c;
+    padding: 16px 50px;
+  }
+}
+
+/* Specific fix for small phones */
+@media (max-width: 380px) {
+  .test-container {
+    padding: 0 15px;
+  }
+  
+  .test-category-box {
+    padding: 20px;
+  }
+
+  .test-entry h4 {
+    font-size: 1rem;
+  }
+}

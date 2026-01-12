@@ -1,0 +1,214 @@
+/* --- Root Section --- */
+.rpc-section {
+  padding: 100px 20px;
+  background-color: #f0f7f4; /* Soft mint background */
+  font-family: 'Inter', sans-serif;
+}
+
+.rpc-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.rpc-title {
+  text-align: center;
+  font-size: clamp(26px, 4vw, 38px);
+  color: #0b3d2e;
+  font-weight: 800;
+  margin-bottom: 60px;
+  letter-spacing: -1px;
+}
+
+/* --- The Steps Container --- */
+/* We remove the standard card look and use a "Floating Panel" style */
+.rpc-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 30px;
+  margin-bottom: 30px;
+  box-shadow: 20px 20px 60px #d9e2df, -20px -20px 60px #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.rpc-card h3 {
+  font-size: 1.2rem;
+  color: #2ca01c;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Input Styling --- */
+.rpc-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+select {
+  padding: 15px;
+  border-radius: 12px;
+  border: 2px solid #eef2f1;
+  background-color: #f8faf9;
+  font-size: 1rem;
+  color: #0b3d2e;
+  outline: none;
+  transition: border-color 0.3s ease;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #2ca01c;
+}
+
+/* --- Custom Sliders --- */
+.rpc-slider {
+  margin-bottom: 35px;
+}
+
+.rpc-slider label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #4a5568;
+  font-weight: 500;
+}
+
+.rpc-slider label strong {
+  color: #2ca01c;
+  font-size: 1.4rem;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 8px;
+  background: #eef2f1;
+  border-radius: 5px;
+  outline: none;
+  accent-color: #2ca01c; /* Modern way to style range handles */
+}
+
+/* --- Options Checkboxes --- */
+.rpc-options {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.rpc-options label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+/* --- Results Section (The Highlight) --- */
+.rpc-result {
+  background: linear-gradient(145deg, #ffffff, #f0f7f4);
+}
+
+.rpc-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.rpc-box {
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid #eef2f1;
+}
+
+.rpc-box h4 {
+  font-size: 0.9rem;
+  color: #718096;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.rpc-box ul {
+  list-style: none;
+  padding: 0;
+}
+
+.rpc-box li {
+  padding: 12px 0;
+  border-bottom: 1px solid #edf2f0;
+  font-size: 0.95rem;
+  color: #2d3748;
+  display: flex;
+  justify-content: space-between;
+}
+
+.rpc-box li strong {
+  color: #0b3d2e;
+  font-weight: 700;
+}
+
+.rpc-benefit {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #2ca01c;
+  line-height: 1.6;
+}
+
+/* --- The Verdict Banner --- */
+.rpc-verdict {
+  background: #0b3d2e;
+  color: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(11, 61, 46, 0.2);
+}
+
+.rpc-verdict span {
+  color: #7cffc4;
+  font-weight: 800;
+  font-size: 1.6rem;
+}
+
+/* --- Download Button --- */
+.rpc-download {
+  width: 100%;
+  padding: 20px;
+  background-color: transparent;
+  border: 2px dashed #2ca01c;
+  color: #2ca01c;
+  font-weight: 700;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.rpc-download:hover {
+  background-color: #2ca01c;
+  color: #ffffff;
+  border-style: solid;
+}
+
+/* --- Responsive --- */
+@media (max-width: 850px) {
+  .rpc-row, .rpc-compare {
+    grid-template-columns: 1fr;
+  }
+  
+  .rpc-options {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .rpc-card {
+    padding: 25px;
+  }
+}

@@ -1,0 +1,214 @@
+/* --- Section Core --- */
+.env-impact {
+  padding: 100px 5%;
+  color: #1a1a1a;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.env-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.env-impact h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b3d2e;
+  margin-bottom: 60px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.env-impact h2::before {
+  content: "";
+  width: 40px;
+  height: 2px;
+  background: #2ca01c;
+}
+
+/* --- Metrics Dashboard (Technical Grid) --- */
+.impact-dashboard {
+  margin-bottom: 120px;
+}
+
+.impact-dashboard h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+}
+
+.metric-card {
+  padding: 40px 25px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.metric-card:hover {
+  background: #f8fafc;
+  box-shadow: inset 0 0 20px rgba(0,0,0,0.02);
+}
+
+.metric-value {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  letter-spacing: -1px;
+  font-feature-settings: "tnum"; 
+}
+
+.metric-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+}
+
+.metric-card small {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #2ca01c;
+  background: rgba(44, 160, 28, 0.08);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+/* --- Carbon Credit Program (Visual Process Step-Flow) --- */
+.carbon-program {
+  background: #f8faf9;
+  padding: 60px;
+  border-radius: 32px;
+  border: 1px solid #eef2f0;
+}
+
+.carbon-program h3 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0b3d2e;
+  margin-bottom: 50px;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  counter-reset: step-counter;
+  position: relative;
+}
+
+/* Connecting Line between steps */
+.program-grid::before {
+  content: "";
+  position: absolute;
+  top: 35px;
+  left: 50px;
+  right: 50px;
+  height: 1px;
+  background: #d1d5db;
+  z-index: 0;
+}
+
+.program-card {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Step Number Badge */
+.program-card::before {
+  content: counter(step-counter);
+  counter-increment: step-counter;
+  width: 45px;
+  height: 45px;
+  background: #ffffff;
+  border: 2px solid #2ca01c;
+  color: #2ca01c;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 800;
+  margin-bottom: 25px;
+  transition: all 0.3s ease;
+}
+
+.program-card:hover::before {
+  background: #2ca01c;
+  color: #ffffff;
+}
+
+.program-card h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.program-card p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  padding-right: 15px;
+}
+
+/* --- RESPONSIVE FIXES --- */
+
+@media (max-width: 1024px) {
+  .metrics-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .program-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+  .program-grid::before {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .env-impact {
+    padding: 60px 20px;
+  }
+  
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .carbon-program {
+    padding: 40px 25px;
+  }
+
+  .program-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card::before {
+    margin-bottom: 15px;
+  }
+  
+  .env-impact h2 {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&family=Plus+Jakarta+Sans:wght@400;600&display=swap');
+
+/* Main Section */
+.cc-section {
+  padding: clamp(60px, 10vw, 100px) 0; /* Fluid vertical padding */
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #232f34;
+  overflow-x: hidden; /* Prevent horizontal scroll on small devices */
+}
+
+.cc-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Styling */
+.cc-header {
+  text-align: center;
+  margin-bottom: clamp(40px, 8vw, 70px);
+}
+
+.cc-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #f0fdf4;
+  color: #166534;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border: 1px solid #dcfce7;
+  margin-bottom: 15px;
+}
+
+.cc-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* Responsive font sizing */
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.cc-header h2 span {
+  color: #10b981;
+}
+
+.cc-header p {
+  max-width: 650px;
+  margin: 15px auto 0;
+  color: #64748b;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  line-height: 1.6;
+}
+
+/* Grid System */
+.cc-grid {
+  display: grid;
+  /* Default: 4 columns for Desktop/Laptops */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+/* Card Design */
+.cc-card {
+  background: #ffffff;
+  border-radius: 30px;
+  padding: clamp(25px, 5vw, 40px) 20px;
+  border: 1px solid #f1f5f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures cards in a row are same height */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cc-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 60px -15px rgba(15, 23, 42, 0.1);
+  border-color: #10b981;
+}
+
+/* Perfect Circular Image with Icon Tag */
+.cc-circle-frame {
+  position: relative;
+  width: clamp(120px, 15vw, 160px);
+  height: clamp(120px, 15vw, 160px);
+  margin: 0 auto 25px;
+  flex-shrink: 0;
+}
+
+.cc-circle-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.cc-card-icon {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #10b981;
+  color: white;
+  width: clamp(30px, 4vw, 38px);
+  height: clamp(30px, 4vw, 38px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+.cc-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  margin-bottom: 15px;
+  color: #0f172a;
+}
+
+/* List Styling */
+.cc-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Pushes button/content to align bottom */
+}
+
+.cc-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #475569;
+  text-align: left;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.cc-list li svg {
+  color: #10b981;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* IPM Section Overlay */
+.cc-ipm-box {
+  margin-top: clamp(40px, 10vw, 80px);
+  background: linear-gradient(135deg, #064e3b 0%, #065f46 100%);
+  border-radius: clamp(24px, 5vw, 40px);
+  padding: clamp(30px, 8vw, 60px) 20px;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.cc-ipm-box::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.cc-ipm-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 1.8rem);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.cc-ipm-grid {
+  display: grid;
+  /* Responsive grid for internal items */
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.ipm-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cc-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 32px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+  width: fit-content;
+}
+
+.cc-btn:hover {
+  background: white;
+  color: #064e3b;
+  transform: translateY(-3px);
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Laptops / Smaller Desktops */
+@media (max-width: 1200px) {
+  .cc-grid {
+    gap: 20px;
+  }
+}
+
+/* Tablets (Portrait & Landscape): 2 cards per row */
+@media (max-width: 1024px) {
+  .cc-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+}
+
+/* Large Mobile / Small Tablets */
+@media (max-width: 768px) {
+  .cc-section {
+    padding: 60px 0;
+  }
+  
+  .cc-ipm-grid {
+    grid-template-columns: repeat(2, 1fr); /* Stay 2x2 on mobile for symmetry */
+  }
+}
+
+/* Small Mobile: 1 card per row */
+@media (max-width: 500px) {
+  .cc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cc-ipm-grid {
+    grid-template-columns: 1fr; /* Stack IPM items on very small screens */
+  }
+
+  .cc-card {
+    padding: 30px 20px;
+  }
+
+  .cc-btn {
+    width: 100%; /* Full width button on mobile */
+  }
+}

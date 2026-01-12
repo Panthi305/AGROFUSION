@@ -1,0 +1,199 @@
+:root {
+  --primary-dark: #2c3e50;
+  --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.af-ecosystem {
+  padding-top: 60px;
+  /* padding: 60px 20px; */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.af-ecosystem__container {
+  max-width: 1280px;
+  width: 100%;
+}
+
+.af-ecosystem__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.af-ecosystem__title {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--primary-dark);
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.af-ecosystem__description {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Layout Engine */
+.af-ecosystem__layout {
+  display: grid;
+  grid-template-columns: 1fr 450px 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Side Columns */
+.af-ecosystem__side {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Cards */
+.af-ecosystem__card {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  border-radius: 12px;
+  background: white;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+}
+
+.af-ecosystem__card.active,
+.af-ecosystem__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  border-color: #eee;
+}
+
+.af-ecosystem__card-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.af-ecosystem__card-info h4 {
+  margin: 0 0 5px 0;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--primary-dark);
+}
+
+.af-ecosystem__card-info p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.4;
+  /* Collapsed by default for a clean look */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.af-ecosystem__card.active p,
+.af-ecosystem__card:hover p {
+  max-height: 80px;
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* Visual SVG Area */
+.af-ecosystem__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.af-ecosystem__svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+
+.af-ecosystem__path {
+  transition: var(--transition-smooth);
+  stroke: #fff;
+  stroke-width: 1.5;
+  cursor: pointer;
+}
+
+.af-ecosystem__group:hover .af-ecosystem__path,
+.af-ecosystem__group.active .af-ecosystem__path {
+  transform: scale(1.03);
+  transform-origin: center;
+  filter: brightness(1.1);
+}
+
+.af-ecosystem__center-text {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--primary-dark);
+  pointer-events: none;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.af-ecosystem__center-text.visible {
+  opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE OVERRIDES
+   ============================================ */
+
+/* Medium Laptops */
+@media (max-width: 1200px) {
+  .af-ecosystem__layout {
+    grid-template-columns: 1fr 350px 1fr;
+    gap: 20px;
+  }
+}
+
+/* Tablets (Stacking) */
+@media (max-width: 992px) {
+  .af-ecosystem__layout {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .af-ecosystem__visual {
+    order: -1;
+    /* Chart at top */
+    width: 300px;
+    margin: 0 auto 30px;
+  }
+
+  .af-ecosystem__side {
+    gap: 15px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  .af-ecosystem__card-info p {
+    display: block;
+    /* Always show description on small phones to avoid jumpy layout */
+    max-height: none;
+    opacity: 1;
+    margin-top: 5px;
+  }
+
+  .af-ecosystem__visual {
+    width: 260px;
+  }
+}

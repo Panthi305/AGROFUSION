@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+.fp-fert-blueprint-root {
+  --green-main: #1a4d2e;
+  --green-bright: #4caf50;
+  --slate-900: #0f172a;
+  --slate-400: #94a3b8;
+  --border-light: #f1f5f9;
+
+  padding: 100px 24px;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--slate-900);
+  min-width: 0;
+  /* Prevents unwanted horizontal overflow */
+}
+
+.fp-blueprint-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Header UI */
+.fp-blueprint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 80px;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.fp-blueprint-header h1 {
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 800;
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -1.5px;
+}
+
+.fp-blueprint-header h1 span {
+  color: var(--slate-400);
+  font-weight: 400;
+}
+
+.fp-header-right p {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 420px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Grid UI: Responsive 2x2 → 1 column on mobile */
+.fp-blueprint-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+/* Card Styling */
+.fp-blueprint-card {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 0px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* overflow: hidden; */
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+  height: 100%;
+  /* Ensures equal height in grid */
+}
+
+.fp-blueprint-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px circle at top left,
+      rgba(50, 131, 53, 0.08),
+      transparent 40%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.fp-blueprint-card:hover::after {
+  opacity: 1;
+}
+
+.fp-blueprint-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(76, 175, 80, 0.25);
+  box-shadow:
+    0 18px 40px rgba(15, 23, 42, 0.08),
+    0 0 0 1px rgba(76, 175, 80, 0.08);
+}
+
+.fp-blueprint-card:hover .fp-icon-box {
+  color: var(--green-bright);
+  transform: translateY(-2px) scale(1.1);
+}
+
+/* Card Content */
+.fp-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+.fp-icon-box {
+  color: var(--green-main);
+  transition: all 0.3s ease;
+}
+
+.fp-tag-line {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  letter-spacing: 1.2px;
+  white-space: nowrap;
+}
+
+.fp-blueprint-card h3 {
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px 0;
+  transition: color 0.3s ease;
+}
+
+.fp-blueprint-card:hover h3 {
+  color: var(--green-main);
+}
+
+.fp-section-desc {
+  font-size: 14.5px;
+  color: #64748b;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  flex-grow: 1;
+}
+
+.fp-technical-specs {
+  border-top: 1px solid var(--border-light);
+  padding-top: 25px;
+}
+
+.fp-spec-row {
+  margin-bottom: 20px;
+}
+
+.fp-spec-row:last-child {
+  margin-bottom: 0;
+}
+
+.fp-spec-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--slate-400);
+  margin-bottom: 8px;
+  letter-spacing: 1.2px;
+}
+
+.fp-spec-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fp-mini-pill {
+  font-size: 12px;
+  font-weight: 600;
+  background: #f8fafc;
+  padding: 5px 11px;
+  border-radius: 6px;
+  color: var(--slate-900);
+}
+
+/* Strategy Banner */
+.fp-strategy-banner {
+  margin-top: 80px;
+  background: var(--green-main);
+  border-radius: 20px;
+  padding: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  gap: 40px;
+}
+
+.fp-strategy-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1;
+}
+
+.fp-strategy-icon {
+  flex-shrink: 0;
+}
+
+.fp-strategy-text h2 {
+  font-size: 26px;
+  margin: 0 0 10px 0;
+  font-weight: 700;
+}
+
+.fp-strategy-text p {
+  margin: 0;
+  opacity: 0.9;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.fp-strategy-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.fp-action-pill {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 12px 22px;
+  border-radius: 50px;
+  font-size: 13.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Large Tablets */
+@media (max-width: 1024px) {
+  .fp-blueprint-header {
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+
+  .fp-blueprint-grid {
+    gap: 28px;
+  }
+
+  .fp-blueprint-card {
+    padding: 32px;
+  }
+
+  .fp-strategy-banner {
+    padding: 40px;
+    gap: 30px;
+  }
+
+  .fp-strategy-text h2 {
+    font-size: 24px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .fp-fert-blueprint-root {
+    padding: 80px 20px;
+  }
+
+  .fp-blueprint-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 50px;
+  }
+
+  .fp-header-right p {
+    max-width: none;
+    font-size: 16px;
+  }
+
+  .fp-blueprint-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .fp-blueprint-card {
+    padding: 36px 28px;
+  }
+
+  .fp-card-top {
+    margin-bottom: 24px;
+  }
+
+  .fp-section-desc {
+    margin-bottom: 24px;
+  }
+
+  .fp-strategy-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 30px;
+    gap: 32px;
+  }
+
+  .fp-strategy-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .fp-strategy-actions {
+    width: 100%;
+    align-items: center;
+  }
+
+  .fp-action-pill {
+    justify-content: center;
+    width: fit-content;
+    min-width: 220px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .fp-fert-blueprint-root {
+    padding: 60px 16px;
+  }
+
+  .fp-blueprint-header {
+    margin-bottom: 40px;
+  }
+
+  .fp-blueprint-header h1 {
+    font-size: clamp(32px, 9vw, 40px);
+    letter-spacing: -1.2px;
+  }
+
+  .fp-header-right p {
+    font-size: 15.5px;
+  }
+
+  .fp-blueprint-card {
+    padding: 28px 24px;
+  }
+
+  .fp-blueprint-card h3 {
+    font-size: 22px;
+  }
+
+  .fp-section-desc {
+    font-size: 14px;
+  }
+
+  .fp-mini-pill {
+    font-size: 11.5px;
+    padding: 4px 9px;
+  }
+
+  .fp-strategy-banner {
+    padding: 36px 24px;
+    border-radius: 16px;
+    margin-top: 60px;
+  }
+
+  .fp-strategy-text h2 {
+    font-size: 22px;
+  }
+
+  .fp-strategy-text p {
+    font-size: 15px;
+  }
+
+  .fp-action-pill {
+    font-size: 13px;
+    padding: 11px 20px;
+    min-width: auto;
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* Extra small fix for very narrow screens */
+@media (max-width: 360px) {
+  .fp-card-top {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .fp-tag-line {
+    align-self: flex-end;
+  }
+}

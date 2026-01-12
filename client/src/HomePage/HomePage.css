@@ -1,0 +1,35 @@
+.hhome-bg {
+    position: relative;
+    /* IMAGE */
+    background-image: url("./../assets/HomePage/p2.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* IMPORTANT */
+    background-attachment: fixed;
+
+    /* padding: 140px 0; */
+}
+
+/* OVERLAY */
+.hhome-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* LIGHT overlay so image is visible */
+    background-color: rgba(251, 243, 231, 0.23);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.hhome-bg>* {
+    position: relative;
+    z-index: 2;
+}

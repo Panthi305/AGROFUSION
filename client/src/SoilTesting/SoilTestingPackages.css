@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&family=Inter:wght@400;500;600&display=swap');
+
+.soil-packages {
+  padding: 100px 0;
+  background-color: #fdfdfb;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  position: relative;
+}
+
+.soil-packages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Header Section --- */
+.soil-packages-header {
+  margin-bottom: 60px;
+  border-left: 4px solid #1a1a1a;
+  padding-left: 30px;
+}
+
+.soil-packages-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+}
+
+.soil-packages-subtitle {
+  font-size: 1rem;
+  color: #555;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+/* --- The Blueprint Slate Grid --- */
+.soil-packages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 2px;
+  box-shadow: 30px 30px 60px rgba(0,0,0,0.02);
+}
+
+.soil-package-card {
+  padding: 60px 45px;
+  border-right: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s ease;
+}
+
+.soil-package-card:last-child {
+  border-right: none;
+}
+
+.soil-package-card:hover {
+  background: #fafafa;
+  z-index: 2;
+}
+
+.soil-package-card.featured {
+  background: #f7f8f4;
+  border-left: 1px solid #e2e2e2;
+  border-right: 1px solid #e2e2e2;
+}
+
+.soil-package-card h3 {
+  font-family: 'Fraunces', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.soil-package-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #888;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --- Compact Feature List with Dots --- */
+.soil-package-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 45px 0;
+  flex-grow: 1;
+}
+
+.soil-package-list li {
+  font-size: 0.9rem;
+  padding: 6px 0; /* Significantly reduced spacing */
+  color: #444;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: none; /* Removed the lines */
+}
+
+/* Custom Bullet Dot */
+.soil-package-list li::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: #2ca01c;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* --- Action Button --- */
+.soil-package-btn {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.soil-package-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.soil-package-btn.primary {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+/* --- Bottom Specialized Grid --- */
+.soil-special-packages {
+  margin-top: 80px;
+  padding: 60px 40px;
+  background: #fff;
+  border: 1px solid #f0f0f0;
+}
+
+.soil-special-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.soil-special-card h4 {
+  font-weight: 700;
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #2ca01c;
+}
+
+.soil-special-card p {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .soil-packages-grid, .soil-special-grid { grid-template-columns: 1fr; }
+  .soil-package-card { border-right: none; border-bottom: 1px solid #f0f0f0; padding: 40px; }
+}

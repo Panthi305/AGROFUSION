@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap');
+
+.input-hero-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #ffffff;
+}
+
+/* --- Parallax & Background --- */
+.input-hero-parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Desktop Parallax */
+  z-index: -1;
+}
+
+.input-hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+}
+
+.input-hero-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 120px 24px 60px;
+  z-index: 2;
+}
+
+/* --- Content Scaling --- */
+.input-hero-content {
+  max-width: 800px;
+  margin-bottom: 50px;
+}
+
+.input-hero-tag {
+  color: #4ade80; /* Brighter green for dark BG */
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.input-hero-content h1 {
+  /* Adjusted heading size: Smaller and more readable */
+  font-size: clamp(2rem, 5vw, 3.2rem); 
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+}
+
+.input-hero-content p {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+/* --- Responsive Stats Bar --- */
+.input-hero-stats-bar {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  width: fit-content;
+}
+
+.input-stat-card {
+  padding: 0 30px;
+}
+
+.input-stat-value {
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: #4ade80;
+}
+
+.input-stat-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- Actions --- */
+.input-hero-actions {
+  display: flex;
+  gap: 16px;
+}
+
+.input-hero-primary, .input-hero-secondary {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: 0.3s ease;
+  text-align: center;
+}
+
+.input-hero-primary {
+  background: #2ca01c;
+  color: white;
+}
+
+.input-hero-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+/* --- Responsive Breakdown --- */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .input-hero-container {
+    padding-top: 100px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .input-hero-parallax {
+    background-attachment: scroll; /* Fixes mobile glitching */
+  }
+
+  .input-hero-container {
+    text-align: center;
+    padding-top: 80px;
+  }
+
+  .input-hero-content {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .input-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .input-hero-stats-bar {
+    grid-template-columns: 1fr; /* Stack vertically on mobile */
+    width: 100%;
+    gap: 20px;
+    padding: 30px 20px;
+  }
+
+  .input-divider {
+    width: 60%;
+    height: 1px;
+    justify-self: center;
+  }
+
+  .input-stat-card {
+    padding: 0;
+  }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+  .input-hero-content h1 {
+    font-size: 1.8rem;
+  }
+}

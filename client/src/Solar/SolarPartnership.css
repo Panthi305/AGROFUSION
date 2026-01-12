@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.solar-partnership-section {
+  padding: clamp(60px, 8vw, 100px) 5%;
+  background-color: #fcfcfd;
+  color: #1e293b;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden;
+}
+
+.solar-partnership-container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* --- Header Section --- */
+.solar-partnership-header {
+  margin-bottom: clamp(30px, 5vw, 50px);
+}
+
+.accent-text {
+  color: #10b981;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.solar-partnership-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4.5vw, 3rem);
+  max-width: 700px;
+  line-height: 1.15;
+  color: #0f172a;
+}
+
+/* --- Layout Grid --- */
+.solar-partnership-main {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(25px, 4vw, 50px);
+  align-items: stretch; /* Cards and Image match height on desktop */
+}
+
+/* --- Image Canvas --- */
+.solar-image-canvas {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 500px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+  background-color: #e2e8f0;
+}
+
+.solar-image-canvas img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 1.2s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.solar-image-canvas:hover img {
+  transform: scale(1.05);
+}
+
+.image-glass-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.image-glass-overlay p {
+  color: #334155;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* --- Data Grid Cards --- */
+.solar-data-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+}
+
+.data-card {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  border: 1px solid #f1f5f9;
+  transition: all 0.4s ease;
+}
+
+.data-card:hover {
+  transform: translateX(10px);
+  border-color: #10b981;
+  box-shadow: 0 15px 30px -10px rgba(16, 185, 129, 0.1);
+}
+
+.card-header {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #10b981;
+}
+
+.data-card ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.data-card li {
+  font-size: 0.9rem;
+  color: #64748b;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.4;
+}
+
+.data-card li::before {
+  content: "•";
+  color: #10b981;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet & Smaller Desktops */
+@media (max-width: 1024px) {
+  .solar-partnership-main {
+    grid-template-columns: 1fr;
+  }
+  
+  .solar-partnership-header {
+    text-align: center;
+  }
+  
+  .solar-partnership-header h2 {
+    margin: 0 auto;
+  }
+
+  .solar-image-canvas {
+    min-height: 350px;
+    height: 400px;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .solar-partnership-section {
+    padding: 60px 5%;
+  }
+
+  .data-card:hover {
+    transform: translateY(-5px); /* Slide up instead of right on mobile */
+  }
+
+  .data-card ul {
+    grid-template-columns: 1fr; /* Stack list items on small phones */
+  }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+  .solar-image-canvas {
+    height: 300px;
+  }
+
+  .image-glass-overlay {
+    padding: 16px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .image-glass-overlay p {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+.perspective-section {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow: hidden; /* Prevents unwanted horizontal scroll on mobile */
+}
+
+.perspective-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.perspective-header {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.perspective-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+  color: #0f172a;
+  letter-spacing: -1px;
+}
+
+.h-line {
+  width: 50px;
+  height: 4px;
+  background: #10b981;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* --- Responsive Track --- */
+.horizontal-track {
+  display: flex;
+  flex-wrap: nowrap; /* Default for Desktop */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.step-block {
+  flex: 1; /* Equal width cards */
+  position: relative;
+  min-height: 180px;
+  padding: 25px 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  /* Scroll Animation Starts Hidden */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Reveal class for JS/Intersection Observer */
+.step-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.step-block:hover {
+  transform: translateY(-8px);
+  border-color: #10b981;
+  box-shadow: 0 15px 30px rgba(16, 185, 129, 0.1);
+}
+
+.block-content {
+  position: relative;
+  z-index: 2;
+}
+
+.step-id {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #ecfdf5;
+  color: #10b981;
+  border-radius: 50%;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.step-block:hover .step-id {
+  background: #10b981;
+  color: #ffffff;
+}
+
+.block-content h3 {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.1rem;
+  color: #0f172a;
+  vertical-align: middle;
+}
+
+.block-content p {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin-top: 15px;
+}
+
+/* --- Media Queries for All Devices --- */
+
+/* Large Tablets & Laptops (Break into 3x2 Grid) */
+@media (max-width: 1200px) {
+  .horizontal-track {
+    flex-wrap: wrap; 
+  }
+  .step-block {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row */
+    min-width: 250px;
+  }
+}
+
+/* Small Tablets (Break into 2x3 Grid) */
+@media (max-width: 850px) {
+  .perspective-section { padding: 60px 5%; }
+  .step-block {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+  }
+}
+
+/* Mobile Phones (Single Column Stack) */
+@media (max-width: 550px) {
+  .perspective-header h2 { font-size: 1.8rem; }
+  .horizontal-track {
+    flex-direction: column; /* Stack vertically */
+    gap: 15px;
+  }
+  .step-block {
+    width: 100%;
+    min-height: auto; /* Let content dictate height */
+    padding: 20px;
+  }
+  .block-content h3 {
+    font-size: 1rem;
+  }
+}

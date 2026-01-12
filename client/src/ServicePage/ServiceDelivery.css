@@ -1,0 +1,212 @@
+.delivery-roadmap {
+  padding: 80px 0;
+  background-color: #fdfdfd;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden;
+}
+
+.roadmap-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.roadmap-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.roadmap-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.roadmap-subtitle {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* GRID SETUP */
+.roadmap-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.roadmap-item {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+}
+
+/* COMPACT CARD STYLING */
+.roadmap-card {
+  background: #ffffff;
+  padding: 25px 15px; /* Reduced padding for smaller height */
+  border-radius: 20px;
+  border: 2px dashed #e0e0e0; 
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.roadmap-card:hover {
+  transform: translateY(-8px); /* Subtle lift */
+  border: 2px solid #4baf47; 
+  border-style: solid;
+  box-shadow: 0 15px 35px rgba(75, 175, 71, 0.08);
+}
+
+.roadmap-number {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  font-size: 2.5rem; /* Slightly smaller number */
+  font-weight: 900;
+  color: rgba(0,0,0,0.03);
+  z-index: 0;
+}
+
+.roadmap-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  background: #f0f9f0;
+  color: #4baf47;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s;
+}
+
+.roadmap-card:hover .roadmap-icon-wrapper {
+  background: #4baf47;
+  color: white;
+  /* Icon tilt removed as requested */
+}
+
+.roadmap-tier-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.roadmap-location {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #4baf47;
+  margin-bottom: 6px;
+}
+
+.roadmap-desc {
+  font-size: 0.8rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* WAVY ARROW STYLING */
+.roadmap-wavy-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  flex-shrink: 0;
+  width: 40px; /* Reduced size for better fit */
+}
+
+/* LIGHT THEME FOOTER */
+.delivery-footer-box {
+  background: #f4fbf4; /* Light Green Tint */
+  border: 1px solid #e2f0e2;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-content strong {
+  color: #2e7d32;
+  font-size: 0.95rem;
+}
+
+.footer-tags {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer-tags span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #555;
+  background: #ffffff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  border: 1px solid #eee;
+}
+
+/* --- FULL RESPONSIVE ADJUSTMENTS --- */
+
+/* Laptops/Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .roadmap-grid {
+    gap: 15px;
+  }
+  .roadmap-wavy-arrow {
+    width: 30px;
+  }
+  .roadmap-wavy-arrow svg {
+    width: 30px;
+  }
+}
+
+/* Tablet Portrait (900px and below) */
+@media (max-width: 900px) {
+  .roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 25px;
+  }
+  .roadmap-wavy-arrow {
+    display: none; /* Removed for cleaner grid */
+  }
+}
+
+/* Mobile (600px and below) */
+@media (max-width: 600px) {
+  .delivery-roadmap {
+    padding: 60px 0;
+  }
+  .roadmap-grid {
+    grid-template-columns: 1fr; /* 1 card per row */
+    gap: 20px;
+  }
+  .roadmap-card {
+    padding: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+  }
+  .footer-tags {
+    gap: 10px;
+  }
+}

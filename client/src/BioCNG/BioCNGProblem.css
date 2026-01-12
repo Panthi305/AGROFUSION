@@ -1,0 +1,124 @@
+/* --- Section Core --- */
+.bio-cng-problem {
+  padding: 100px 5%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: center;
+}
+
+.bio-cng-problem__container {
+  max-width: 1000px;
+  width: 100%;
+}
+
+/* --- Subtle, Elegant Title --- */
+.bio-cng-problem h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #9ca3af; /* Soft gray */
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+/* --- The Visual Flow (Miniature & Non-intrusive) --- */
+.bio-cng-problem__visual {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 100px;
+  align-items: center;
+}
+
+.step {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0b3d2e;
+  position: relative;
+}
+
+/* Tiny dot indicator instead of a box */
+.step::before {
+  content: "";
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: #2ca01c;
+  margin-bottom: 8px;
+  border-radius: 50%;
+}
+
+.arrow {
+  color: #e5e7eb;
+  font-weight: 200;
+  font-size: 1.2rem;
+}
+
+/* --- The Output Grid (No Borders) --- */
+.bio-cng-outputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px; /* Large gap for a "roomy" feel */
+  margin-bottom: 100px;
+}
+
+.output h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0b3d2e;
+  margin-bottom: 15px;
+  letter-spacing: -0.02rem;
+}
+
+.output p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* --- Environmental Impact (Compact Inline Layout) --- */
+.bio-cng-impact {
+  border-top: 1px solid #f3f4f6;
+  padding-top: 50px;
+}
+
+.bio-cng-impact h3 {
+  font-size: 0.75rem;
+  color: #9ca3af;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.impact-badges {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.badge {
+  font-size: 0.85rem;
+  color: #4b5563;
+  line-height: 1.5;
+  font-weight: 400;
+  padding-right: 10px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+  .bio-cng-outputs {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .impact-badges {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .bio-cng-problem__visual {
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+}

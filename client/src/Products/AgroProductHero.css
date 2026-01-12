@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+:root {
+  --nav-height: 63px;
+}
+
+.aph-immersive-hero {
+  position: relative;
+  /* Adjust height to account for navbar so there is no scroll */
+  height: calc(100vh - var(--nav-height));
+  width: 100vw;
+  background: #000;
+  /* overflow: hidden; */
+  display: flex;
+  font-family: 'Inter', sans-serif;
+  margin-top: var(--nav-height);
+}
+
+/* BASE TEXT LAYER */
+.aph-hero-base-layer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.aph-main-title-container {
+  text-align: center;
+  color: white;
+  width: 100%;
+}
+
+.aph-main-title-container h1 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: clamp(40px, 8vw, 110px);
+  font-weight: 700;
+  line-height: 0.9;
+  margin: 0;
+  text-transform: uppercase;
+  /* Optional: adds a slight shadow to make text readable against bright images */
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.aph-main-title-container h1 span {
+  -webkit-text-stroke: 1.5px white;
+  -webkit-text-fill-color: transparent;
+}
+
+/* INTERACTIVE BLADES */
+.aph-blades-container {
+  position: relative;
+  z-index: 10;
+  /* Lower than text layer */
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.aph-blade {
+  position: relative;
+  flex: 1;
+  /* overflow: hidden; */
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  transition: flex 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.aph-blade.aph-active {
+  flex: 2.5;
+  /* Slightly more expansion for a more dramatic effect */
+}
+
+.aph-blade-img-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.aph-blade-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%) brightness(0.3);
+  transition: transform 1.2s ease, filter 0.8s ease;
+}
+
+.aph-blade.aph-active .aph-blade-img-wrapper img {
+  filter: grayscale(0%) brightness(0.5);
+  transform: scale(1.05);
+}
+
+.aph-blade-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.1) 100%);
+}
+
+/* BLADE CONTENT */
+.aph-blade-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px;
+  z-index: 5;
+  color: white;
+  /* Allow clicking the "Explore" button despite pointer-events: none on the parent layer */
+  pointer-events: auto;
+}
+
+/* Rest of your styles remain the same... */
+.aph-blade-header h3 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.aph-blade-btn {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid white;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 40px;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.aph-blade-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+/* MOBILE OPTIMIZATION (Less than 768px and specifically < 500px) */
+@media (max-width: 768px) {
+  .aph-immersive-hero {
+    height: calc(100vh - var(--nav-height));
+    flex-direction: column;
+  }
+
+  /* Adjust Title for Mobile */
+  .aph-hero-base-layer {
+    height: 30%;
+    /* Move title to top area */
+    align-items: flex-start;
+    padding-top: 40px;
+  }
+
+  .aph-main-title-container h1 {
+    font-size: clamp(28px, 10vw, 42px);
+    line-height: 1.1;
+    padding: 0 20px;
+  }
+
+  /* Stack Blades Vertically */
+  .aph-blades-container {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .aph-blade {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex: 1;
+    /* Default state: shared equal space */
+  }
+
+  /* When active in mobile, it grows significantly */
+  .aph-blade.aph-active {
+    flex: 4;
+  }
+
+  .aph-blade-content {
+    padding: 20px;
+  }
+
+  .aph-blade-header h3 {
+    font-size: 18px;
+  }
+
+  .aph-blade-details p {
+    font-size: 14px;
+    margin-bottom: 15px;
+    max-width: 80%;
+  }
+
+  .aph-blade-btn {
+    padding: 8px 16px;
+    font-size: 10px;
+  }
+}
+
+/* SPECIFIC TWEAKS FOR VERY SMALL PHONES */
+@media (max-width: 500px) {
+  .aph-main-title-container h1 {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+
+  /* Ensure the background text doesn't interfere with top-most blade content */
+  .aph-hero-base-layer {
+    background: linear-gradient(to bottom, #000 60%, transparent);
+    height: 25%;
+  }
+
+  .aph-blade.aph-active .aph-blade-img-wrapper img {
+    filter: grayscale(0%) brightness(0.4);
+    /* Darker for text readability */
+  }
+}

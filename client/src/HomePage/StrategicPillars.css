@@ -1,0 +1,389 @@
+/* ===== BASE ===== */
+.sp-hub {
+  padding: 80px 0;
+  /* Slightly reduced padding for mobile friendliness */
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+  /* CRITICAL: Prevents the horizontal scrollbar */
+  width: 100%;
+  
+}
+
+.sp-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 20px;
+  /* Ensures content doesn't touch screen edges */
+  box-sizing: border-box;
+}
+
+/* ===== HEADER ===== */
+.sp-header {
+  text-align: center;
+  margin-bottom: 60px;
+  /* Reduced from 100px for better flow */
+}
+
+.sp-eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #4f7f6a;
+  font-weight: 600;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+}
+
+.sp-header h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.sp-header p {
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+/* ===== LAYOUT ===== */
+.sp-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  /* Reduced gap for better fit */
+  align-items: center;
+}
+
+/* ===== HUB ===== */
+.sp-hub-visual {
+  position: relative;
+  /* Use viewport units with a max-size to stay responsive */
+  width: min(85vw, 440px);
+  height: min(85vw, 440px);
+  margin: 40px auto;
+  /* Added margin to allow nodes to scale without clipping */
+}
+
+.sp-hub-visual::before,
+.sp-hub-visual::after {
+  animation: rotate 30s linear infinite;
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px dashed rgba(48, 114, 92, 0.199);
+  transition: transform 1s ease;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sp-hub-visual::after {
+  inset: clamp(30px, 8vw, 40px);
+}
+
+.sp-core {
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: clamp(180px, 30%, 170px);
+  height: clamp(180px, 30%, 170px);
+  background: radial-gradient(circle at 30% 30%, #23a077, #1c8c67);
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(28, 140, 103, 0.35);
+  z-index: 2;
+}
+
+.sp-core span {
+  font-size: clamp(16px, 4vw, 22px);
+  font-weight: 800;
+}
+
+.sp-core small {
+  font-size: 10px;
+  opacity: 0.85;
+  letter-spacing: 0.5px;
+}
+
+/* ===== NODES ===== */
+/* ===== NODES ===== */
+
+.sp-node {
+
+  position: absolute;
+
+  width: 56px;
+
+  height: 56px;
+
+  border-radius: 50%;
+
+  border: 1.5px solid rgba(28, 140, 103, 0.45);
+
+  background: #ffffff;
+
+  font-weight: 700;
+
+  font-size: 13px;
+
+  color: #1c8c67;
+
+  cursor: pointer;
+
+  transition: all 0.35s ease, transform 0.4s ease;
+
+  display: grid;
+
+  place-items: center;
+
+}
+
+
+
+.sp-node:hover {
+
+  transform: scale(1.15);
+
+  box-shadow: 0 10px 25px rgba(28, 140, 103, 0.35);
+
+}
+
+
+
+.sp-node.active {
+
+  background: #1c8c67;
+
+  color: #fff;
+
+  box-shadow: 0 14px 36px rgba(28, 140, 103, 0.45);
+
+}
+
+
+
+/* NODE POSITIONS */
+
+.sp-node:nth-child(2) {
+
+  top: -5.5%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+}
+
+
+
+.sp-node:nth-child(3) {
+
+  top: 20%;
+
+  right: 0;
+
+}
+
+
+
+.sp-node:nth-child(4) {
+
+  bottom: 20%;
+
+  right: 0;
+
+}
+
+
+
+.sp-node:nth-child(5) {
+
+  bottom: -5.5%;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+}
+
+
+
+.sp-node:nth-child(6) {
+
+  bottom: 20%;
+
+  left: 0;
+
+}
+
+
+
+.sp-node:nth-child(7) {
+
+  top: 20%;
+
+  left: 0;
+
+}
+
+/* ===== DETAILS ===== */
+.sp-detail {
+  padding: 0 10px;
+}
+
+.sp-detail-kicker {
+  font-size: 12px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: #6b9d86;
+  text-transform: uppercase;
+}
+
+.sp-detail-title {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 800;
+  color: #0f5132;
+  margin: 10px 0;
+}
+
+.sp-detail-desc {
+
+  font-size: 16px;
+
+  line-height: 1.75;
+
+  color: #475569;
+
+  margin-bottom: 26px;
+
+}
+
+
+
+.sp-capabilities {
+
+  display: grid;
+
+  gap: 14px;
+
+}
+
+
+
+.sp-capability {
+
+  display: grid;
+
+  grid-template-columns: 42px 1fr;
+
+  gap: 14px;
+
+  align-items: center;
+
+  padding: 14px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid rgba(0, 0, 0, 0.06);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.sp-capability:hover {
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(28, 140, 103, 0.15);
+
+}
+
+
+
+.sp-cap-index {
+
+  width: 34px;
+
+  height: 34px;
+
+  border-radius: 50%;
+
+  background: #e7f6ef;
+
+  color: #1c8c67;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  display: grid;
+
+  place-items: center;
+
+}
+
+
+
+.sp-cap-text {
+
+  font-size: 15px;
+
+  color: #374151;
+
+  line-height: 1.5;
+
+}
+
+
+/* ===== RESPONSIVENESS ===== */
+@media (max-width: 900px) {
+  .sp-core {
+    width: clamp(140px, 30%, 170px);
+    height: clamp(140px, 30%, 170px);
+  }
+
+  .sp-hub {
+    padding: 60px 0;
+  }
+
+  .sp-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .sp-header {
+    margin-bottom: 40px;
+  }
+
+  .sp-detail {
+    text-align: center;
+    padding-left: 0;
+  }
+
+  .sp-capabilities {
+    max-width: 450px;
+    margin: 0 auto;
+    text-align: left;
+  }
+}

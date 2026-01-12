@@ -1,0 +1,366 @@
+/* SeedsPortfolio.css */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+.sp-seeds-premium-section {
+  padding: 100px 24px;
+  background-color: #fcfdfd;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #1a202c;
+}
+
+.sp-seeds-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Header */
+.sp-seeds-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.sp-seeds-eyebrow {
+  color: #16a34a;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.sp-seeds-header h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.sp-green-text {
+  color: #16a34a;
+}
+
+.sp-seeds-header p {
+  font-size: 18px;
+  color: #718096;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Main Grid */
+.sp-seeds-main-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+/* Featured Cards - span 8 columns on large screens */
+.sp-seed-feature-card {
+  grid-column: span 8;
+  display: flex;
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.sp-seed-feature-card.sp-veg {
+  flex-direction: row-reverse;
+  /* Image on right for vegetables */
+}
+
+/* Compact Cards - span 4 columns */
+.sp-seed-compact-card {
+  grid-column: span 4;
+  background: white;
+  padding: 32px;
+  border-radius: 24px;
+  border: 1px solid #edf2f7;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image & Content Sides */
+.sp-card-image-side {
+  width: 40%;
+  min-height: 300px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sp-card-image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sp-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 50%, rgba(255, 255, 255, 0.2));
+}
+
+.sp-card-content-side {
+  width: 60%;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sp-category-tag {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.sp-card-content-side h3 {
+  font-size: 28px;
+  margin: 16px 0 28px;
+  line-height: 1.3;
+}
+
+.sp-inner-flex {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 20px;
+}
+
+.sp-inner-col h4 {
+  font-size: 15px;
+  color: #16a34a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.sp-inner-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sp-inner-col li {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #4a5568;
+  display: flex;
+  align-items: flex-start;
+}
+
+.sp-inner-col li::before {
+  content: "•";
+  color: #16a34a;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.sp-maize-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.sp-maize-footer h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #16a34a;
+}
+
+.sp-maize-footer p {
+  font-size: 14px;
+  color: #718096;
+  line-height: 1.5;
+}
+
+/* Compact Card Specific */
+.sp-compact-img-wrapper {
+  height: 180px;
+  border-radius: 18px;
+   
+  margin-bottom: 24px;
+}
+
+.sp-compact-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.sp-seed-compact-card:hover .sp-compact-img-wrapper img {
+  transform: scale(1.08);
+}
+
+.sp-seed-compact-card h3 {
+  font-size: 22px;
+  margin: 0 0 20px;
+}
+
+.sp-compact-body h4 {
+  font-size: 14px;
+  color: #16a34a;
+  text-transform: uppercase;
+  margin: 20px 0 10px;
+}
+
+.sp-compact-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sp-compact-body li {
+  font-size: 14px;
+  color: #4a5568;
+  margin-bottom: 6px;
+}
+
+/* Bottom Split */
+.sp-bottom-split {
+  grid-column: span 12;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.sp-mini-card {
+  padding: 20px;
+  border-radius: 24px;
+}
+
+.sp-mini-card.sp-fodder {
+  background: #015c2a;
+  color: white;
+}
+
+.sp-mini-card.sp-highlight {
+  background: #228743;
+  color: white;
+}
+
+.sp-mini-card h4 {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.sp-mini-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.sp-mini-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sp-mini-card li {
+  font-size: 15px;
+  margin-bottom: 12px;
+  opacity: 0.95;
+}
+
+/* Responsive Breakpoints */
+
+/* Tablet - 1024px and below */
+@media (max-width: 1024px) {
+  .sp-seeds-main-grid {
+    grid-template-columns: repeat(8, 1fr);
+    gap: 24px;
+  }
+
+  .sp-seed-feature-card,
+  .sp-seed-compact-card {
+    grid-column: span 8;
+  }
+
+  .sp-seed-feature-card {
+    flex-direction: column;
+  }
+
+  .sp-seed-feature-card.sp-veg {
+    flex-direction: column;
+  }
+
+  .sp-card-image-side,
+  .sp-card-content-side {
+    width: 100%;
+  }
+
+  .sp-card-image-side {
+    height: 300px;
+  }
+
+  .sp-card-content-side {
+    padding: 40px;
+  }
+
+  .sp-inner-flex {
+    gap: 32px;
+  }
+}
+
+/* Mobile - 768px and below */
+@media (max-width: 768px) {
+  .sp-seeds-premium-section {
+    padding: 80px 20px;
+  }
+
+  .sp-seeds-main-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .sp-seed-feature-card,
+  .sp-seed-compact-card,
+  .sp-bottom-split {
+    grid-column: 1 / -1;
+  }
+
+  .sp-card-content-side {
+    padding: 32px;
+  }
+
+  .sp-inner-flex {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .sp-bottom-split {
+    grid-template-columns: 1fr;
+  }
+
+  .sp-mini-card {
+    padding: 32px;
+  }
+
+  .sp-compact-img-wrapper {
+    height: 200px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .sp-seeds-header h2 {
+    font-size: 32px;
+  }
+
+  .sp-card-content-side {
+    padding: 24px;
+  }
+
+  .sp-seed-compact-card {
+    padding: 24px;
+  }
+}

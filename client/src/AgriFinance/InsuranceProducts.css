@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap');
+
+/* --- GLOBAL STYLES --- */
+.ins-section {
+  padding: clamp(40px, 8vw, 100px) 5%;
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  color: #111827;
+  overflow-x: hidden;
+}
+
+.ins-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row; /* Desktop Default */
+  gap: 60px;
+  align-items: flex-start;
+}
+
+/* --- LEFT SIDE: CORPORATE NAVIGATION --- */
+.ins-left-panel {
+  flex: 0 0 320px; /* Fixed width on desktop */
+  position: sticky;
+  top: 40px;
+}
+
+.ins-header h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #064e3b;
+  line-height: 1.1;
+  margin-bottom: 15px;
+  letter-spacing: -1px;
+}
+
+.ins-header p {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.ins-tabs {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e5e7eb;
+}
+
+.ins-tab-btn {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 20px 0;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.3s ease;
+  position: relative;
+  width: 100%;
+}
+
+.ins-tab-btn .tab-number {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  font-family: 'Outfit', sans-serif;
+}
+
+.ins-tab-btn .tab-text {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ins-tab-btn.active {
+  padding-left: 15px;
+}
+
+.ins-tab-btn.active .tab-text { color: #064e3b; }
+.ins-tab-btn.active .tab-number { color: #10b981; }
+
+.ins-tab-btn.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 4px;
+  height: 20px;
+  background: #10b981;
+}
+
+/* --- RIGHT SIDE: CONTENT --- */
+.ins-right-panel {
+  flex: 1;
+  width: 100%;
+}
+
+.ins-content-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #064e3b;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #064e3b;
+}
+
+.ins-item {
+  display: flex;
+  flex-direction: row; /* Desktop split */
+  padding: 30px 0;
+  border-bottom: 1px solid #f3f4f6;
+  gap: 40px;
+}
+
+.ins-item strong {
+  flex: 0 0 240px; /* Label width */
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.ins-item p {
+  flex: 1;
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.7;
+}
+
+/* --- RESPONSIVE FIXES --- */
+
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 1024px) {
+  .ins-container {
+    flex-direction: column; /* Stack vertically */
+    gap: 30px;
+  }
+
+  .ins-left-panel {
+    flex: none;
+    width: 100%;
+    position: relative;
+    top: 0;
+  }
+
+  .ins-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-top: none;
+    border-bottom: 1px solid #e5e7eb;
+    margin: 0 -5vw;
+    padding: 0 5vw;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .ins-tabs::-webkit-scrollbar { display: none; }
+
+  .ins-tab-btn {
+    width: auto;
+    padding: 15px 20px;
+    border-bottom: none;
+    flex-shrink: 0;
+  }
+
+  .ins-tab-btn.active {
+    padding-left: 20px;
+    border-bottom: 3px solid #10b981;
+  }
+
+  .ins-tab-btn.active::before { display: none; }
+
+  .ins-item {
+    flex-direction: column; /* Stack label and text on mobile */
+    gap: 8px;
+    padding: 20px 0;
+  }
+
+  .ins-item strong {
+    flex: none;
+    width: 100%;
+  }
+}
+
+/* Specific Phone Optimizations */
+@media (max-width: 480px) {
+  .ins-header h2 { font-size: 1.8rem; }
+  .ins-tab-btn { padding: 12px 15px; }
+  .ins-tab-btn .tab-text { font-size: 0.8rem; }
+}

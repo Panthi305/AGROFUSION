@@ -1,0 +1,44 @@
+/* .ffarmer-bg {
+    background-image: url("./../assets/Farmers/fbg1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+} */
+
+.ffarmer-bg {
+    position: relative;
+
+    /* IMAGE */
+    background-image: url("./../assets/Farmers/fbg1.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    /* IMPORTANT */
+    background-attachment: fixed;
+
+    /* padding: 140px 0; */
+}
+
+/* OVERLAY */
+.ffarmer-bg::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    /* LIGHT overlay so image is visible */
+    background-color: rgba(255, 251, 245, 0.2);
+
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* CONTENT ABOVE OVERLAY */
+.ffarmer-bg>* {
+    position: relative;
+    z-index: 2;
+}

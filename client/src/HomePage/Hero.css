@@ -1,0 +1,145 @@
+.af-hero {
+  position: relative;
+  width: 100%;
+  /* 100dvh prevents the mobile 'address bar' from hiding your buttons */
+  height: 100vh;
+  height: 100dvh;
+  min-height: 550px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+}
+
+.af-hero__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  /* Ensures your 4K video fills the screen without stretching */
+  object-fit: cover;
+  object-position: center;
+}
+
+.af-hero__overlay {
+  position: absolute;
+  inset: 0;
+  /* Darker gradient for better text readability */
+  background: linear-gradient(to bottom,
+      rgba(11, 61, 46, 0.8) 0%,
+      rgba(11, 61, 46, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+}
+
+.af-hero__content {
+  position: relative;
+  z-index: 3;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Container to stop text from jumping */
+.typing-container {
+  min-height: 120px;
+  /* Adjust this if your text wraps to 3 lines */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.typing-title {
+  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  line-height: 1.2;
+  font-weight: 800;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+.af-hero__content p {
+  font-size: clamp(0.95rem, 1.5vw, 1.2rem);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto 2.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.af-hero__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.af-btn {
+  padding: 0.85rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  min-width: 170px;
+}
+
+.af-btn--primary {
+  background: #2ecc71;
+  color: #0b3d2e;
+}
+
+.af-btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+/* =====================================
+   SMART MOBILE OPTIMIZATION
+===================================== */
+@media (max-width: 768px) {
+  .af-hero {
+    padding: 0 20px;
+  }
+
+  .typing-container {
+    min-height: 100px;
+    /* Specific height for mobile screens */
+  }
+
+  .typing-title {
+    font-size: 2rem;
+  }
+
+  .af-hero__buttons {
+    flex-direction: column;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .af-btn {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+
+/* Fix for very small phones */
+@media (max-height: 600px) {
+  .af-hero__content {
+    margin-top: 20px;
+  }
+
+  .typing-title {
+    font-size: 3rem;
+  }
+
+  .af-hero__content p {
+    margin-bottom: 1.5rem;
+  }
+}

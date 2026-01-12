@@ -1,0 +1,218 @@
+:root {
+  --color-1: #8bc34a;
+  --color-2: #26c6da;
+  --color-3: #00bfa5;
+  --color-4: #26c6da;
+  --border-color: #00bfa5;
+}
+
+.infographic-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  /* background-color: #fff; */
+  font-family: sans-serif;
+  overflow: hidden; /* Prevent AOS horizontal scroll */
+}
+
+.infographic-container {
+  max-width: 1100px;
+  width: 100%;
+}
+
+.infographic-grid {
+  display: grid;
+  grid-template-columns: 1fr 180px 1fr;
+  align-items: center;
+  position: relative;
+  gap: 40px 0;
+}
+
+/* Central Circle */
+.center-circle {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  width: 160px;
+  height: 160px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: white;
+  z-index: 2;
+  justify-self: center;
+}
+
+.center-circle::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: 30%;
+  right: 30%;
+  background: white;
+}
+
+.center-text { text-align: center; z-index: 3; }
+.center-text span { font-size: 11px; color: #666; letter-spacing: 1px; }
+.center-text strong { display: block; font-size: 18px; color: #000; }
+
+/* Card Layouts */
+.info-card {
+  background: white;
+  border: 2px solid #e0e0e0;
+  display: flex;
+  min-height: 140px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.card-01, .card-02 { 
+  grid-column: 1; 
+  margin-right: 60px; 
+  border-radius: 30px 100px 100px 30px; 
+}
+
+.card-03, .card-04 { 
+  grid-column: 3; 
+  margin-left: 60px; 
+  flex-direction: row-reverse; 
+  border-radius: 100px 30px 30px 100px; 
+}
+
+/* Sidebar Numbers */
+.card-number {
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-01 .card-number, .card-02 .card-number { 
+  background-color: var(--color-1); 
+  border-radius: 20px 0 0 20px; 
+}
+.card-03 .card-number, .card-04 .card-number { 
+  background-color: var(--color-3); 
+  border-radius: 0 20px 20px 0; 
+}
+
+.card-content { padding: 15px 25px; flex: 1; }
+.card-title { font-size: 16px; margin: 5px 0; font-weight: 700; }
+.card-description { font-size: 13px; color: #777; line-height: 1.4; margin: 0; }
+
+/* Connectors */
+.connector {
+  position: absolute;
+  width: 50px;
+  height: 40px;
+  border: 2px solid var(--border-color);
+  z-index: 1;
+}
+
+.connector-01 { bottom: 20%; right: -52px; border-bottom: none; border-left: none; border-radius: 0 20px 0 0; }
+.connector-02 { top: 20%; right: -52px; border-top: none; border-left: none; border-radius: 0 0 20px 0; }
+.connector-03 { bottom: 20%; left: -52px; border-bottom: none; border-right: none; border-radius: 20px 0 0 0; }
+.connector-04 { top: 20%; left: -52px; border-top: none; border-right: none; border-radius: 0 0 0 20px; }
+
+/* TABLET VIEW */
+@media (max-width: 992px) {
+  .infographic-grid { grid-template-columns: 1fr 140px 1fr; }
+  .center-circle { width: 130px; height: 130px; }
+  .card-01, .card-02 { margin-right: 30px; }
+  .card-03, .card-04 { margin-left: 30px; }
+  .connector { width: 32px; }
+  .connector-01, .connector-02 { right: -32px; }
+  .connector-03, .connector-04 { left: -32px; }
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .infographic-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .center-circle {
+    order: -1; /* Move "INFOTECH" to the top */
+    margin-bottom: 20px;
+  }
+
+  .info-card {
+    width: 100%;
+    margin: 0 !important;
+    flex-direction: row !important; /* All cards look same on mobile */
+    border-radius: 15px !important;
+    min-height: auto;
+  }
+
+  .card-number {
+    border-radius: 13px 0 0 13px !important;
+    width: 50px;
+  }
+
+  .card-content { text-align: left; padding: 15px; }
+
+  .connector {
+    /* Create a vertical line connecting cards on mobile */
+    left: 24px !important;
+    right: auto !important;
+    top: -32px !important;
+    width: 2px !important;
+    height: 32px !important;
+    border: none !important;
+    background: var(--border-color);
+  }
+
+  /* Hide the first connector on mobile */
+  .card-01 .connector { display: none; }
+}
+
+
+/* Section Header Styles */
+.section-header {
+  text-align: center;
+  margin-bottom: 60px; /* Space between text and infographic */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+}
+
+
+.section-description {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Adjustments for Mobile Header */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+  }
+  
+  .section-description {
+    font-size: 14px;
+  }
+}

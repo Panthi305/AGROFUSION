@@ -1,0 +1,84 @@
+.fpocta-section {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #064e3b, #14532d);
+  color: #ffffff;
+}
+
+.fpocta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fpocta-content {
+  text-align: center;
+}
+
+.fpocta-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.fpocta-headline {
+  font-size: 20px;
+  max-width: 900px;
+  margin: 0 auto 55px;
+  line-height: 1.6;
+  color: #dcfce7;
+}
+
+/* BENEFITS GRID */
+.fpocta-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  margin-bottom: 60px;
+}
+
+.fpocta-benefit {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 26px;
+  border-radius: 18px;
+  font-size: 16px;
+  line-height: 1.5;
+  backdrop-filter: blur(6px);
+}
+
+.fpocta-benefit span {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* CTA BUTTON */
+.fpocta-action {
+  margin-top: 20px;
+}
+
+.fpocta-button {
+  display: inline-block;
+  padding: 16px 42px;
+  background: #facc15;
+  color: #1f2933;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.fpocta-button:hover {
+  background: #fde047;
+  transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .fpocta-content h2 {
+    font-size: 32px;
+  }
+
+  .fpocta-headline {
+    font-size: 18px;
+  }
+}

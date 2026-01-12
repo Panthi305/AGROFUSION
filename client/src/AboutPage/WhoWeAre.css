@@ -1,0 +1,221 @@
+/* ======================================================
+   STORY SECTION — PREMIUM EDITORIAL DESIGN
+====================================================== */
+
+.as-story-section {
+    background: #f9fffeeb;
+    padding: clamp(70px, 0vw, 130px) 0;
+    overflow: hidden;
+    font-family: "Inter", system-ui, sans-serif;
+}
+
+.as-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ======================================================
+   GRID LAYOUT
+====================================================== */
+
+.as-story-content {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(50px, 7vw, 90px);
+    align-items: center;
+}
+
+/* ======================================================
+   LEFT — IMAGE STORY
+====================================================== */
+
+.as-story-image-wrapper {
+    position: relative;
+    border-radius: 26px;
+    overflow: hidden;
+    /* box-shadow: 0 40px 90px rgba(0, 0, 0, 0.18); */
+}
+
+.as-story-image {
+    width: 100%;
+    height: clamp(420px, 55vw, 620px);
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+}
+
+/* Editorial overlay */
+.as-story-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(9, 45, 26, 0.55) 100%);
+}
+
+/* Experience badge — premium & restrained */
+.as-story-badge {
+    position: absolute;
+    bottom: 32px;
+    left: 32px;
+
+    background: rgba(255, 255, 255, 0.92);
+    padding: 22px 28px;
+    border-radius: 18px;
+    backdrop-filter: blur(14px);
+
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.25);
+}
+
+.as-badge-number {
+    display: block;
+    font-size: 44px;
+    font-weight: 800;
+    color: #0f5132;
+    line-height: 1;
+}
+
+.as-badge-text {
+    font-size: 13px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: #555;
+    margin-top: 6px;
+}
+
+/* ======================================================
+   RIGHT — STORY CONTENT
+====================================================== */
+
+.as-story-right {
+    padding-right: 10px;
+}
+
+/* Label */
+.as-section-label {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2.6px;
+    color: #5c7c6a;
+    margin-bottom: 18px;
+}
+
+/* Title — serif authority */
+.as-section-title {
+    font-family: "Libre Baskerville", Georgia, serif;
+    font-size: clamp(32px, 4.2vw, 44px);
+    line-height: 1.28;
+    color: #0f172a;
+    margin-bottom: 32px;
+}
+
+/* Body text */
+.as-story-text p {
+    font-size: 16.5px;
+    line-height: 1.85;
+    color: #3f3f46;
+    max-width: 520px;
+}
+
+/* ======================================================
+   HIGHLIGHTS — STRUCTURED, NOT “CARDY”
+====================================================== */
+
+.as-story-highlights {
+    margin-top: 18px;
+    display: grid;
+    grid-template-columns: 0.9fr;
+    gap: 16px;
+}
+
+.as-highlight-item {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    gap: 20px;
+    align-items: start;
+
+    padding: 22px 26px;
+    background: #ffffff;
+    border-radius: 16px;
+
+    /* border-left: 4px solid #8fbfa3; */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.as-highlight-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Icon */
+.as-highlight-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg,
+            #0f5132,
+            #1b7a4a);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+}
+
+/* Text */
+.as-highlight-content h4 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.as-highlight-content p {
+    font-size: 14.5px;
+    color: #52525b;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ======================================================
+   RESPONSIVE — INTENTIONAL, NOT COMPROMISED
+====================================================== */
+
+
+@media (max-width: 950px) {
+
+  /* Stack layout */
+  .as-story-content {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reorder elements */
+  .as-story-right {
+    order: 1;
+  }
+
+  .as-story-left {
+    order: 2;
+    margin-top: 30px;
+  }
+
+  /* Center align text for mobile (optional but recommended) */
+  .as-section-label,
+  .as-section-title {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+    .as-story-image {
+        height: 360px;
+    }
+
+    .as-section-title {
+        font-size: 30px;
+    }
+}
