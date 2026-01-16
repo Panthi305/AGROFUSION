@@ -10,6 +10,7 @@ import Testimonials from "./Testimonials";
 import CTA from "./CTA";
 import "./HomePage.css";
 import PartnersSection from "./PartnersSection";
+import JaiKissanSection from "./JaiKissanSection";
 function HomePage() {
     return (
         <>
@@ -20,6 +21,7 @@ function HomePage() {
                 {/* <MissionVision/> */}
                 <StrategicPillars />
                 <EcosystemAdvantage />
+                <JaiKissanSection />
                 <ImpactStats />
                 <FarmerModels />
                 <TechnologyBackbone />

@@ -135,21 +135,54 @@
   filter: brightness(1.1);
 }
 
-.af-ecosystem__center-text {
+.af-ecosystem__center {
   position: absolute;
-  width: 60px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 110px;
+  /* IMPORTANT: keep inside white circle */
   text-align: center;
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--primary-dark);
+
   pointer-events: none;
   opacity: 0;
   transition: var(--transition-smooth);
 }
 
-.af-ecosystem__center-text.visible {
+
+.af-ecosystem__center.visible {
   opacity: 1;
 }
+
+/* Company Name (Golden / Logo color) */
+.af-ecosystem__center-title {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #c9a227;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+
+  line-height: 1.2;
+  word-break: break-word;
+  /* 👈 prevents overflow */
+}
+
+
+/* Middle Logo */
+.af-ecosystem__center-logo {
+  width: 36px;
+  height: auto;
+  object-fit: contain;
+}
+
 
 /* ============================================
    RESPONSIVE OVERRIDES

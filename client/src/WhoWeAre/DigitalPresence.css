@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --text-gray: #64748b;
+    --bg-light: #fbfbfb;
+    --border: #e8e8e8;
+}
+
+.wdp-presence-page {
+    background-color: #fff;
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    width: 100%;
+}
+
+.wdp-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wdp-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HEADER --- */
+.wdp-intro {
+    padding: 80px 0 60px;
+    text-align: center;
+    background: linear-gradient(to bottom, #fcfcfc, #fff);
+}
+
+.wdp-header-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.wdp-header-logo {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+}
+
+.wdp-header-center {
+    flex-grow: 1;
+}
+
+.wdp-pre {
+    color: var(--gold);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+}
+
+.wdp-title-lg {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin: 10px 0;
+     color: var(--gold);
+}
+
+.wdp-gold {
+    color: var(--gold);
+}
+
+.wdp-lead {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* --- GRID SECTION --- */
+.wdp-grid-section {
+    padding-bottom: 100px;
+}
+
+.wdp-master-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+    gap: 30px;
+}
+
+.wdp-cat-card {
+    border: 1px solid var(--border);
+    padding: 40px;
+    background: #fff;
+    transition: 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.wdp-cat-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.wdp-cat-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.wdp-cat-icon {
+    font-size: 1.8rem;
+    color: var(--gold);
+}
+
+.wdp-cat-card h3 {
+    font-size: 1.3rem;
+    color: var(--dark);
+}
+
+.wdp-purpose-text {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    min-height: 40px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+    line-height: 1.6;
+}
+
+.wdp-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.wdp-link-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wdp-site-name {
+    display: block;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+}
+
+.wdp-site-url {
+    font-size: 0.75rem;
+    color: var(--gold);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.3s;
+    word-break: break-all;
+    flex-wrap: wrap;
+}
+
+.wdp-site-url:hover {
+    color: var(--gold-light);
+}
+
+/* --- VISION BANNER --- */
+.wdp-vision {
+    padding-bottom: 100px;
+}
+
+.wdp-vision-banner {
+    background: var(--dark);
+    color: #fff;
+    padding: 80px 40px;
+    text-align: center;
+    border-left: 6px solid var(--gold);
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.wdp-vision-banner h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.wdp-vision-banner p {
+    opacity: 0.7;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+}
+
+.wdp-cta-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.wdp-btn-gold {
+    padding: 16px 35px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.wdp-btn-outline {
+    padding: 16px 35px;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.wdp-btn-gold:hover {
+    transform: translateY(-3px);
+    background: var(--gold-light);
+}
+
+.wdp-btn-outline:hover {
+    background: #fff;
+    color: var(--dark);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .wdp-intro {
+        padding: 60px 0 40px;
+    }
+
+    .wdp-container {
+        padding: 0 20px;
+    }
+
+    .wdp-header-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .wdp-header-logo {
+        height: 60px;
+    }
+
+    .wdp-title-lg {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
+
+    .wdp-lead {
+        font-size: 1rem;
+    }
+
+    .wdp-grid-section {
+        padding-bottom: 60px;
+    }
+
+    .wdp-master-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .wdp-cat-card {
+        padding: 30px;
+    }
+
+    .wdp-vision {
+        padding-bottom: 60px;
+    }
+
+    .wdp-vision-banner {
+        padding: 60px 30px;
+    }
+
+    .wdp-vision-banner h2 {
+        font-size: 1.8rem;
+    }
+
+    .wdp-cta-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wdp-btn-gold,
+    .wdp-btn-outline {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 640px) {
+    .wdp-intro {
+        padding: 40px 0 30px;
+    }
+
+    .wdp-container {
+        padding: 0 16px;
+    }
+
+    .wdp-header-logo {
+        height: 50px;
+    }
+
+    .wdp-pre {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .wdp-title-lg {
+        font-size: 1.5rem;
+    }
+
+    .wdp-lead {
+        font-size: 0.95rem;
+    }
+
+    .wdp-cat-card {
+        padding: 25px;
+    }
+
+    .wdp-cat-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .wdp-cat-icon {
+        font-size: 1.5rem;
+    }
+
+    .wdp-cat-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .wdp-purpose-text {
+        font-size: 0.8rem;
+    }
+
+    .wdp-site-name {
+        font-size: 0.85rem;
+    }
+
+    .wdp-site-url {
+        font-size: 0.7rem;
+    }
+
+    .wdp-vision-banner {
+        padding: 40px 20px;
+        border-left-width: 4px;
+    }
+
+    .wdp-vision-banner h2 {
+        font-size: 1.5rem;
+    }
+
+    .wdp-vision-banner p {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+
+    .wdp-btn-gold,
+    .wdp-btn-outline {
+        padding: 14px 28px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .wdp-container {
+        padding: 0 12px;
+    }
+
+    .wdp-header-logo {
+        height: 40px;
+    }
+
+    .wdp-title-lg {
+        font-size: 1.3rem;
+    }
+
+    .wdp-cat-card {
+        padding: 20px;
+    }
+
+    .wdp-master-grid {
+        gap: 16px;
+    }
+
+    .wdp-vision-banner {
+        padding: 30px 16px;
+    }
+
+    .wdp-btn-gold,
+    .wdp-btn-outline {
+        padding: 12px 24px;
+        font-size: 11px;
+    }
+}

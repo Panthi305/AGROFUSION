@@ -1,51 +1,41 @@
 /* =====================================
-    ABOUT HERO SECTION - CINEMATIC VERSION
+    ABOUT HERO SECTION - SCOPED VERSION
 ===================================== */
 .af-about-hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  min-height: 600px;
+  min-height: 650px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
   background-color: #0b3d2e;
-  clip-path: inset(0 0 0 0);
+  /* Fallback */
 }
 
+/* Background strictly scoped to this section */
 .af-about-hero__bg {
-  position: fixed;
+  position: absolute;
+  /* Changed from fixed to absolute to keep it in this section only */
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none;
-  background-image: url("https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&w=1920&q=80");
+  background-image: url("./../assets/About/abouthero.png");
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   animation: kenBurns 20s infinite alternate ease-in-out;
-  will-change: transform;
-}
-
-@keyframes kenBurns {
-  0% {
-    transform: scale(1);
-  }
-
-  100% {
-    transform: scale(1.15);
-  }
 }
 
 .af-about-hero__overlay {
   position: absolute;
   inset: 0;
+  /* Darker gradient for better text readability */
   background: linear-gradient(180deg,
-      rgba(11, 61, 46, 0.5) 0%,
-      rgba(11, 61, 46, 0.8) 100%);
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(6, 7, 6, 0.3) 100%);
   z-index: 2;
 }
 
@@ -55,92 +45,83 @@
   text-align: center;
   color: #ffffff;
   padding: 0 1.5rem;
-  max-width: 1000px;
-  width: 100%;
+  max-width: 900px;
+}
+
+/* Logo Styling */
+.af-hero-logo-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.af-hero-logo {
+  height: 80px;
+  /* Adjust based on your logo's shape */
+  width: auto;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
 }
 
 .af-subtitle {
   display: block;
-  font-size: clamp(0.75rem, 2vw, 1rem);
+  font-size: clamp(0.8rem, 2vw, 1.1rem);
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
   color: #2ecc71;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
 .af-about-hero__content h1 {
-  font-size: clamp(2.4rem, 8vw, 5rem);
-  font-weight: 800;
-  margin: 0 0 1rem 0;
-  line-height: 1.1;
-  letter-spacing: -1px;
-  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 900;
+  margin: 0;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.text-highlight {
+  color: #2ecc71;
+  /* Green accent for 'Fusion' */
 }
 
 .af-hero-line {
-  width: 80px;
-  height: 4px;
+  width: 100px;
+  height: 3px;
   background: #2ecc71;
   margin: 2rem auto;
   border-radius: 50px;
 }
 
 .af-about-hero__content p {
-  font-size: clamp(1rem, 2.5vw, 1.4rem);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 750px;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
   margin: 0 auto;
+  font-weight: 300;
 }
 
-/* =====================================
-    RESPONSIVE FIXES
-===================================== */
-@media (max-width: 1024px) {
-  .af-about-hero__bg {
-    position: absolute;
-    /* Better performance on tablets */
-    animation: kenBurnsMobile 15s infinite alternate ease-in-out;
+/* Animations */
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
   }
 
-  @keyframes kenBurnsMobile {
-    0% {
-      transform: scale(1.1);
-    }
-
-    100% {
-      transform: scale(1.25);
-    }
+  100% {
+    transform: scale(1.1);
   }
 }
 
-@media (max-width: 480px) {
+/* Tablet & Mobile Adjustments */
+@media (max-width: 768px) {
+  .af-hero-logo {
+    height: 60px;
+  }
+
   .af-about-hero {
-    /* Fix for mobile browser address bars */
-    height: 100vh;
-    height: calc(var(--vh, 1vh) * 100);
-    min-height: 500px;
+    height: 85vh;
   }
+}
 
-  .af-about-hero__content {
-    padding-top: 60px;
-    /* Space for a header if needed */
-  }
-
-  .af-about-hero__content h1 {
-    font-size: 2.2rem;
-    /* Clean sizing for small screens */
-    margin-bottom: 15px;
-  }
-
-  .af-hero-line {
-    margin: 1.5rem auto;
-    width: 60px;
-  }
-
-  .af-about-hero__content p {
-    font-size: 1.05rem;
-    line-height: 1.5;
-  }
+.jggold {
+  color: goldenrod;
 }

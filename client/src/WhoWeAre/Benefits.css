@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+
+.wcb-benefits-page {
+    background-color: white;
+    color: #1a1a1a;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wcb-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wcb-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wcb-hero {
+    position: relative;
+    height: 55vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+}
+
+.wcb-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(#e2c99d 0.5px, transparent 0.5px);
+    background-size: 40px 40px;
+    opacity: 0.15;
+}
+
+.wcb-pre-title {
+    color: #c5a059;
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wcb-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.wcb-gold-text {
+    color: #c5a059;
+}
+
+.wcb-hero-lead {
+    font-size: 1.15rem;
+    color: #64748b;
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- CLIENTS GRID --- */
+.wcb-clients {
+    padding: 100px 0;
+}
+
+.wcb-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wcb-gold-divider {
+    width: 50px;
+    height: 3px;
+    background: #c5a059;
+    margin: 15px auto;
+}
+
+.wcb-benefit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.wcb-benefit-card {
+    padding: 40px 30px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.wcb-featured {
+    background: #1a1a1a;
+    border: none;
+}
+
+.wcb-icon {
+    font-size: 2rem;
+    color: #c5a059;
+    margin-bottom: 20px;
+}
+
+.wcb-benefit-card h4 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+.wcb-benefit-card p {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- PARTNER BOX --- */
+.wcb-partners {
+    padding: 50px 0 100px;
+}
+
+.wcb-dark-box {
+    background: #fdfaf4;
+    border-left: 6px solid #c5a059;
+    padding: 80px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.wcb-box-header h2 {
+    font-size: 2.2rem;
+}
+
+.wcb-partner-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wcb-partner-item {
+    display: flex;
+    gap: 20px;
+}
+
+.wcb-partner-item svg {
+    font-size: 1.5rem;
+    color: #c5a059;
+    margin-top: 5px;
+}
+
+.wcb-partner-item h5 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.wcb-partner-item p {
+    font-size: 0.9rem;
+    color: #64748b;
+}
+
+/* --- EMPLOYEES --- */
+.wcb-employees {
+    padding: 100px 0;
+    background: #fcfcfc;
+}
+
+.wcb-employee-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.wcb-emp-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.wcb-emp-icon {
+    font-size: 2.5rem;
+    color: #c5a059;
+    margin-bottom: 20px;
+}
+
+.wcb-emp-card h4 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.wcb-emp-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+/* --- BANNER --- */
+.wcb-banner {
+    padding-bottom: 100px;
+}
+
+.wcb-banner-inner {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.wcb-banner-icon {
+    font-size: 2rem;
+    color: #c5a059;
+    margin-bottom: 20px;
+}
+
+.wcb-banner-inner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+
+    .wcb-dark-box,
+    .wcb-employee-row {
+        grid-template-columns: 1fr;
+    }
+
+    .wcb-dark-box {
+        padding: 40px 20px;
+    }
+}

@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #121212;
+    --text-gray: #5a5a5a;
+    --bg-soft: #fcfcfc;
+    --white: #ffffff;
+}
+
+.wcv-values-page {
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wcv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wcv-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wcv-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+}
+
+.wcv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(197, 160, 89, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.wcv-pre-title {
+    color: var(--gold);
+    letter-spacing: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wcv-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.2;
+}
+
+.wcv-gold-text {
+    color: var(--gold);
+}
+
+.wcv-hero-line {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 30px auto 0;
+}
+
+/* --- PHILOSOPHY --- */
+.wcv-philosophy {
+    padding: 80px 0;
+}
+
+.wcv-phil-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+
+.wcv-quote-icon {
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.wcv-phil-box p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+/* --- VALUES GRID --- */
+.wcv-grid-section {
+    padding: 80px 0 120px;
+    background: var(--bg-soft);
+}
+
+.wcv-values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.wcv-value-card {
+    background: var(--white);
+    padding: 50px;
+    border: 1px solid #eee;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.wcv-value-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.06);
+}
+
+.wcv-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.wcv-value-number {
+    font-family: 'Marcellus', serif;
+    font-size: 1rem;
+    color: var(--gold);
+    opacity: 0.6;
+}
+
+.wcv-value-icon {
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.wcv-value-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.wcv-card-divider {
+    width: 30px;
+    height: 2px;
+    background: var(--gold-light);
+    margin-bottom: 20px;
+}
+
+.wcv-value-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* --- COMMITMENT BANNER --- */
+.wcv-commitment {
+    padding-bottom: 120px;
+}
+
+.wcv-commit-box {
+    background: var(--dark);
+    color: var(--white);
+    padding: 80px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.wcv-commit-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+}
+
+.wcv-commit-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.wcv-commit-content p {
+    opacity: 0.8;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.wcv-badge-row {
+    display: flex;
+    gap: 20px;
+}
+
+.wcv-badge-row span {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px 16px;
+    color: var(--gold-light);
+}
+
+.wcv-gold-shape {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 300px;
+    height: 300px;
+    background: var(--gold);
+    opacity: 0.1;
+    border-radius: 50%;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .wcv-values-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wcv-commit-box {
+        padding: 40px;
+    }
+
+    .wcv-badge-row {
+        flex-wrap: wrap;
+    }
+}

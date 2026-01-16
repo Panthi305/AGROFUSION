@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #121212;
+    --soft-white: #fcfcfc;
+    --border: #ececec;
+    --text-gray: #5a5a5a;
+}
+
+.wsg-strategy-page {
+    background-color: #fff;
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wsg-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wsg-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wsg-hero {
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+    border-bottom: 1px solid var(--border);
+}
+
+.wsg-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(var(--gold-light) 0.5px, transparent 0.5px);
+    background-size: 30px 30px;
+    opacity: 0.2;
+}
+
+.wsg-pre-title {
+    color: var(--gold);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wsg-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(3rem, 7vw, 4.5rem);
+    margin-bottom: 20px;
+}
+
+.wsg-gold-text {
+    color: var(--gold);
+}
+
+.wsg-hero-lead {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- PILLARS --- */
+.wsg-pillars {
+    padding: 100px 0;
+}
+
+.wsg-pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.wsg-p-card {
+    padding: 50px 40px;
+    background: #fff;
+    border: 1px solid var(--border);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.wsg-p-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.05);
+}
+
+.wsg-p-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.wsg-p-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.wsg-p-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.wsg-hubs-tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wsg-hubs-tag span {
+    font-size: 10px;
+    font-weight: 700;
+    background: #f0f0f0;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.wsg-extra {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- TIERS SECTION --- */
+.wsg-penetration {
+    padding: 100px 0;
+    background: var(--soft-white);
+}
+
+.wsg-section-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.wsg-section-header h2 {
+    font-size: 2.5rem;
+}
+
+.wsg-gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.wsg-tier-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    position: relative;
+}
+
+.wsg-tier-item {
+    background: #fff;
+    padding: 60px 40px;
+    text-align: center;
+    border: 1px solid var(--border);
+    position: relative;
+}
+
+.wsg-tier-num {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-family: 'Marcellus', serif;
+    font-size: 0.8rem;
+    color: var(--gold);
+    opacity: 0.5;
+}
+
+.wsg-tier-icon {
+    font-size: 2.2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.wsg-tier-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.wsg-tier-item p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+}
+
+.wsg-arrow {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold-light);
+    font-size: 1.5rem;
+}
+
+/* --- QUOTE BANNER --- */
+.wsg-quote {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.wsg-quote-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    border: 1px solid var(--gold-light);
+}
+
+.wsg-quote-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.wsg-quote-box p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    font-style: italic;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .wsg-tier-row {
+        grid-template-columns: 1fr;
+    }
+
+    .wsg-arrow {
+        display: none;
+    }
+
+    .wsg-quote-box {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --text-gray: #64748b;
+    --white: #ffffff;
+    --border: #f0f0f0;
+}
+
+.wir-investor-page {
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wir-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wir-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wir-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+}
+
+.wir-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to right, rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+    background-size: 60px 60px;
+}
+
+.wir-pre-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wir-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.wir-gold-text {
+    color: var(--gold);
+}
+
+.wir-hero-lead {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- PHILOSOPHY --- */
+.wir-philosophy {
+    padding: 100px 0;
+}
+
+.wir-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wir-gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px auto;
+}
+
+.wir-phil-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.wir-phil-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 40px 30px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.wir-phil-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.wir-phil-icon {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.wir-phil-card h4 {
+    font-size: 1.15rem;
+    margin-bottom: 12px;
+}
+
+.wir-phil-card p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- FINANCIAL HIGHLIGHTS --- */
+.wir-highlights {
+    padding-bottom: 100px;
+}
+
+.wir-highlights-box {
+    background: var(--dark);
+    padding: 80px 60px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.white-opacity {
+    opacity: 0.6;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.wir-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 80px;
+}
+
+.wir-stat-val {
+    display: block;
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+}
+
+.wir-stat-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+    letter-spacing: 1px;
+}
+
+/* --- DUAL LAYOUT --- */
+.wir-comm-opp {
+    padding-bottom: 120px;
+}
+
+.wir-dual-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.wir-comm-block h3,
+.wir-opp-block h3 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.wir-comm-list {
+    list-style: none;
+    padding: 0;
+}
+
+.wir-comm-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-gray);
+}
+
+.wir-comm-list svg {
+    color: var(--gold);
+}
+
+.wir-contact-badge {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 8px 15px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.wir-opp-item {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    padding: 25px;
+    background: #fbfbfb;
+    border-left: 4px solid var(--gold);
+}
+
+.wir-opp-icon {
+    font-size: 1.5rem;
+    color: var(--gold);
+}
+
+.wir-opp-text h5 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.wir-opp-text p {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+
+    .wir-phil-grid,
+    .wir-dual-layout,
+    .wir-highlights-box {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .wir-stats-grid {
+        gap: 40px;
+        margin-top: 40px;
+    }
+
+    .wir-highlights-box {
+        padding: 40px;
+    }
+}

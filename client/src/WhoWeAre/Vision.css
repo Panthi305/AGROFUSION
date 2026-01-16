@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --soft-white: #fcfcfc;
+    --text-gray: #666666;
+    --border: #eeeeee;
+}
+
+.wwv-vision-page {
+    background-color: #fff;
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wwv-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wwv-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wwv-hero {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.wwv-hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.wwv-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    filter: saturate(0.5);
+}
+
+.wwv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, #fff, transparent);
+}
+
+.wwv-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 20px;
+}
+
+.wwv-pre-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.wwv-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(3rem, 7vw, 5rem);
+    margin-bottom: 30px;
+}
+
+.wwv-gold-text {
+    color: var(--gold);
+}
+
+.wwv-vision-statement {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    border-top: 1px solid var(--gold-light);
+    border-bottom: 1px solid var(--gold-light);
+}
+
+.wwv-vision-statement p {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- MILESTONES --- */
+.wwv-milestones {
+    padding: 100px 0;
+    background: var(--soft-white);
+}
+
+.wwv-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wwv-title-sm {
+    font-family: 'Marcellus', serif;
+    font-size: 2.2rem;
+}
+
+.wwv-gold-divider {
+    width: 50px;
+    height: 3px;
+    background: var(--gold);
+    margin: 15px auto;
+}
+
+.wwv-milestone-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.wwv-m-card {
+    background: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: 0.3s;
+}
+
+.wwv-m-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+.wwv-m-icon {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.wwv-m-value {
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.wwv-m-label {
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--gold);
+    margin-bottom: 10px;
+}
+
+.wwv-m-sub {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+/* --- FOCUS AREAS --- */
+.wwv-focus {
+    padding: 120px 0;
+}
+
+.wwv-focus-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.wwv-focus-image {
+    position: relative;
+}
+
+.wwv-focus-image img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.wwv-image-badge {
+    position: absolute;
+    bottom: 30px;
+    right: -20px;
+    background: var(--gold);
+    color: #fff;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.wwv-sub-label {
+    font-family: 'Marcellus', serif;
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.wwv-focus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.wwv-focus-item {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border);
+    transition: 0.3s ease;
+    cursor: default;
+}
+
+.wwv-focus-icon-wrap {
+    font-size: 1.5rem;
+    color: var(--gold);
+    margin-top: 5px;
+}
+
+.wwv-focus-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.wwv-focus-item p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* --- BOTTOM BANNER --- */
+.wwv-banner {
+    padding: 100px 0;
+}
+
+.wwv-banner-box {
+    background: var(--dark);
+    color: #fff;
+    text-align: center;
+    padding: 80px 40px;
+}
+
+.wwv-banner-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.wwv-banner-box p {
+    font-size: 1.1rem;
+    opacity: 0.8;
+    margin-bottom: 30px;
+}
+
+.wwv-gold-line {
+    width: 100px;
+    height: 4px;
+    background: var(--gold);
+    margin: 0 auto;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .wwv-focus-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .wwv-main-title {
+        font-size: 3rem;
+    }
+}

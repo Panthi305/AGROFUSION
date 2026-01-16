@@ -3,6 +3,7 @@ import {
   ShieldCheck, Cpu, Globe2, Container, Zap, Sprout
 } from "lucide-react";
 import "./EcosystemAdvantage.css";
+import middleLogo from "./../assets/middlelogo.png";
 
 const EcosystemAdvantage = () => {
   const [hoveredItem, setHoveredItem] = useState(null);
@@ -80,9 +81,19 @@ const EcosystemAdvantage = () => {
               <circle cx="100" cy="100" r="35" fill="white" />
             </svg>
 
-            <div className={`af-ecosystem__center-text ${hoveredItem ? "visible" : ""}`}>
-              {hoveredItem?.name}
+            <div className={`af-ecosystem__center ${hoveredItem ? "visible" : ""}`}>
+              <img
+                src={middleLogo}
+                alt="Jigisha Group"
+                className="af-ecosystem__center-logo"
+              />
+              <h4 className="af-ecosystem__center-title">
+                {hoveredItem?.name}
+              </h4>
+
+
             </div>
+
           </div>
 
           {/* Right Side */}

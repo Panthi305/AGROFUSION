@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --soft-white: #f8f9fa;
+    --border: #ececec;
+    --text-gray: #5a5a5a;
+}
+
+.woi-infra-page {
+    background-color: #fff;
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.woi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.woi-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.woi-hero {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.woi-hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.woi-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.woi-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, #fff);
+}
+
+.woi-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.woi-pre-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 11px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.woi-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.woi-gold-text {
+    color: var(--gold);
+}
+
+.woi-hero-lead {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- NETWORK GRID --- */
+.woi-india-network {
+    padding: 80px 0;
+}
+
+.woi-gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 20px auto 60px;
+}
+
+.woi-section-header {
+    text-align: center;
+}
+
+.woi-network-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.woi-network-card {
+    background: var(--soft-white);
+    padding: 40px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.woi-card-top {
+    margin-bottom: 20px;
+}
+
+.woi-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.woi-zones {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.woi-zones span {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--gold-light);
+    padding: 4px 10px;
+}
+
+/* --- SPLIT LAYOUT --- */
+.woi-global-specialized {
+    padding: 100px 0;
+    background: #fff;
+}
+
+.woi-split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.woi-label {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.woi-side-block h3 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.woi-infra-list {
+    list-style: none;
+    padding: 0;
+}
+
+.woi-infra-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border);
+    color: var(--text-gray);
+}
+
+.woi-infra-list svg {
+    color: var(--gold);
+}
+
+.woi-facility-tags {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.woi-facility-tags span {
+    background: var(--soft-white);
+    padding: 15px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--gold);
+}
+
+/* --- TECH INFRA --- */
+.woi-tech-infra {
+    padding: 100px 0;
+}
+
+.woi-tech-box {
+    background: var(--dark);
+    color: #fff;
+    padding: 80px 60px;
+    text-align: center;
+}
+
+.woi-tech-header {
+    margin-bottom: 50px;
+}
+
+.woi-tech-main-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 20px;
+}
+
+.woi-tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.woi-tech-item svg {
+    font-size: 2rem;
+    color: var(--gold-light);
+    margin-bottom: 15px;
+}
+
+.woi-tech-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.woi-tech-item p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* --- BANNER --- */
+.woi-banner {
+    padding: 40px 0;
+    text-align: center;
+    background: var(--gold);
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+
+    .woi-network-grid,
+    .woi-split-layout,
+    .woi-tech-grid {
+        grid-template-columns: 1fr;
+    }
+}

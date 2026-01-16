@@ -1,0 +1,13 @@
+.optimized-image {
+  transition: opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.optimized-image.loading {
+  opacity: 0.6;
+  filter: blur(10px);
+}
+
+.optimized-image.loaded {
+  opacity: 1;
+  filter: blur(0);
+}

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --text-gray: #64748b;
+    --bg-soft: #fcfcfc;
+    --white: #ffffff;
+    --border: #eef2f6;
+}
+
+.wwo-way-page {
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wwo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wwo-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+.wwo-center {
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 2.5rem;
+}
+
+/* --- HERO --- */
+.wwo-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+}
+
+.wwo-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(197, 160, 89, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(197, 160, 89, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+}
+
+.wwo-pre-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wwo-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+}
+
+.wwo-gold-text {
+    color: var(--gold);
+}
+
+.wwo-hero-lead {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 20px auto 0;
+}
+
+/* --- INTEGRATED SPLIT --- */
+.wwo-integrated {
+    padding: 100px 0;
+}
+
+.wwo-split-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.wwo-split-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+}
+
+.wwo-gold-line {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin-bottom: 40px;
+}
+
+.wwo-check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.wwo-check-list li {
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+.wwo-check-list li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-weight: 900;
+}
+
+.wwo-split-visual img {
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 20px 20px 0px var(--gold-light);
+}
+
+/* --- STEP FLOW --- */
+.wwo-engagement {
+    padding: 100px 0;
+    background: var(--bg-soft);
+}
+
+.wwo-step-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.wwo-step-card {
+    background: #fff;
+    padding: 40px 30px;
+    border: 1px solid var(--border);
+    text-align: center;
+    position: relative;
+}
+
+.wwo-step-icon-wrap {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.wwo-step-num {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--dark);
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.wwo-step-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.wwo-step-card p {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* --- DUAL GRID --- */
+.wwo-dual-grid {
+    padding: 100px 0;
+}
+
+.wwo-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.wwo-grid-box {
+    padding: 60px;
+    border: 1px solid var(--border);
+}
+
+.wwo-gold-bg {
+    background: var(--gold);
+    color: #fff;
+    border: none;
+}
+
+.white {
+    color: #fff !important;
+}
+
+.wwo-box-icon {
+    font-size: 3rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.wwo-grid-box h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.wwo-grid-box p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.wwo-tag {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gold);
+    border: 1px solid var(--gold);
+    padding: 6px 15px;
+}
+
+.wwo-mini-list {
+    display: flex;
+    gap: 15px;
+}
+
+.wwo-mini-list span {
+    font-size: 10px;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+}
+
+/* --- CLOSING --- */
+.wwo-closing {
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-gray);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+
+    .wwo-split-box,
+    .wwo-step-row,
+    .wwo-grid-layout {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,114 @@
+/* =====================================
+   JAI KISSAN FOUNDATION SECTION
+===================================== */
+
+.jsk-section {
+    padding: 110px 20px;
+   
+}
+
+.jsk-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* BRANDING */
+.jsk-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.jsk-top-logo {
+    height: 200px;
+    width: auto;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.08));
+}
+
+.jsk-brand-caption {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #2e7d32;
+}
+
+/* GRID */
+.jsk-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: flex-start;
+}
+
+/* TEXT */
+.jsk-text-block {
+    max-width: 520px;
+}
+
+.jsk-title {
+    font-size: clamp(2.2rem, 4vw, 2.8rem);
+    font-weight: 800;
+    color: #0b3d2e;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.jsk-title span {
+    color: #2ecc71;
+    display: block;
+}
+
+.jsk-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0b3d2e;
+    margin-bottom: 18px;
+}
+
+.jsk-para {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 22px;
+}
+
+/* HIGHLIGHT */
+.jsk-highlight-box {
+    display: inline-block;
+    background: #0b3d2e;
+    color: #ffffff;
+    padding: 16px 28px;
+    border-radius: 14px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    border-left: 5px solid #2ecc71;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .jsk-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .jsk-text-block {
+        max-width: 100%;
+    }
+
+    .jsk-title span {
+        display: inline;
+    }
+
+    .jsk-highlight-box {
+        margin: 0 auto;
+    }
+
+    .jsk-top-logo {
+        height: 160px;
+    }
+}

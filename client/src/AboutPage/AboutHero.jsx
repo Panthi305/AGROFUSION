@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "./AboutHero.css";
+// Importing the logo from your local path
+import agroLogo from "./../assets/all_company/AGRO.png";
+import abouthero from "./../assets/About/abouthero.png";
 
 const AboutHero = () => {
   // Animation Variants
@@ -27,31 +30,35 @@ const AboutHero = () => {
 
   return (
     <section className="af-about-hero">
-      {/* Background layer with Ken Burns effect via CSS */}
+      {/* Background stays specific to this section */}
       <div className="af-about-hero__bg"></div>
-
-      {/* Overlay layer */}
       <div className="af-about-hero__overlay"></div>
 
-      {/* Text layer using Framer Motion */}
       <motion.div
         className="af-about-hero__content"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
+        {/* Logo Integration */}
+        <motion.div variants={itemVariants} className="af-hero-logo-wrapper">
+          <img src={agroLogo} alt="Agro Fusion Logo" className="af-hero-logo" />
+        </motion.div>
+
         <motion.span className="af-subtitle" variants={itemVariants}>
-          A Jigisha Group Initiative
+          The Next Evolution of Jigisha Agro
         </motion.span>
 
         <motion.h1 variants={itemVariants}>
-          About Agro Fusion
+          Agro <span className="text-highlight">Fusion</span>
         </motion.h1>
 
+        {/* Decorative Divider */}
 
         <motion.p variants={itemVariants}>
-          Redefining Agriculture Through Integration, Innovation, and Global Impact.
-          We connect the roots of farming with the height of technology.
+          Born from the legacy of <span className="jggold">Jigisha Agro</span>, <strong>Agro Fusion</strong> represents our expanded vision.
+          We are bridging the gap between traditional farming wisdom and modern global scale
+          to create a sustainable future for agriculture.
         </motion.p>
       </motion.div>
     </section>

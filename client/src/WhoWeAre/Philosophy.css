@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --text-gray: #64748b;
+    --bg-soft: #fcfcfc;
+    --white: #ffffff;
+}
+
+.wbp-philosophy-page {
+    background-color: var(--white);
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.wbp-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.wbp-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.wbp-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #fbfbfb;
+}
+
+.wbp-hero-bg {
+    position: absolute;
+    inset: 0;
+}
+
+.wbp-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;
+}
+
+.wbp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, #fff);
+}
+
+.wbp-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.wbp-pre-title {
+    color: var(--gold);
+    letter-spacing: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.wbp-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1.2;
+}
+
+.wbp-gold-text {
+    color: var(--gold);
+}
+
+.wbp-gold-line {
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+    margin: 30px auto 0;
+}
+
+/* --- PRINCIPLES GRID --- */
+.wbp-principles {
+    padding: 100px 0;
+}
+
+.wbp-section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.wbp-section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.wbp-sub-intro {
+    color: var(--text-gray);
+    font-size: 1.1rem;
+}
+
+.wbp-principles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.wbp-p-card {
+    padding: 2px;
+    background: linear-gradient(135deg, var(--gold-light), transparent);
+}
+
+.wbp-card-inner {
+    background: #fff;
+    padding: 50px 40px;
+    height: 100%;
+    transition: 0.3s ease;
+}
+
+.wbp-p-card:hover .wbp-card-inner {
+    background: #fdfaf4;
+}
+
+.wbp-p-icon {
+    font-size: 2rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.wbp-p-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+}
+
+.wbp-p-card p {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    line-height: 1.8;
+}
+
+/* --- APPROACH SECTION --- */
+.wbp-approach {
+    padding: 100px 0;
+    background: var(--bg-soft);
+}
+
+.wbp-approach-box {
+    background: var(--dark);
+    color: #fff;
+    padding: 80px 60px;
+    border-radius: 4px;
+}
+
+.wbp-approach-header {
+    margin-bottom: 60px;
+    text-align: center;
+}
+
+.wbp-approach-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.wbp-approach-header p {
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+.wbp-approach-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.wbp-a-item {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-left: 4px solid var(--gold);
+}
+
+.wbp-a-icon {
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.wbp-a-content h4 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.wbp-a-content p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+}
+
+/* --- CLOSING --- */
+.wbp-closing {
+    padding: 120px 0;
+    text-align: center;
+}
+
+.wbp-closing-card {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.wbp-closing-card p {
+    font-size: 1.8rem;
+    font-family: 'Marcellus', serif;
+    color: var(--text-gray);
+    line-height: 1.4;
+    font-style: italic;
+}
+
+.wbp-gold-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--gold);
+    margin: 30px auto 0;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+
+    .wbp-principles-grid,
+    .wbp-approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .wbp-approach-box {
+        padding: 40px 20px;
+    }
+
+    .wbp-closing-card p {
+        font-size: 1.4rem;
+    }
+}

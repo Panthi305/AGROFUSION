@@ -1,0 +1,256 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+
+:root {
+    --gold: #c5a059;
+    --gold-light: #e2c99d;
+    --dark: #1a1a1a;
+    --soft-white: #f8f9fa;
+    --text-gray: #666666;
+    --border: #e8e8e8;
+}
+
+.woc-clients-page {
+    background-color: #fff;
+    color: var(--dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.woc-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.woc-marcellus {
+    font-family: 'Marcellus', serif;
+}
+
+/* --- HERO --- */
+.woc-hero {
+    position: relative;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop') center/cover;
+}
+
+.woc-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), #fff);
+}
+
+.woc-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.woc-pre-title {
+    color: var(--gold);
+    letter-spacing: 5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.woc-main-title {
+    font-family: 'Marcellus', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 20px;
+}
+
+.woc-gold-text {
+    color: var(--gold);
+}
+
+.woc-hero-lead {
+    font-size: 1.15rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* --- PORTFOLIO SEGMENTS --- */
+.woc-portfolio {
+    padding: 100px 0;
+}
+
+.woc-segment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: center;
+    margin-bottom: 120px;
+}
+
+.woc-reverse {
+    direction: rtl;
+}
+
+.woc-reverse .woc-segment-text {
+    direction: ltr;
+}
+
+.woc-segment-img {
+    position: relative;
+}
+
+.woc-segment-img img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 4px;
+    position: relative;
+    z-index: 2;
+}
+
+.woc-img-frame {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--gold-light);
+    z-index: 1;
+}
+
+.woc-seg-icon {
+    font-size: 2.5rem;
+    color: var(--gold);
+    margin-bottom: 15px;
+}
+
+.woc-segment-header h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+}
+
+.woc-client-list {
+    list-style: none;
+    padding: 0;
+}
+
+.woc-client-list li {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.woc-list-bullet {
+    color: var(--gold);
+    font-size: 0.8rem;
+}
+
+/* --- PHILOSOPHY CARD --- */
+.woc-philosophy {
+    padding-bottom: 100px;
+}
+
+.woc-philosophy-card {
+    background: var(--soft-white);
+    padding: 60px;
+    border-left: 5px solid var(--gold);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.woc-phil-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.woc-phil-content p {
+    color: var(--text-gray);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
+.woc-stats-strip {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.woc-stat {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: var(--gold);
+}
+
+/* --- CTA --- */
+.woc-cta {
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.woc-banner-box {
+    background: var(--dark);
+    color: #fff;
+    padding: 80px 40px;
+    border-radius: 4px;
+}
+
+.woc-cta-icon {
+    font-size: 3.5rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+}
+
+.woc-banner-box h2 {
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.woc-banner-box p {
+    opacity: 0.7;
+    margin-bottom: 35px;
+}
+
+.woc-gold-btn {
+    padding: 18px 50px;
+    background: var(--gold);
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.woc-gold-btn:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 968px) {
+    .woc-segment-row {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .woc-segment-img img {
+        height: 300px;
+    }
+
+    .woc-philosophy-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
