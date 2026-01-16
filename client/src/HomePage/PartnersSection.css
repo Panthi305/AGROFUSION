@@ -1,0 +1,149 @@
+/* =========================================
+   1. SECTION WRAPPER
+========================================= */
+.hp-partners-section {
+    padding: 60px 0 0px;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+}
+
+.hp-partners-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   2. HEADER TYPOGRAPHY
+========================================= */
+.hp-partners-header {
+    margin-bottom: 20px;
+    /* Increased slightly for better spacing */
+}
+
+.hp-title-prefix {
+    /* font-family: 'Montserrat', sans-serif; */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #8b7355;
+    display: inline-block;
+    position: relative;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    color: var(--primary-dark);
+    font-weight: 800;
+}
+
+
+
+/* =========================================
+   3. INFINITE SCROLL WINDOW
+========================================= */
+.hp-scroll-window {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Mask for smooth fade edges */
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    -webkit-mask-image: linear-gradient(to right,
+            transparent 0%,
+            black 10%,
+            black 90%,
+            transparent 100%);
+    /* Increased padding to accommodate bigger pop effect */
+}
+
+/* The moving track */
+.hp-scroll-track {
+    display: flex;
+    width: max-content;
+    align-items: center;
+    /* INCREASED GAP: Keeps them breathing since logos are bigger */
+    gap: clamp(60px, 8vw, 120px);
+
+    /* The Animation */
+    animation: scrollLoop 81s linear infinite;
+    /* Slowed down slightly for elegance */
+    will-change: transform;
+}
+
+.hp-scroll-track:hover {
+    animation-play-state: paused;
+}
+
+/* =========================================
+   4. LOGO ITEMS (BIGGER & COLORFUL)
+========================================= */
+.hp-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hp-logo-img {
+    /* ⚠️ CHANGED: Increased Sizes Significantly */
+    /* Min: 70px (Mobile), Ideal: 10vw, Max: 140px (Desktop) */
+    height: clamp(70px, 12vw, 140px);
+
+    width: auto;
+    /* Increased max-width to allow wider logos to stretch properly */
+    max-width: 260px;
+
+    object-fit: contain;
+
+    /* ⚠️ CHANGED: Full Color by Default (No Grayscale) */
+    filter: none;
+    opacity: 1;
+
+    transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    cursor: pointer;
+}
+
+/* Hover Interaction - Just Scale/Pop */
+.hp-logo-item:hover .hp-logo-img {
+    /* Just a nice pop, no color change needed */
+    transform: scale(1.15) translateY(-5px);
+    /* Optional: Add a subtle drop shadow on hover for depth */
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+}
+
+/* =========================================
+   5. KEYFRAMES
+========================================= */
+@keyframes scrollLoop {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-33.33%);
+    }
+}
+
+/* =========================================
+   6. MOBILE OPTIMIZATIONS
+========================================= */
+@media (max-width: 768px) {
+    .hp-partners-section {
+        padding: 40px 0;
+    }
+
+    .hp-scroll-track {
+        animation-duration: 20s;
+        /* Reduce gap on mobile so they don't look too far apart */
+        gap: 40px;
+    }
+
+    .hp-logo-img {
+        /* Slightly smaller on mobile to fit screen, but still big */
+        height: clamp(60px, 15vw, 100px);
+    }
+}

@@ -9,12 +9,14 @@ import TechnologyBackbone from "./TechnologyBackbone";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
 import "./HomePage.css";
+import PartnersSection from "./PartnersSection";
 function HomePage() {
     return (
         <>
 
             <Hero />
             <div className="hhome-bg">
+                <PartnersSection />
                 {/* <MissionVision/> */}
                 <StrategicPillars />
                 <EcosystemAdvantage />

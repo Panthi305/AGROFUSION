@@ -4,51 +4,32 @@
   position: relative;
   width: 100%;
   height: 100vh;
-  /* Ensure content is always accessible even if height is small */
-  min-height: 600px; 
+  min-height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+
+  /* IMAGE BACKGROUND */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-/* --- THE PARALLAX VIDEO CONTAINER --- */
-.af-hero-video {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Ensure video covers the screen without stretching */
-.af-hero-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.af-hero-section::before {
-  content: '';
+/* DARK OVERLAY */
+.af-hero-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.45) 0%,
-    rgba(0, 0, 0, 0.75) 100%
-  );
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(0, 0, 0, 0.75) 100%);
   z-index: 1;
 }
 
-/* --- CONTENT LAYER --- */
+/* CONTENT */
 .af-hero-content {
   position: relative;
-  z-index: 10;
+  z-index: 2;
   width: 90%;
   max-width: 900px;
   text-align: center;
@@ -58,13 +39,19 @@
 }
 
 @keyframes fadeInHero {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .af-hero-content h1 {
   font-family: 'Outfit', sans-serif;
-  /* Responsive font size: Min 1.8rem, Max 3.5rem */
   font-size: clamp(1.8rem, 5vw, 3.5rem);
   line-height: 1.15;
   margin-bottom: 20px;
@@ -84,15 +71,15 @@
   margin-right: auto;
 }
 
-/* --- BUTTONS --- */
+/* CTA */
 .af-hero-cta {
   display: flex;
   gap: 16px;
   justify-content: center;
-  flex-wrap: wrap; /* Allows stacking on very narrow screens */
+  flex-wrap: wrap;
 }
 
-.af-cta-primary, .af-cta-secondary {
+.af-cta-secondary {
   padding: clamp(14px, 2vh, 18px) 36px;
   font-size: 1rem;
   font-weight: 600;
@@ -101,45 +88,33 @@
   transition: all 0.3s ease;
   font-family: 'Plus Jakarta Sans', sans-serif;
   min-width: 240px;
-}
 
-.af-cta-primary {
-  background-color: #10b981;
-  color: #ffffff;
-  border: none;
-  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
-}
-
-.af-cta-secondary {
   background-color: rgba(255, 255, 255, 0.1);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
 }
 
-/* --- MEDIA QUERIES FOR ALL DEVICES --- */
-
-/* Tablets and below */
-@media (max-width: 1024px) {
-  /* Some mobile browsers jump when using 'fixed'. Switching to absolute keeps it decent. */
-  .af-hero-video {
-    position: absolute;
-  }
+.af-cta-secondary:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.18);
 }
 
-/* Small Laptops/Large Tablets */
+/* RESPONSIVE */
+
+/* Tablets */
 @media (max-width: 991px) {
   .af-hero-content {
     max-width: 700px;
   }
 }
 
-/* Mobile Phones */
+/* Mobile */
 @media (max-width: 768px) {
   .af-hero-section {
     height: auto;
     min-height: 100vh;
-    padding: 100px 0; /* Ensures content doesn't hit edges on scroll */
+    padding: 100px 0;
   }
 
   .af-hero-cta {
@@ -148,23 +123,23 @@
     width: 100%;
   }
 
-  .af-cta-primary, .af-cta-secondary {
-    width: 100%; /* Full width for easier tapping */
+  .af-cta-secondary {
+    width: 100%;
     max-width: 320px;
     min-width: unset;
   }
-  
+
   .af-hero-content h1 {
     margin-bottom: 15px;
   }
 }
 
-/* Tiny Phones (iPhone SE etc.) */
+/* Small Phones */
 @media (max-width: 380px) {
   .af-hero-content h1 {
     font-size: 1.6rem;
   }
-  
+
   .af-hero-content p {
     font-size: 0.9rem;
   }

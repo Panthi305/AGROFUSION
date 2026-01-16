@@ -1,5 +1,9 @@
 import { Bug, ShieldCheck, Sprout, Layers, CheckCircle } from "lucide-react";
 import "./CropCarePortfolio.css";
+import cp1 from "./../assets/Service/InputSupply/cp1.png"
+import cp2 from "./../assets/Service/InputSupply/cp2.png"
+import cp3 from "./../assets/Service/InputSupply/cp3.png"
+import cp4 from "./../assets/Service/InputSupply/cp4.png"
 
 const CropCarePortfolio = () => {
   return (
@@ -22,7 +26,7 @@ const CropCarePortfolio = () => {
           {/* INSECTICIDES */}
           <div className="cc-card">
             <div className="cc-circle-frame">
-              <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=600" alt="Insecticides" />
+              <img src={cp1} alt="Insecticides" />
               <div className="cc-card-icon"><Bug size={18} /></div>
             </div>
             <h3>Insecticides</h3>
@@ -36,7 +40,7 @@ const CropCarePortfolio = () => {
           {/* FUNGICIDES */}
           <div className="cc-card">
             <div className="cc-circle-frame">
-              <img src="https://images.unsplash.com/photo-1598514982846-35c8e0f24f40?q=80&w=600" alt="Fungicides" />
+              <img src={cp2} alt="Fungicides" />
               <div className="cc-card-icon"><ShieldCheck size={18} /></div>
             </div>
             <h3>Fungicides</h3>
@@ -50,7 +54,7 @@ const CropCarePortfolio = () => {
           {/* HERBICIDES */}
           <div className="cc-card">
             <div className="cc-circle-frame">
-              <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=600" alt="Herbicides" />
+              <img src={cp3} alt="Herbicides" />
               <div className="cc-card-icon"><Sprout size={18} /></div>
             </div>
             <h3>Herbicides</h3>
@@ -64,7 +68,7 @@ const CropCarePortfolio = () => {
           {/* SPECIALTY */}
           <div className="cc-card">
             <div className="cc-circle-frame">
-              <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?q=80&w=600" alt="Specialty" />
+              <img src={cp4} alt="Specialty" />
               <div className="cc-card-icon"><Layers size={18} /></div>
             </div>
             <h3>Specialty Care</h3>

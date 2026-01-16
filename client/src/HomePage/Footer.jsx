@@ -30,7 +30,7 @@ const Footer = () => {
 
             </div>
             <p className="footer-bio">
-              Empowering farmers with 4K drone tech, AI-driven insights, and a seamless digital marketplace for a sustainable future.
+              Agro Fusion is an agricultural ecosystem integrator revolutionizing Indian agriculture through Jigisha Agro Industries Pvt. Ltd. It connects farmers with affordable inputs, technology, mechanization, credit, and global markets.
             </p>
             <div className="footer-social-row">
               <a href="#" className="social-pill"><Facebook size={18} /></a>

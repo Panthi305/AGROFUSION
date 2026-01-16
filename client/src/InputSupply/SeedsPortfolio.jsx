@@ -1,29 +1,32 @@
 import { CheckCircle } from "lucide-react";
 import "./SeedsPortfolio.css";
-
+import g2 from "./../assets/Service/InputSupply/g2.png"
+import g3 from "./../assets/Service/InputSupply/g3.png"
+import g4 from "./../assets/Service/InputSupply/g4.png"
+import g1 from "./../assets/Service/InputSupply/g1.avif"
 const SeedsPortfolio = () => {
   return (
     <section className="seed-portfolio-v3">
       <div className="portfolio-container">
-        
+
         {/* Modern Clean Header */}
         <header className="portfolio-header">
           <span className="section-subtitle">Premium Seed Solutions</span>
           <h2>Certified Genetics for Superior Yields</h2>
           <div className="header-bar"></div>
           <p>
-            Curated high-performance seeds engineered for purity, vigor, and 
+            Curated high-performance seeds engineered for purity, vigor, and
             stability across India's diverse agro-climatic zones.
           </p>
         </header>
 
         {/* Circular Grid Layout */}
         <div className="seed-circle-grid">
-          
+
           {/* CEREALS */}
           <div className="seed-circle-item">
             <div className="circle-image-wrapper">
-              <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?q=80&w=800" alt="Cereals" />
+              <img src={g1} alt="Cereals" />
               <div className="circle-overlay">01</div>
             </div>
             <div className="seed-circle-info">
@@ -40,7 +43,7 @@ const SeedsPortfolio = () => {
           <div className="seed-circle-item">
             <div className="circle-image-wrapper">
               {/* Updated URL: High quality Pulses/Lentils */}
-              <img src="https://images.unsplash.com/photo-1547051253-195971a938c1?q=80&w=800" alt="Pulses" />
+              <img src={g2} alt="Pulses" />
               <div className="circle-overlay">02</div>
             </div>
             <div className="seed-circle-info">
@@ -57,7 +60,7 @@ const SeedsPortfolio = () => {
           <div className="seed-circle-item">
             <div className="circle-image-wrapper">
               {/* Updated URL: Mustard/Oilseeds field */}
-              <img src="https://images.unsplash.com/photo-1463131343837-773a4694f4c2?q=80&w=800" alt="Oilseeds" />
+              <img src={g3} alt="Oilseeds" />
               <div className="circle-overlay">03</div>
             </div>
             <div className="seed-circle-info">
@@ -74,7 +77,7 @@ const SeedsPortfolio = () => {
           <div className="seed-circle-item">
             <div className="circle-image-wrapper">
               {/* Updated URL: Premium Vegetable farming */}
-              <img src="https://images.unsplash.com/photo-1592419044706-39796d40f98c?q=80&w=800" alt="Vegetables" />
+              <img src={g4} alt="Vegetables" />
               <div className="circle-overlay">04</div>
             </div>
             <div className="seed-circle-info">

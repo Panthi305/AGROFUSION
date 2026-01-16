@@ -1,15 +1,16 @@
 import "./AgriFinanceHero.css";
+import heroImg from "./../assets/Service/Agrifinace/image.png";
 
 const AgriFinanceHero = () => {
   return (
-    <section className="af-hero-section">
-      {/* BACKGROUND VIDEO (Online Source) */}
-      <div className="af-hero-video">
-        <video autoPlay muted loop playsInline poster="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=2000">
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-agriculture-drone-flying-over-a-field-1577-large.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <section
+      className="af-hero-section"
+      style={{ backgroundImage: `url(${heroImg})` }}
+    >
+      {/* OVERLAY */}
+      <div className="af-hero-overlay"></div>
 
+      {/* CONTENT */}
       <div className="af-hero-content">
         <h1>Financial Solutions for Every Farming Need</h1>
         <p>
@@ -19,7 +20,6 @@ const AgriFinanceHero = () => {
         </p>
 
         <div className="af-hero-cta">
-          
           <button
             className="af-cta-secondary"
             onClick={() => (window.location.href = "/check-eligibility")}

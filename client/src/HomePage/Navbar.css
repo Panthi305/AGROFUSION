@@ -44,7 +44,7 @@
 }
 
 .brand-accent {
-  color: #16a34a;
+  color: rgb(189, 161, 5);
   /* subtle agri green */
   font-weight: 800;
 }
@@ -78,7 +78,7 @@
 .brand-name {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #107009;
 
   /* Typography magic */
   letter-spacing: -0.8px;

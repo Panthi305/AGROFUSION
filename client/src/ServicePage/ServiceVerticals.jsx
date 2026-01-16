@@ -6,6 +6,10 @@ import { Sprout, Tractor, Cpu, Factory, Globe, Leaf, Briefcase } from "lucide-re
 import a1 from "./../assets/Service/a1.png"
 import a2 from "./../assets/Service/a2.png"
 import a3 from "./../assets/Service/a3.png"
+import a4 from "./../assets/Service/a4.png"
+import a5 from "./../assets/Service/a5.png"
+import a6 from "./../assets/Service/a6.png"
+import a7 from "./../assets/Service/a7.png"
 const servicesData = [
   {
     id: "01",
@@ -34,7 +38,7 @@ const servicesData = [
     id: "04",
     icon: <Factory size={22} />,
     title: "Value Addition",
-    image: "https://th.bing.com/th/id/OIP.FetZ0Wu0SvNpe2OCghBUvAHaE8?w=230&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3", // Processing Factory
+    image: a4,
     description: "Processing, packaging, and branding to increase market value.",
     points: ["Aggregation Centers", "Processing Units", "QR Traceability", "Contract MFG", "Benefit: Higher price realization"]
   },
@@ -42,7 +46,7 @@ const servicesData = [
     id: "05",
     icon: <Globe size={22} />,
     title: "Global Market Linkage",
-    image: "https://th.bing.com/th/id/OIP.h2h0GMjKEekQJDPhHYO-DAHaEK?w=284&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3", // Global Trade
+    image: a5,
     description: "Bridging the gap between domestic farmers and international buyers.",
     points: ["B2B Supply", "Export Channels", "Buy-Back Assurance", "Digital Marketplace", "Benefit: 12% price premium"]
   },
@@ -50,7 +54,7 @@ const servicesData = [
     id: "06",
     icon: <Leaf size={22} />,
     title: "Green Farming",
-    image: "https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?auto=format&fit=crop&q=80&w=800", // Greenery/Bio
+    image: a6,
     description: "Sustainable wealth from waste via Bio-CNG and carbon credit programs.",
     points: ["Bio-CNG Plants", "Organic Manure", "Carbon Credits", "Green Hydrogen", "Benefit: Additional waste income"]
   },
@@ -58,7 +62,7 @@ const servicesData = [
     id: "07",
     icon: <Briefcase size={22} />,
     title: "Policy-Led Farming",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800", // Policy/Documents
+    image: a7,
     description: "Execution partner for state and central government agri-schemes.",
     points: ["Scheme Facilitation", "Subsidy Management", "Capacity Building", "Agri-Infra Fund", "Benefit: Easier subsidy access"]
   }
